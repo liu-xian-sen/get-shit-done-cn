@@ -292,7 +292,7 @@ SessionStart 钩子 (`gsd-check-update.js`) 会向检测到的运行时缓存目
 
 ⚠️  请重启运行时以加载新命令。
 
-[查看完整变更日志](https://github.com/glittercowboy/get-shit-done/blob/main/CHANGELOG.md)
+[查看完整变更日志](https://github.com/liu-xian-sen/get-shit-done-dh/blob/main/CHANGELOG.md)
 ```
 </step>
 
