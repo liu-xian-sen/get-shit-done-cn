@@ -15,6 +15,7 @@
 - 路径包含 `/.codex/` -> `codex`
 - 路径包含 `/.gemini/` -> `gemini`
 - 路径包含 `/.config/opencode/` 或 `/.opencode/` -> `opencode`
+- 路径包含 `/.codebuddy/` -> `codebuddy`
 - 否则 -> `claude`
 
 将 `PREFERRED_RUNTIME` 作为第一个检查的运行时，以便 `/gsd:update` 针对调用它的运行时。
@@ -23,7 +24,7 @@
 # 运行时候选列表：存储为数组的 "<runtime>:<config-dir>"。
 # 使用数组而不是空格分隔的字符串可确保在 bash 和 zsh 中都能正确迭代
 # （zsh 默认不会对未引用的变量进行单词分割）。修复 #1173。
-RUNTIME_DIRS=( "claude:.claude" "opencode:.config/opencode" "opencode:.opencode" "gemini:.gemini" "codex:.codex" )
+RUNTIME_DIRS=( "claude:.claude" "opencode:.config/opencode" "opencode:.opencode" "gemini:.gemini" "codex:.codex" "codebuddy:.codebuddy" )
 
 # 在运行此块之前，应从 execution_context 设置 PREFERRED_RUNTIME。
 # 如果未设置，则从运行时环境变量推断；备选为 claude。
@@ -34,6 +35,8 @@ if [ -z "$PREFERRED_RUNTIME" ]; then
     PREFERRED_RUNTIME="gemini"
   elif [ -n "$OPENCODE_CONFIG_DIR" ] || [ -n "$OPENCODE_CONFIG" ]; then
     PREFERRED_RUNTIME="opencode"
+  elif [ -n "$CODEBUDDY_CONFIG_DIR" ]; then
+    PREFERRED_RUNTIME="codebuddy"
   elif [ -n "$CLAUDE_CONFIG_DIR" ]; then
     PREFERRED_RUNTIME="claude"
   else
@@ -122,7 +125,7 @@ echo "$TARGET_RUNTIME"
 解析输出：
 - 第 1 行 = 已安装版本（`0.0.0` 表示未知版本）
 - 第 2 行 = 安装范围（`LOCAL`、`GLOBAL` 或 `UNKNOWN`）
-- 第 3 行 = 目标运行时（`claude`、`opencode`、`gemini` 或 `codex`）
+- 第 3 行 = 目标运行时（`claude`、`opencode`、`gemini`、`codex` 或 `codebuddy`）
 - 如果范围是 `UNKNOWN`，则使用 `--claude --global` 备选方案继续安装步骤。
 
 如果检测到多个运行时安装，且无法从 execution_context 确定调用的运行时，请在运行安装前询问用户要更新哪个运行时。
@@ -220,8 +223,8 @@ npm view get-shit-done-dh version 2>/dev/null
 - `agents/gsd-*` 文件将被替换
 
 （路径相对于检测到的运行时安装位置：
-全局：`~/.claude/`、`~/.config/opencode/`、`~/.opencode/`、`~/.gemini/` 或 `~/.codex/`
-本地：`./.claude/`、`./.config/opencode/`、`./.opencode/`、`./.gemini/` 或 `./.codex/`）
+全局：`~/.claude/`、`~/.config/opencode/`、`~/.opencode/`、`~/.gemini/`、`~/.codex/` 或 `~/.codebuddy/`
+本地：`./.claude/`、`./.config/opencode/`、`./.opencode/`、`./.gemini/`、`./.codex/` 或 `./.codebuddy/`）
 
 您在其他位置的自定义文件将被保留：
 - 不在 `commands/gsd/` 中的自定义命令 ✓
@@ -270,7 +273,7 @@ npx -y get-shit-done-dh@latest --claude --global
 
 ```bash
 # 清除所有运行时目录下的更新缓存
-for dir in .claude .config/opencode .opencode .gemini .codex; do
+for dir in .claude .config/opencode .opencode .gemini .codex .codebuddy; do
   rm -f "./$dir/cache/gsd-update-check.json"
   rm -f "$HOME/$dir/cache/gsd-update-check.json"
 done
