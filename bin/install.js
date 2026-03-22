@@ -769,7 +769,7 @@ function convertClaudeAgentToCodebuddyAgent(content, isGlobal = false) {
   const description = extractFrontmatterField(frontmatter, 'description') || '';
   const toolsRaw = extractFrontmatterField(frontmatter, 'tools') || '';
 
-  let fm = `---\nname: ${name}\ndescription: ${description}\nagentMode: agentic\nenabled: true\nenableAutoRun: true\n`;
+  let fm = `---\nname: ${name}\ndescription: ${description}\nagentMode: agentic\nenabled: true\nenabledAutoRun: true\n`;
   if (toolsRaw) fm += `tools: ${toolsRaw}\n`;
   fm += '---';
 
