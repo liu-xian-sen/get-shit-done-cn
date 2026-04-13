@@ -625,7 +625,7 @@ describe('copyCommandsAsCopilotSkills', () => {
       // Count gsd-* directories — should be 31
       const dirs = fs.readdirSync(tempDir, { withFileTypes: true })
         .filter(e => e.isDirectory() && e.name.startsWith('gsd-'));
-      assert.strictEqual(dirs.length, 53, `expected 53 skill folders, got ${dirs.length}`);
+      assert.strictEqual(dirs.length, 71, `expected 71 skill folders, got ${dirs.length}`);
     } finally {
       fs.rmSync(tempDir, { recursive: true });
     }
@@ -746,10 +746,10 @@ describe('Copilot agent conversion - real files', () => {
     assert.ok(toolsLine.includes("'read'"), 'Read mapped');
   });
 
-  test('all 17 agents convert without error', () => {
+  test('all 29 agents convert without error', () => {
     const agents = fs.readdirSync(agentsSrc)
       .filter(f => f.startsWith('gsd-') && f.endsWith('.md'));
-    assert.strictEqual(agents.length, 17, `expected 17 agents, got ${agents.length}`);
+    assert.strictEqual(agents.length, 29, `expected 29 agents, got ${agents.length}`);
 
     for (const agentFile of agents) {
       const content = fs.readFileSync(path.join(agentsSrc, agentFile), 'utf8');
@@ -1119,8 +1119,8 @@ const { execFileSync } = require('child_process');
 const crypto = require('crypto');
 
 const INSTALL_PATH = path.join(__dirname, '..', 'bin', 'install.js');
-const EXPECTED_SKILLS = 53;
-const EXPECTED_AGENTS = 17;
+const EXPECTED_SKILLS = 71;
+const EXPECTED_AGENTS = 29;
 
 function runCopilotInstall(cwd) {
   const env = { ...process.env };
@@ -1188,24 +1188,36 @@ describe('E2E: Copilot full install verification', () => {
     const files = fs.readdirSync(agentsDir);
     const gsdAgents = files.filter(f => f.startsWith('gsd-') && f.endsWith('.agent.md')).sort();
     const expected = [
-      'gsd-advisor-researcher.agent.md',
-      'gsd-codebase-mapper.agent.md',
-      'gsd-debugger.agent.md',
-      'gsd-executor.agent.md',
-      'gsd-integration-checker.agent.md',
-      'gsd-nyquist-auditor.agent.md',
-      'gsd-phase-researcher.agent.md',
-      'gsd-plan-checker.agent.md',
-      'gsd-planner.agent.md',
-      'gsd-project-researcher.agent.md',
-      'gsd-research-synthesizer.agent.md',
-      'gsd-roadmapper.agent.md',
-      'gsd-ui-auditor.agent.md',
-      'gsd-ui-checker.agent.md',
-      'gsd-ui-researcher.agent.md',
-      'gsd-user-profiler.agent.md',
-      'gsd-verifier.agent.md',
-    ].sort();
+      "gsd-advisor-researcher.agent.md",
+      "gsd-ai-researcher.agent.md",
+      "gsd-assumptions-analyzer.agent.md",
+      "gsd-code-fixer.agent.md",
+      "gsd-code-reviewer.agent.md",
+      "gsd-codebase-mapper.agent.md",
+      "gsd-debugger.agent.md",
+      "gsd-doc-verifier.agent.md",
+      "gsd-doc-writer.agent.md",
+      "gsd-domain-researcher.agent.md",
+      "gsd-eval-auditor.agent.md",
+      "gsd-eval-planner.agent.md",
+      "gsd-executor.agent.md",
+      "gsd-framework-selector.agent.md",
+      "gsd-integration-checker.agent.md",
+      "gsd-intel-updater.agent.md",
+      "gsd-nyquist-auditor.agent.md",
+      "gsd-phase-researcher.agent.md",
+      "gsd-plan-checker.agent.md",
+      "gsd-planner.agent.md",
+      "gsd-project-researcher.agent.md",
+      "gsd-research-synthesizer.agent.md",
+      "gsd-roadmapper.agent.md",
+      "gsd-security-auditor.agent.md",
+      "gsd-ui-auditor.agent.md",
+      "gsd-ui-checker.agent.md",
+      "gsd-ui-researcher.agent.md",
+      "gsd-user-profiler.agent.md",
+      "gsd-verifier.agent.md"
+].sort();
     assert.deepStrictEqual(gsdAgents, expected);
   });
 
