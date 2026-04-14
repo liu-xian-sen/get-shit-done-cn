@@ -249,6 +249,8 @@ node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" phases list --type summarie
 
 每个任务（验证通过、满足完成标准）完成后，立即提交。
 
+**0. 检查 auto_commit：** 如果 init 上下文中 `auto_commit` 为 `false`，跳过以下所有 git 提交步骤。改为输出变更摘要（修改了哪些文件、变更类型），供用户手动提交，然后直接跳到下一个任务。
+
 **1. 检查：** `git status --short`
 
 **2. 单独暂存**（绝不使用 `git add .` 或 `git add -A`）：

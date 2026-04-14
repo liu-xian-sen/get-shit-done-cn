@@ -77,7 +77,7 @@ function cmdVerifySummary(cwd, summaryPath, checkFileCount, raw) {
 
   // Check 4: Self-check section
   let selfCheck = 'not_found';
-  const selfCheckPattern = /##\s*(?:Self[- ]?Check|Verification|Quality Check)/i;
+  const selfCheckPattern = /##\s*(?:Self[- ]?Check|Verification|Quality Check|自检|验证|质量检查)/i;
   if (selfCheckPattern.test(content)) {
     const passPattern = /(?:all\s+)?(?:pass|✓|✅|complete|succeeded)/i;
     const failPattern = /(?:fail|✗|❌|incomplete|blocked)/i;
@@ -571,10 +571,15 @@ function cmdValidateHealth(cwd, options, raw) {
     addIssue('error', 'E002', 'PROJECT.md not found', 'Run /gsd:new-project to create');
   } else {
     const content = fs.readFileSync(projectPath, 'utf-8');
-    const requiredSections = ['## What This Is', '## Core Value', '## Requirements'];
+    // Support both English and Chinese section headers (dual-language / 汉化支持)
+    const requiredSections = [
+      { en: '## What This Is', zh: '## 这是什么' },
+      { en: '## Core Value', zh: '## 核心价值' },
+      { en: '## Requirements', zh: '## 要求' },
+    ];
     for (const section of requiredSections) {
-      if (!content.includes(section)) {
-        addIssue('warning', 'W001', `PROJECT.md missing section: ${section}`, 'Add section manually');
+      if (!content.includes(section.en) && !content.includes(section.zh)) {
+        addIssue('warning', 'W001', `PROJECT.md missing section: ${section.en} / ${section.zh}`, 'Add section manually');
       }
     }
   }
@@ -591,7 +596,7 @@ function cmdValidateHealth(cwd, options, raw) {
   } else {
     const stateContent = fs.readFileSync(statePath, 'utf-8');
     // Extract phase references from STATE.md
-    const phaseRefs = [...stateContent.matchAll(/[Pp]hase\s+(\d+(?:\.\d+)*)/g)].map(m => m[1]);
+    const phaseRefs = [...stateContent.matchAll(/(?:[Pp]hase|阶段)\s+(\d+(?:\.\d+)*)/g)].map(m => m[1]);
     // Get disk phases
     const diskPhases = new Set();
     try {

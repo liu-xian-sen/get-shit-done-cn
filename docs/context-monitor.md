@@ -60,7 +60,7 @@ GSD's `/gsd:pause-work` command saves execution state. The WARNING message sugge
 
 ## Setup
 
-Both hooks are automatically registered during `npx get-shit-done-dh` installation:
+Both hooks are automatically registered during `npx get-shit-done-cn` installation:
 
 - **Statusline** (writes bridge file): Registered as `statusLine` in settings.json
 - **Context Monitor** (reads bridge file): Registered as `PostToolUse` hook in settings.json (`AfterTool` for Gemini)

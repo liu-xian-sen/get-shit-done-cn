@@ -124,7 +124,7 @@ function parseVerificationItems(content, status) {
   const items = [];
   if (status === 'human_needed') {
     // Extract from human_verification section — look for numbered items or table rows
-    const hvSection = content.match(/##\s*Human Verification.*?\n([\s\S]*?)(?=\n##\s|\n---\s|$)/i);
+    const hvSection = content.match(/##\s*(?:Human Verification|人工验证).*?\n([\s\S]*?)(?=\n##\s|\n---\s|$)/i);
     if (hvSection) {
       const lines = hvSection[1].split('\n');
       for (const line of lines) {

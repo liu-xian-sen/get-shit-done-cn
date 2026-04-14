@@ -208,7 +208,7 @@ This phase covers:
     const output = JSON.parse(result.output);
     assert.strictEqual(output.found, false, 'phase should not be found');
     assert.strictEqual(output.error, 'malformed_roadmap', 'should identify malformed roadmap');
-    assert.ok(output.message.includes('missing'), 'should explain the issue');
+    assert.ok(output.message.includes('缺少'), 'should explain the issue');
   });
 });
 

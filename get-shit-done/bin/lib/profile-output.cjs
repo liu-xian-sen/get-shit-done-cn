@@ -262,7 +262,9 @@ function extractMarkdownSection(content, sectionName) {
   const lines = content.split('\n');
   let capturing = false;
   const result = [];
-  const headingPattern = new RegExp(`^## ${sectionName}\\s*$`);
+  // Support multiple alternate names (dual-language / 汉化支持)
+  const names = Array.isArray(sectionName) ? sectionName : [sectionName];
+  const headingPattern = new RegExp(`^## (?:${names.map(n => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})\\s*(?:\\(.*\\))?\\s*$`);
   for (const line of lines) {
     if (headingPattern.test(line)) {
       capturing = true;
@@ -286,20 +288,20 @@ function generateProjectSection(cwd) {
   const parts = [];
   const h1Match = content.match(/^# (.+)$/m);
   if (h1Match) parts.push(`**${h1Match[1]}**`);
-  const whatThisIs = extractMarkdownSection(content, 'What This Is');
+  const whatThisIs = extractMarkdownSection(content, ['What This Is', '这是什么']);
   if (whatThisIs) {
-    const body = whatThisIs.replace(/^## What This Is\s*/i, '').trim();
+    const body = whatThisIs.replace(/^## (?:What This Is|这是什么)\s*/i, '').trim();
     if (body) parts.push(body);
   }
-  const coreValue = extractMarkdownSection(content, 'Core Value');
+  const coreValue = extractMarkdownSection(content, ['Core Value', '核心价值']);
   if (coreValue) {
-    const body = coreValue.replace(/^## Core Value\s*/i, '').trim();
-    if (body) parts.push(`**Core Value:** ${body}`);
+    const body = coreValue.replace(/^## (?:Core Value|核心价值)\s*/i, '').trim();
+    if (body) parts.push(`**核心价值:** ${body}`);
   }
-  const constraints = extractMarkdownSection(content, 'Constraints');
+  const constraints = extractMarkdownSection(content, ['Constraints', '约束']);
   if (constraints) {
-    const body = constraints.replace(/^## Constraints\s*/i, '').trim();
-    if (body) parts.push(`### Constraints\n\n${body}`);
+    const body = constraints.replace(/^## (?:Constraints|约束)\s*(?:\(.*\))?\s*/i, '').trim();
+    if (body) parts.push(`### 约束\n\n${body}`);
   }
   if (parts.length === 0) {
     return { content: CLAUDE_MD_FALLBACKS.project, source: 'PROJECT.md', hasFallback: true };

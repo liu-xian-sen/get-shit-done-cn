@@ -509,9 +509,9 @@ function cmdProgressRender(cwd, format, raw) {
     const filled = Math.round((percent / 100) * barWidth);
     const bar = '\u2588'.repeat(filled) + '\u2591'.repeat(barWidth - filled);
     let out = `# ${milestone.version} ${milestone.name}\n\n`;
-    out += `**Progress:** [${bar}] ${totalSummaries}/${totalPlans} plans (${percent}%)\n\n`;
-    out += `| Phase | Name | Plans | Status |\n`;
-    out += `|-------|------|-------|--------|\n`;
+    out += `**进度：** [${bar}] ${totalSummaries}/${totalPlans} 个计划 (${percent}%)\n\n`;
+    out += `| 阶段 | 名称 | 计划 | 状态 |\n`;
+    out += `|------|------|------|------|\n`;
     for (const p of phases) {
       out += `| ${p.number} | ${p.name} | ${p.summaries}/${p.plans} | ${p.status} |\n`;
     }
@@ -520,7 +520,7 @@ function cmdProgressRender(cwd, format, raw) {
     const barWidth = 20;
     const filled = Math.round((percent / 100) * barWidth);
     const bar = '\u2588'.repeat(filled) + '\u2591'.repeat(barWidth - filled);
-    const text = `[${bar}] ${totalSummaries}/${totalPlans} plans (${percent}%)`;
+    const text = `[${bar}] ${totalSummaries}/${totalPlans} 个计划 (${percent}%)`;
     output({ bar: text, percent, completed: totalSummaries, total: totalPlans }, raw, text);
   } else {
     // JSON format
@@ -704,17 +704,17 @@ function cmdScaffold(cwd, type, options, raw) {
   switch (type) {
     case 'context': {
       filePath = path.join(phaseDir, `${padded}-CONTEXT.md`);
-      content = `---\nphase: "${padded}"\nname: "${name || phaseInfo?.phase_name || 'Unnamed'}"\ncreated: ${today}\n---\n\n# Phase ${phase}: ${name || phaseInfo?.phase_name || 'Unnamed'} — Context\n\n## Decisions\n\n_Decisions will be captured during /gsd:discuss-phase ${phase}_\n\n## Discretion Areas\n\n_Areas where the executor can use judgment_\n\n## Deferred Ideas\n\n_Ideas to consider later_\n`;
+      content = `---\nphase: "${padded}"\nname: "${name || phaseInfo?.phase_name || 'Unnamed'}"\ncreated: ${today}\n---\n\n# 阶段 ${phase}：${name || phaseInfo?.phase_name || 'Unnamed'} — 上下文\n\n## 决策\n\n_决策将在 /gsd:discuss-phase ${phase} 过程中记录_\n\n## 自由裁量区域\n\n_执行者可以自行判断的领域_\n\n## 延迟想法\n\n_稍后考虑的想法_\n`;
       break;
     }
     case 'uat': {
       filePath = path.join(phaseDir, `${padded}-UAT.md`);
-      content = `---\nphase: "${padded}"\nname: "${name || phaseInfo?.phase_name || 'Unnamed'}"\ncreated: ${today}\nstatus: pending\n---\n\n# Phase ${phase}: ${name || phaseInfo?.phase_name || 'Unnamed'} — User Acceptance Testing\n\n## Test Results\n\n| # | Test | Status | Notes |\n|---|------|--------|-------|\n\n## Summary\n\n_Pending UAT_\n`;
+      content = `---\nphase: "${padded}"\nname: "${name || phaseInfo?.phase_name || 'Unnamed'}"\ncreated: ${today}\nstatus: pending\n---\n\n# 阶段 ${phase}：${name || phaseInfo?.phase_name || 'Unnamed'} — 用户验收测试\n\n## 测试结果\n\n| # | 测试 | 状态 | 备注 |\n|---|------|------|------|\n\n## 总结\n\n_待用户验收测试_\n`;
       break;
     }
     case 'verification': {
       filePath = path.join(phaseDir, `${padded}-VERIFICATION.md`);
-      content = `---\nphase: "${padded}"\nname: "${name || phaseInfo?.phase_name || 'Unnamed'}"\ncreated: ${today}\nstatus: pending\n---\n\n# Phase ${phase}: ${name || phaseInfo?.phase_name || 'Unnamed'} — Verification\n\n## Goal-Backward Verification\n\n**Phase Goal:** [From ROADMAP.md]\n\n## Checks\n\n| # | Requirement | Status | Evidence |\n|---|------------|--------|----------|\n\n## Result\n\n_Pending verification_\n`;
+      content = `---\nphase: "${padded}"\nname: "${name || phaseInfo?.phase_name || 'Unnamed'}"\ncreated: ${today}\nstatus: pending\n---\n\n# 阶段 ${phase}：${name || phaseInfo?.phase_name || 'Unnamed'} — 验证\n\n## 目标逆推验证\n\n**阶段目标：** [来自 ROADMAP.md]\n\n## 检查项\n\n| # | 需求 | 状态 | 证据 |\n|---|------|------|------|\n\n## 结果\n\n_待验证_\n`;
       break;
     }
     case 'phase-dir': {
@@ -759,12 +759,12 @@ function cmdStats(cwd, format, raw) {
 
   try {
     const roadmapContent = extractCurrentMilestone(fs.readFileSync(roadmapPath, 'utf-8'), cwd);
-    const headingPattern = /#{2,4}\s*Phase\s+(\d+[A-Z]?(?:\.\d+)*)\s*:\s*([^\n]+)/gi;
+    const headingPattern = /#{2,4}\s*(?:Phase|阶段)\s+(\d+[A-Z]?(?:\.\d+)*)\s*[：:]\s*([^\n]+)/gi;
     let match;
     while ((match = headingPattern.exec(roadmapContent)) !== null) {
       phasesByNumber.set(match[1], {
         number: match[1],
-        name: match[2].replace(/\(INSERTED\)/i, '').trim(),
+        name: match[2].replace(/[（(](?:INSERTED|已插入)[)）]/i, '').trim(),
         plans: 0,
         summaries: 0,
         status: 'Not Started',
@@ -832,8 +832,8 @@ function cmdStats(cwd, format, raw) {
     if (fs.existsSync(statePath)) {
       const stateContent = fs.readFileSync(statePath, 'utf-8');
       const activityMatch = stateContent.match(/^last_activity:\s*(.+)$/im)
-        || stateContent.match(/\*\*Last Activity:\*\*\s*(.+)/i)
-        || stateContent.match(/^Last Activity:\s*(.+)$/im)
+        || stateContent.match(/\*\*(?:Last Activity|最后活动)[：:]?\*\*\s*(.+)/i)
+        || stateContent.match(/^(?:Last Activity|最后活动)[：:]\s*(.+)$/im)
         || stateContent.match(/^Last activity:\s*(.+)$/im);
       if (activityMatch) lastActivity = activityMatch[1].trim();
     }
@@ -876,18 +876,18 @@ function cmdStats(cwd, format, raw) {
     const barWidth = 10;
     const filled = Math.round((percent / 100) * barWidth);
     const bar = '\u2588'.repeat(filled) + '\u2591'.repeat(barWidth - filled);
-    let out = `# ${milestone.version} ${milestone.name} \u2014 Statistics\n\n`;
-    out += `**Progress:** [${bar}] ${completedPhases}/${phases.length} phases (${percent}%)\n`;
+    let out = `# ${milestone.version} ${milestone.name} \u2014 统计\n\n`;
+    out += `**进度：** [${bar}] ${completedPhases}/${phases.length} 个阶段 (${percent}%)\n`;
     if (totalPlans > 0) {
-      out += `**Plans:** ${totalSummaries}/${totalPlans} complete (${planPercent}%)\n`;
+      out += `**计划：** ${totalSummaries}/${totalPlans} 已完成 (${planPercent}%)\n`;
     }
-    out += `**Phases:** ${completedPhases}/${phases.length} complete\n`;
+    out += `**阶段：** ${completedPhases}/${phases.length} 已完成\n`;
     if (requirementsTotal > 0) {
-      out += `**Requirements:** ${requirementsComplete}/${requirementsTotal} complete\n`;
+      out += `**需求：** ${requirementsComplete}/${requirementsTotal} 已完成\n`;
     }
     out += '\n';
-    out += `| Phase | Name | Plans | Completed | Status |\n`;
-    out += `|-------|------|-------|-----------|--------|\n`;
+    out += `| 阶段 | 名称 | 计划 | 已完成 | 状态 |\n`;
+    out += `|------|------|------|--------|------|\n`;
     for (const p of phases) {
       out += `| ${p.number} | ${p.name} | ${p.plans} | ${p.summaries} | ${p.status} |\n`;
     }
@@ -896,7 +896,7 @@ function cmdStats(cwd, format, raw) {
       if (gitFirstCommitDate) out += ` (since ${gitFirstCommitDate})`;
       out += '\n';
     }
-    if (lastActivity) out += `**Last activity:** ${lastActivity}\n`;
+    if (lastActivity) out += `**最后活动：** ${lastActivity}\n`;
     output({ rendered: out }, raw, out);
   } else {
     output(result, raw);

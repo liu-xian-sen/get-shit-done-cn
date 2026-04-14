@@ -208,6 +208,7 @@ function loadConfig(cwd) {
     resolve_model_ids: false, // when true, resolve aliases (opus/sonnet/haiku) to full model IDs
     context_window: 200000, // default 200k; set to 1000000 for Opus/Sonnet 4.6 1M models
     phase_naming: 'sequential', // 'sequential' (default, auto-increment) or 'custom' (arbitrary string IDs)
+    auto_commit: true, // when true, executor auto-commits after each task; when false, user commits manually
   };
 
   try {
@@ -299,6 +300,7 @@ function loadConfig(cwd) {
       resolve_model_ids: get('resolve_model_ids') ?? defaults.resolve_model_ids,
       context_window: get('context_window') ?? defaults.context_window,
       phase_naming: get('phase_naming') ?? defaults.phase_naming,
+      auto_commit: get('auto_commit', { section: 'workflow', field: 'auto_commit' }) ?? defaults.auto_commit,
       model_overrides: parsed.model_overrides || null,
     };
   } catch {
@@ -843,18 +845,18 @@ function getRoadmapPhaseInternal(cwd, phaseNum) {
     const content = extractCurrentMilestone(fs.readFileSync(roadmapPath, 'utf-8'), cwd);
     const escapedPhase = escapeRegex(phaseNum.toString());
     // Match both numeric (Phase 1:) and custom (Phase PROJ-42:) headers
-    const phasePattern = new RegExp(`#{2,4}\\s*Phase\\s+${escapedPhase}:\\s*([^\\n]+)`, 'i');
+    const phasePattern = new RegExp(`#{2,4}\\s*(?:Phase|阶段)\\s+${escapedPhase}[：:]\\s*([^\\n]+)`, 'i');
     const headerMatch = content.match(phasePattern);
     if (!headerMatch) return null;
 
     const phaseName = headerMatch[1].trim();
     const headerIndex = headerMatch.index;
     const restOfContent = content.slice(headerIndex);
-    const nextHeaderMatch = restOfContent.match(/\n#{2,4}\s+Phase\s+[\w]/i);
+    const nextHeaderMatch = restOfContent.match(/\n#{2,4}\s+(?:Phase|阶段)\s+[\w]/i);
     const sectionEnd = nextHeaderMatch ? headerIndex + nextHeaderMatch.index : content.length;
     const section = content.slice(headerIndex, sectionEnd).trim();
 
-    const goalMatch = section.match(/\*\*Goal(?:\*\*:|\*?\*?:\*\*)\s*([^\n]+)/i);
+    const goalMatch = section.match(/\*\*(?:Goal|目标)(?:\*\*[:：]|\*?\*?[:：]\*\*)\s*([^\n]+)/i);
     const goal = goalMatch ? goalMatch[1].trim() : null;
 
     return {
@@ -988,7 +990,7 @@ function getMilestonePhaseFilter(cwd) {
   try {
     const roadmap = extractCurrentMilestone(fs.readFileSync(path.join(cwd, '.planning', 'ROADMAP.md'), 'utf-8'), cwd);
     // Match both numeric phases (Phase 1:) and custom IDs (Phase PROJ-42:)
-    const phasePattern = /#{2,4}\s*Phase\s+([\w][\w.-]*)\s*:/gi;
+    const phasePattern = /#{2,4}\s*(?:Phase|阶段)\s+([\w][\w.-]*)\s*[：:]/gi;
     let m;
     while ((m = phasePattern.exec(roadmap)) !== null) {
       milestonePhaseNums.add(m[1]);

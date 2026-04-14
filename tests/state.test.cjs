@@ -213,7 +213,7 @@ None
     const state = fs.readFileSync(path.join(tmpDir, '.planning', 'STATE.md'), 'utf-8');
     assert.match(
       state,
-      /- \[Phase 11-01\]: Benchmark prices moved from \$0\.50 to \$2\.00 to \$5\.00 — track cost growth/,
+      /- \[阶段 11-01\]：Benchmark prices moved from \$0\.50 to \$2\.00 to \$5\.00 — track cost growth/,
       'decision entry should preserve literal dollar values'
     );
     assert.strictEqual((state.match(/^## Decisions$/gm) || []).length, 1, 'Decisions heading should not be duplicated');
@@ -268,7 +268,7 @@ None
     const state = fs.readFileSync(path.join(tmpDir, '.planning', 'STATE.md'), 'utf-8');
     assert.match(
       state,
-      /- \[Phase 11-02\]: Price tiers: \$0\.50, \$2\.00, else \$5\.00 — Keep exact currency literals for budgeting/,
+      /- \[阶段 11-02\]：Price tiers: \$0\.50, \$2\.00, else \$5\.00 — Keep exact currency literals for budgeting/,
       'file-based decision input should preserve literal dollar values'
     );
   });
@@ -909,7 +909,7 @@ describe('cmdStateAdvancePlan (state advance-plan)', () => {
 
     const updated = fs.readFileSync(path.join(tmpDir, '.planning', 'STATE.md'), 'utf-8');
     assert.ok(updated.includes('**Current Plan:** 2'), 'Current Plan should be updated to 2');
-    assert.ok(updated.includes('**Status:** Ready to execute'), 'Status should be Ready to execute');
+    assert.ok(updated.includes('**Status:** 准备执行'), 'Status should be Ready to execute');
     const after = new Date().toISOString().split('T')[0];
     assert.ok(
       updated.includes(`**Last Activity:** ${before}`) || updated.includes(`**Last Activity:** ${after}`),
@@ -930,7 +930,7 @@ describe('cmdStateAdvancePlan (state advance-plan)', () => {
     assert.strictEqual(output.status, 'ready_for_verification', 'status should be ready_for_verification');
 
     const updated = fs.readFileSync(path.join(tmpDir, '.planning', 'STATE.md'), 'utf-8');
-    assert.ok(updated.includes('Phase complete'), 'Status should contain Phase complete');
+    assert.ok(updated.includes('阶段完成'), 'Status should contain Phase complete');
   });
 
   test('returns error when STATE.md missing', () => {
@@ -974,7 +974,7 @@ describe('cmdStateAdvancePlan (state advance-plan)', () => {
     const updated = fs.readFileSync(path.join(tmpDir, '.planning', 'STATE.md'), 'utf-8');
     assert.ok(updated.includes('Plan: 3 of 5 in current phase'),
       'should preserve compound format with updated plan number');
-    assert.ok(updated.includes('Status: Ready to execute'),
+    assert.ok(updated.includes('Status: 准备执行'),
       'Status should be updated');
   });
 
@@ -992,7 +992,7 @@ describe('cmdStateAdvancePlan (state advance-plan)', () => {
     assert.strictEqual(output.reason, 'last_plan');
 
     const updated = fs.readFileSync(path.join(tmpDir, '.planning', 'STATE.md'), 'utf-8');
-    assert.ok(updated.includes('Phase complete'), 'Status should contain Phase complete');
+    assert.ok(updated.includes('阶段完成'), 'Status should contain Phase complete');
   });
 });
 
@@ -1029,7 +1029,7 @@ describe('cmdStateRecordMetric (state record-metric)', () => {
     assert.strictEqual(output.recorded, true, 'recorded should be true');
 
     const updated = fs.readFileSync(path.join(tmpDir, '.planning', 'STATE.md'), 'utf-8');
-    assert.ok(updated.includes('| Phase 2 P1 | 5min | 3 tasks | 4 files |'), 'new row should be present');
+    assert.ok(updated.includes('| 阶段 2 P1 | 5min | 3 个任务 | 4 个文件 |'), 'new row should be present');
     assert.ok(updated.includes('| Phase 1 P1 | 3min | 2 tasks | 3 files |'), 'existing row should still be present');
   });
 
@@ -1052,7 +1052,7 @@ describe('cmdStateRecordMetric (state record-metric)', () => {
 
     const updated = fs.readFileSync(path.join(tmpDir, '.planning', 'STATE.md'), 'utf-8');
     assert.ok(!updated.includes('None yet'), 'None yet placeholder should be removed');
-    assert.ok(updated.includes('| Phase 1 P1 | 2min | 1 tasks | 2 files |'), 'new row should be present');
+    assert.ok(updated.includes('| 阶段 1 P1 | 2min | 1 个任务 | 2 个文件 |'), 'new row should be present');
   });
 
   test('returns error when required fields missing', () => {
@@ -1220,7 +1220,7 @@ describe('cmdStateResolveBlocker (state resolve-blocker)', () => {
     // Section should contain "None" placeholder, not be empty
     const sectionMatch = updated.match(/## Blockers\n([\s\S]*?)(?=\n##|$)/i);
     assert.ok(sectionMatch, 'Blockers section should still exist');
-    assert.ok(sectionMatch[1].includes('None'), 'Blockers section should contain None placeholder');
+    assert.ok(sectionMatch[1].includes('无'), 'Blockers section should contain None placeholder');
   });
 
   test('returns error when text not provided', () => {

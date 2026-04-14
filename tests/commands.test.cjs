@@ -510,7 +510,7 @@ describe('progress command', () => {
 
     const result = runGsdTools('progress table --raw', tmpDir);
     assert.ok(result.success, `Command failed: ${result.error}`);
-    assert.ok(result.output.includes('Phase'), 'should have table header');
+    assert.ok(result.output.includes('阶段'), 'should have table header');
     assert.ok(result.output.includes('foundation'), 'should include phase name');
   });
 
@@ -720,9 +720,9 @@ describe('scaffold command', () => {
       path.join(tmpDir, '.planning', 'phases', '03-api', '03-CONTEXT.md'),
       'utf-8'
     );
-    assert.ok(content.includes('Phase 3'), 'should reference phase number');
-    assert.ok(content.includes('Decisions'), 'should have decisions section');
-    assert.ok(content.includes('Discretion Areas'), 'should have discretion section');
+    assert.ok(content.includes('阶段 3'), 'should reference phase number');
+    assert.ok(content.includes('决策'), 'should have decisions section');
+    assert.ok(content.includes('自由裁量区域'), 'should have discretion section');
   });
 
   test('scaffolds UAT file', () => {
@@ -738,8 +738,8 @@ describe('scaffold command', () => {
       path.join(tmpDir, '.planning', 'phases', '03-api', '03-UAT.md'),
       'utf-8'
     );
-    assert.ok(content.includes('User Acceptance Testing'), 'should have UAT heading');
-    assert.ok(content.includes('Test Results'), 'should have test results section');
+    assert.ok(content.includes('用户验收测试'), 'should have UAT heading');
+    assert.ok(content.includes('测试结果'), 'should have test results section');
   });
 
   test('scaffolds verification file', () => {
@@ -755,7 +755,7 @@ describe('scaffold command', () => {
       path.join(tmpDir, '.planning', 'phases', '03-api', '03-VERIFICATION.md'),
       'utf-8'
     );
-    assert.ok(content.includes('Goal-Backward Verification'), 'should have verification heading');
+    assert.ok(content.includes('目标逆推验证'), 'should have verification heading');
   });
 
   test('scaffolds phase directory', () => {
@@ -1513,9 +1513,9 @@ describe('stats command', () => {
 
     const parsed = JSON.parse(result.output);
     assert.ok(parsed.rendered, 'table format should include rendered field');
-    assert.ok(parsed.rendered.includes('Statistics'), 'should include Statistics header');
-    assert.ok(parsed.rendered.includes('| Phase |'), 'should include table header');
+    assert.ok(parsed.rendered.includes('统计'), 'should include Statistics header');
+    assert.ok(parsed.rendered.includes('| 阶段 |'), 'should include table header');
     assert.ok(parsed.rendered.includes('| 1 |'), 'should include phase row');
-    assert.ok(parsed.rendered.includes('1/1 phases'), 'should report phase progress');
+    assert.ok(parsed.rendered.includes('1/1 个阶段'), 'should report phase progress');
   });
 });

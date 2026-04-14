@@ -18,7 +18,7 @@
 GSD 演进很快。请定期更新：
 
 ```bash
-npx get-shit-done-dh@latest
+npx get-shit-done-cn@latest
 ```
 
 ## 核心工作流
@@ -451,7 +451,7 @@ npx get-shit-done-dh@latest
 - 显示你错过的版本的变更日志条目
 - 突出显示重大变更
 - 在运行安装前进行确认
-- 优于原始的 `npx get-shit-dget-shit-done-dh
+- 优于原始的 `npx get-shit-dget-shit-done-cn
 
 用法：`/gsd:update`
 
@@ -525,6 +525,10 @@ npx get-shit-done-dh@latest
 **`planning.commit_docs`**（默认：`true`）
 - `true`：规划产物提交到 Git（标准工作流）
 - `false`：规划产物仅保留在本地，不提交
+
+**`workflow.auto_commit`**（默认：`true`）
+- `true`：执行阶段完成每个任务后自动执行 git commit（标准工作流）
+- `false`：跳过自动提交，仅输出变更摘要供用户手动提交
 
 当 `commit_docs: false` 时：
 - 将 `.planning/` 添加到你的 `.gitignore`

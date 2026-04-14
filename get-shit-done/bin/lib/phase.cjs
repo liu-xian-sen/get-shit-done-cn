@@ -333,7 +333,7 @@ function cmdPhaseAdd(cwd, description, raw, customId) {
     dirName = `${newPhaseId}-${slug}`;
   } else {
     // Sequential mode: find highest integer phase number (in current milestone only)
-    const phasePattern = /#{2,4}\s*Phase\s+(\d+)[A-Z]?(?:\.\d+)*:/gi;
+    const phasePattern = /#{2,4}\s*(?:Phase|阶段)\s+(\d+)[A-Z]?(?:\.\d+)*[：:]/gi;
     let maxPhase = 0;
     let m;
     while ((m = phasePattern.exec(content)) !== null) {
@@ -353,8 +353,8 @@ function cmdPhaseAdd(cwd, description, raw, customId) {
   fs.writeFileSync(path.join(dirPath, '.gitkeep'), '');
 
   // Build phase entry
-  const dependsOn = config.phase_naming === 'custom' ? '' : `\n**Depends on:** Phase ${typeof newPhaseId === 'number' ? newPhaseId - 1 : 'TBD'}`;
-  const phaseEntry = `\n### Phase ${newPhaseId}: ${description}\n\n**Goal:** [To be planned]\n**Requirements**: TBD${dependsOn}\n**Plans:** 0 plans\n\nPlans:\n- [ ] TBD (run /gsd:plan-phase ${newPhaseId} to break down)\n`;
+  const dependsOn = config.phase_naming === 'custom' ? '' : `\n**依赖：** 阶段 ${typeof newPhaseId === 'number' ? newPhaseId - 1 : 'TBD'}`;
+  const phaseEntry = `\n### 阶段 ${newPhaseId}：${description}\n\n**目标：** [待规划]\n**需求：** TBD${dependsOn}\n**计划：** 0 个计划\n\n计划：\n- [ ] TBD（运行 /gsd:plan-phase ${newPhaseId} 进行分解）\n`;
 
   // Find insertion point: before last "---" or at end
   let updatedContent;
@@ -397,7 +397,7 @@ function cmdPhaseInsert(cwd, afterPhase, description, raw) {
   const normalizedAfter = normalizePhaseName(afterPhase);
   const unpadded = normalizedAfter.replace(/^0+/, '');
   const afterPhaseEscaped = unpadded.replace(/\./g, '\\.');
-  const targetPattern = new RegExp(`#{2,4}\\s*Phase\\s+0*${afterPhaseEscaped}:`, 'i');
+    const targetPattern = new RegExp(`#{2,4}\\s*(?:Phase|阶段)\\s+0*${afterPhaseEscaped}[：:]`, 'i');
   if (!targetPattern.test(content)) {
     error(`Phase ${afterPhase} not found in ROADMAP.md`);
   }
@@ -427,10 +427,10 @@ function cmdPhaseInsert(cwd, afterPhase, description, raw) {
   fs.writeFileSync(path.join(dirPath, '.gitkeep'), '');
 
   // Build phase entry
-  const phaseEntry = `\n### Phase ${decimalPhase}: ${description} (INSERTED)\n\n**Goal:** [Urgent work - to be planned]\n**Requirements**: TBD\n**Depends on:** Phase ${afterPhase}\n**Plans:** 0 plans\n\nPlans:\n- [ ] TBD (run /gsd:plan-phase ${decimalPhase} to break down)\n`;
+  const phaseEntry = `\n### 阶段 ${decimalPhase}：${description}（已插入）\n\n**目标：** [紧急工作 - 待规划]\n**需求：** TBD\n**依赖：** 阶段 ${afterPhase}\n**计划：** 0 个计划\n\n计划：\n- [ ] TBD（运行 /gsd:plan-phase ${decimalPhase} 进行分解）\n`;
 
   // Insert after the target phase section
-  const headerPattern = new RegExp(`(#{2,4}\\s*Phase\\s+0*${afterPhaseEscaped}:[^\\n]*\\n)`, 'i');
+    const headerPattern = new RegExp(`(#{2,4}\\s*(?:Phase|阶段)\\s+0*${afterPhaseEscaped}[：:][^\\n]*\\n)`, 'i');
   const headerMatch = rawContent.match(headerPattern);
   if (!headerMatch) {
     error(`Could not find Phase ${afterPhase} header`);
@@ -438,7 +438,7 @@ function cmdPhaseInsert(cwd, afterPhase, description, raw) {
 
   const headerIdx = rawContent.indexOf(headerMatch[0]);
   const afterHeader = rawContent.slice(headerIdx + headerMatch[0].length);
-  const nextPhaseMatch = afterHeader.match(/\n#{2,4}\s+Phase\s+\d/i);
+    const nextPhaseMatch = afterHeader.match(/\n#{2,4}\s+(?:Phase|阶段)\s+\d/i);
 
   let insertIdx;
   if (nextPhaseMatch) {
@@ -621,13 +621,13 @@ function cmdPhaseRemove(cwd, targetPhase, options, raw) {
   // Remove the target phase section
   const targetEscaped = escapeRegex(targetPhase);
   const sectionPattern = new RegExp(
-    `\\n?#{2,4}\\s*Phase\\s+${targetEscaped}\\s*:[\\s\\S]*?(?=\\n#{2,4}\\s+Phase\\s+\\d|$)`,
+    `\\n?#{2,4}\\s*(?:Phase|阶段)\\s+${targetEscaped}\\s*[：:][\\s\\S]*?(?=\\n#{2,4}\\s+(?:Phase|阶段)\\s+\\d|$)`,
     'i'
   );
   roadmapContent = roadmapContent.replace(sectionPattern, '');
 
   // Remove from phase list (checkbox)
-  const checkboxPattern = new RegExp(`\\n?-\\s*\\[[ x]\\]\\s*.*Phase\\s+${targetEscaped}[:\\s][^\\n]*`, 'gi');
+  const checkboxPattern = new RegExp(`\\n?-\\s*\\[[ x]\\]\\s*.*(?:Phase|阶段)\\s+${targetEscaped}[：:\\s][^\\n]*`, 'gi');
   roadmapContent = roadmapContent.replace(checkboxPattern, '');
 
   // Remove from progress table
@@ -647,15 +647,15 @@ function cmdPhaseRemove(cwd, targetPhase, options, raw) {
       const oldPad = oldStr.padStart(2, '0');
       const newPad = newStr.padStart(2, '0');
 
-      // Phase headings: ## Phase 18: or ### Phase 18: → ## Phase 17: or ### Phase 17:
+      // Phase headings: ## Phase 18: or ### 阶段 18：→ renumber
       roadmapContent = roadmapContent.replace(
-        new RegExp(`(#{2,4}\\s*Phase\\s+)${oldStr}(\\s*:)`, 'gi'),
+        new RegExp(`(#{2,4}\\s*(?:Phase|阶段)\\s+)${oldStr}(\\s*[：:])`, 'gi'),
         `$1${newStr}$2`
       );
 
-      // Checkbox items: - [ ] **Phase 18:** → - [ ] **Phase 17:**
+      // Checkbox items: - [ ] **Phase 18:** or **阶段 18：** → renumber
       roadmapContent = roadmapContent.replace(
-        new RegExp(`(Phase\\s+)${oldStr}([:\\s])`, 'g'),
+        new RegExp(`((?:Phase|阶段)\\s+)${oldStr}([：:\\s])`, 'g'),
         `$1${newStr}$2`
       );
 
@@ -673,7 +673,7 @@ function cmdPhaseRemove(cwd, targetPhase, options, raw) {
 
       // Depends on references
       roadmapContent = roadmapContent.replace(
-        new RegExp(`(Depends on:\\*\\*\\s*Phase\\s+)${oldStr}\\b`, 'gi'),
+        new RegExp(`((?:Depends on|依赖)[：:]\\*\\*\\s*(?:Phase|阶段)\\s+)${oldStr}\\b`, 'gi'),
         `$1${newStr}`
       );
     }
@@ -685,11 +685,13 @@ function cmdPhaseRemove(cwd, targetPhase, options, raw) {
   const statePath = path.join(cwd, '.planning', 'STATE.md');
   if (fs.existsSync(statePath)) {
     let stateContent = fs.readFileSync(statePath, 'utf-8');
-    // Update "Total Phases" field — supports both bold and plain formats
-    const totalRaw = stateExtractField(stateContent, 'Total Phases');
+    // Update "Total Phases" / "总阶段数" field — supports both bold and plain formats
+    const totalRaw = stateExtractField(stateContent, 'Total Phases') || stateExtractField(stateContent, '总阶段数');
     if (totalRaw) {
       const oldTotal = parseInt(totalRaw, 10);
-      stateContent = stateReplaceField(stateContent, 'Total Phases', String(oldTotal - 1)) || stateContent;
+      stateContent = stateReplaceField(stateContent, 'Total Phases', String(oldTotal - 1))
+        || stateReplaceField(stateContent, '总阶段数', String(oldTotal - 1))
+        || stateContent;
     }
     // Update "Phase: X of Y" pattern
     const ofPattern = /(\bof\s+)(\d+)(\s*(?:\(|phases?))/i;
@@ -759,9 +761,9 @@ function cmdPhaseComplete(cwd, phaseNum, raw) {
   if (fs.existsSync(roadmapPath)) {
     let roadmapContent = fs.readFileSync(roadmapPath, 'utf-8');
 
-    // Checkbox: - [ ] Phase N: → - [x] Phase N: (...completed DATE)
+    // Checkbox: - [ ] Phase N: or 阶段 N：→ - [x] ... (completed DATE)
     const checkboxPattern = new RegExp(
-      `(-\\s*\\[)[ ](\\]\\s*.*Phase\\s+${escapeRegex(phaseNum)}[:\\s][^\\n]*)`,
+      `(-\\s*\\[)[ ](\\]\\s*.*(?:Phase|阶段)\\s+${escapeRegex(phaseNum)}[：:\\s][^\\n]*)`,
       'i'
     );
     roadmapContent = replaceInCurrentMilestone(roadmapContent, checkboxPattern, `$1x$2 (completed ${today})`);
@@ -788,12 +790,12 @@ function cmdPhaseComplete(cwd, phaseNum, raw) {
 
     // Update plan count in phase section
     const planCountPattern = new RegExp(
-      `(#{2,4}\\s*Phase\\s+${phaseEscaped}[\\s\\S]*?\\*\\*Plans:\\*\\*\\s*)[^\\n]+`,
+      `(#{2,4}\\s*(?:Phase|阶段)\\s+${phaseEscaped}[\\s\\S]*?\\*\\*(?:Plans|计划)[：:]\\*\\*\\s*)[^\\n]+`,
       'i'
     );
     roadmapContent = replaceInCurrentMilestone(
       roadmapContent, planCountPattern,
-      `$1${summaryCount}/${planCount} plans complete`
+      `$1${summaryCount}/${planCount} 个计划已完成`
     );
 
     fs.writeFileSync(roadmapPath, roadmapContent, 'utf-8');
@@ -805,11 +807,11 @@ function cmdPhaseComplete(cwd, phaseNum, raw) {
       const phaseEsc = escapeRegex(phaseNum);
       const currentMilestoneRoadmap = extractCurrentMilestone(roadmapContent, cwd);
       const phaseSectionMatch = currentMilestoneRoadmap.match(
-        new RegExp(`(#{2,4}\\s*Phase\\s+${phaseEsc}[:\\s][\\s\\S]*?)(?=#{2,4}\\s*Phase\\s+|$)`, 'i')
+        new RegExp(`(#{2,4}\\s*(?:Phase|阶段)\\s+${phaseEsc}[：:\\s][\\s\\S]*?)(?=#{2,4}\\s*(?:Phase|阶段)\\s+|$)`, 'i')
       );
 
       const sectionText = phaseSectionMatch ? phaseSectionMatch[1] : '';
-      const reqMatch = sectionText.match(/\*\*Requirements:\*\*\s*([^\n]+)/i);
+      const reqMatch = sectionText.match(/\*\*(?:Requirements|需求|要求)[：:]?\*\*\s*([^\n]+)/i);
 
       if (reqMatch) {
         const reqIds = reqMatch[1].replace(/[\[\]]/g, '').split(/[,\s]+/).map(r => r.trim()).filter(Boolean);
@@ -868,12 +870,12 @@ function cmdPhaseComplete(cwd, phaseNum, raw) {
   if (isLastPhase && fs.existsSync(roadmapPath)) {
     try {
       const roadmapForPhases = extractCurrentMilestone(fs.readFileSync(roadmapPath, 'utf-8'), cwd);
-      const phasePattern = /#{2,4}\s*Phase\s+(\d+[A-Z]?(?:\.\d+)*)\s*:\s*([^\n]+)/gi;
+      const phasePattern = /#{2,4}\s*(?:Phase|阶段)\s+(\d+[A-Z]?(?:\.\d+)*)\s*[：:]\s*([^\n]+)/gi;
       let pm;
       while ((pm = phasePattern.exec(roadmapForPhases)) !== null) {
         if (comparePhaseNum(pm[1], phaseNum) > 0) {
           nextPhaseNum = pm[1];
-          nextPhaseName = pm[2].replace(/\(INSERTED\)/i, '').trim().toLowerCase().replace(/\s+/g, '-');
+          nextPhaseName = pm[2].replace(/[（(](?:INSERTED|已插入)[)）]/i, '').trim().toLowerCase().replace(/\s+/g, '-');
           isLastPhase = false;
           break;
         }
@@ -885,9 +887,10 @@ function cmdPhaseComplete(cwd, phaseNum, raw) {
   if (fs.existsSync(statePath)) {
     let stateContent = fs.readFileSync(statePath, 'utf-8');
 
-    // Update Current Phase — preserve "X of Y (Name)" compound format
+    // Update Current Phase / 当前阶段 — preserve "X of Y (Name)" compound format
     const phaseValue = nextPhaseNum || phaseNum;
     const existingPhaseField = stateExtractField(stateContent, 'Current Phase')
+      || stateExtractField(stateContent, '当前阶段')
       || stateExtractField(stateContent, 'Phase');
     let newPhaseValue = String(phaseValue);
     if (existingPhaseField) {
@@ -900,39 +903,48 @@ function cmdPhaseComplete(cwd, phaseNum, raw) {
       }
     }
     stateContent = stateReplaceFieldWithFallback(stateContent, 'Current Phase', 'Phase', newPhaseValue);
+    stateContent = stateReplaceFieldWithFallback(stateContent, '当前阶段', null, newPhaseValue);
 
-    // Update Current Phase Name
+    // Update Current Phase Name / 当前阶段名称
     if (nextPhaseName) {
-      stateContent = stateReplaceFieldWithFallback(stateContent, 'Current Phase Name', null, nextPhaseName.replace(/-/g, ' '));
+      stateContent = stateReplaceFieldWithFallback(stateContent, 'Current Phase Name', '当前阶段名称', nextPhaseName.replace(/-/g, ' '));
     }
 
-    // Update Status
-    stateContent = stateReplaceFieldWithFallback(stateContent, 'Status', null,
-      isLastPhase ? 'Milestone complete' : 'Ready to plan');
+    // Update Status / 状态
+    stateContent = stateReplaceFieldWithFallback(stateContent, 'Status', '状态',
+      isLastPhase ? '里程碑完成' : '准备规划');
 
-    // Update Current Plan
-    stateContent = stateReplaceFieldWithFallback(stateContent, 'Current Plan', 'Plan', 'Not started');
+    // Update Current Plan / 当前计划
+    stateContent = stateReplaceFieldWithFallback(stateContent, 'Current Plan', 'Plan', '未开始');
+    stateContent = stateReplaceFieldWithFallback(stateContent, '当前计划', null, '未开始');
 
-    // Update Last Activity
+    // Update Last Activity / 最后活动
     stateContent = stateReplaceFieldWithFallback(stateContent, 'Last Activity', 'Last activity', today);
+    stateContent = stateReplaceFieldWithFallback(stateContent, '最后活动', null, today);
 
-    // Update Last Activity Description
+    // Update Last Activity Description / 最后活动描述
     stateContent = stateReplaceFieldWithFallback(stateContent, 'Last Activity Description', null,
-      `Phase ${phaseNum} complete${nextPhaseNum ? `, transitioned to Phase ${nextPhaseNum}` : ''}`);
+      `阶段 ${phaseNum} 完成${nextPhaseNum ? `，已转入阶段 ${nextPhaseNum}` : ''}`);
+    stateContent = stateReplaceFieldWithFallback(stateContent, '最后活动描述', null,
+      `阶段 ${phaseNum} 完成${nextPhaseNum ? `，已转入阶段 ${nextPhaseNum}` : ''}`);
 
-    // Increment Completed Phases counter (#956)
-    const completedRaw = stateExtractField(stateContent, 'Completed Phases');
+    // Increment Completed Phases / 已完成阶段 counter (#956)
+    const completedRaw = stateExtractField(stateContent, 'Completed Phases') || stateExtractField(stateContent, '已完成阶段');
     if (completedRaw) {
       const newCompleted = parseInt(completedRaw, 10) + 1;
-      stateContent = stateReplaceField(stateContent, 'Completed Phases', String(newCompleted)) || stateContent;
+      stateContent = stateReplaceField(stateContent, 'Completed Phases', String(newCompleted))
+        || stateReplaceField(stateContent, '已完成阶段', String(newCompleted))
+        || stateContent;
 
       // Recalculate percent based on completed / total (#956)
-      const totalRaw = stateExtractField(stateContent, 'Total Phases');
+      const totalRaw = stateExtractField(stateContent, 'Total Phases') || stateExtractField(stateContent, '总阶段数');
       if (totalRaw) {
         const totalPhases = parseInt(totalRaw, 10);
         if (totalPhases > 0) {
           const newPercent = Math.round((newCompleted / totalPhases) * 100);
-          stateContent = stateReplaceField(stateContent, 'Progress', `${newPercent}%`) || stateContent;
+          stateContent = stateReplaceField(stateContent, 'Progress', `${newPercent}%`)
+            || stateReplaceField(stateContent, '进度', `${newPercent}%`)
+            || stateContent;
           // Also update percent field if it exists separately
           stateContent = stateContent.replace(
             /(percent:\s*)\d+/,

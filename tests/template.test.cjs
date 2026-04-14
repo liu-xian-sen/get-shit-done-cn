@@ -123,8 +123,8 @@ describe('template fill command', () => {
 
     const content = fs.readFileSync(path.join(tmpDir, out.path), 'utf-8');
     assert.ok(content.includes('---'), 'should have frontmatter');
-    assert.ok(content.includes('Phase 1'), 'should reference phase');
-    assert.ok(content.includes('Accomplishments'), 'should have accomplishments section');
+    assert.ok(content.includes('阶段 1'), 'should reference phase');
+    assert.ok(content.includes('成果'), 'should have accomplishments section');
   });
 
   test('fills plan template', () => {
@@ -136,7 +136,7 @@ describe('template fill command', () => {
 
     const content = fs.readFileSync(path.join(tmpDir, out.path), 'utf-8');
     assert.ok(content.includes('---'), 'should have frontmatter');
-    assert.ok(content.includes('Objective'), 'should have objective section');
+    assert.ok(content.includes('目标'), 'should have objective section');
     assert.ok(content.includes('<task type="code">'), 'should have task XML');
   });
 
@@ -148,8 +148,8 @@ describe('template fill command', () => {
     assert.ok(out.path.includes('01-VERIFICATION.md'));
 
     const content = fs.readFileSync(path.join(tmpDir, out.path), 'utf-8');
-    assert.ok(content.includes('Observable Truths'), 'should have truths section');
-    assert.ok(content.includes('Required Artifacts'), 'should have artifacts section');
+    assert.ok(content.includes('可观测事实'), 'should have truths section');
+    assert.ok(content.includes('必需产出物'), 'should have artifacts section');
   });
 
   test('rejects existing file', () => {

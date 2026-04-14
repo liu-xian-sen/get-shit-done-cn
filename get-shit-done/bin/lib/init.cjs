@@ -63,7 +63,7 @@ function cmdInitExecutePhase(cwd, phase, raw) {
       has_reviews: false,
     };
   }
-  const reqMatch = roadmapPhase?.section?.match(/^\*\*Requirements\*\*:[^\S\n]*([^\n]*)$/m);
+  const reqMatch = roadmapPhase?.section?.match(/^\*\*(?:Requirements|需求|要求)\*\*[：:][^\S\n]*([^\n]*)$/m);
   const reqExtracted = reqMatch
     ? reqMatch[1].replace(/[\[\]]/g, '').split(',').map(s => s.trim()).filter(Boolean).join(', ')
     : null;
@@ -76,6 +76,7 @@ function cmdInitExecutePhase(cwd, phase, raw) {
 
     // Config flags
     commit_docs: config.commit_docs,
+    auto_commit: config.auto_commit,
     sub_repos: config.sub_repos,
     parallelization: config.parallelization,
     context_window: config.context_window,
@@ -156,7 +157,7 @@ function cmdInitPlanPhase(cwd, phase, raw) {
       has_reviews: false,
     };
   }
-  const reqMatch = roadmapPhase?.section?.match(/^\*\*Requirements\*\*:[^\S\n]*([^\n]*)$/m);
+  const reqMatch = roadmapPhase?.section?.match(/^\*\*(?:Requirements|需求|要求)\*\*[：:][^\S\n]*([^\n]*)$/m);
   const reqExtracted = reqMatch
     ? reqMatch[1].replace(/[\[\]]/g, '').split(',').map(s => s.trim()).filter(Boolean).join(', ')
     : null;
@@ -778,11 +779,11 @@ function cmdInitProgress(cwd, raw) {
     const roadmapContent = extractCurrentMilestone(
       fs.readFileSync(path.join(cwd, '.planning', 'ROADMAP.md'), 'utf-8'), cwd
     );
-    const headingPattern = /#{2,4}\s*Phase\s+(\d+[A-Z]?(?:\.\d+)*)\s*:\s*([^\n]+)/gi;
+    const headingPattern = /#{2,4}\s*(?:Phase|阶段)\s+(\d+[A-Z]?(?:\.\d+)*)\s*[：:]\s*([^\n]+)/gi;
     let hm;
     while ((hm = headingPattern.exec(roadmapContent)) !== null) {
       roadmapPhaseNums.add(hm[1]);
-      roadmapPhaseNames.set(hm[1], hm[2].replace(/\(INSERTED\)/i, '').trim());
+      roadmapPhaseNames.set(hm[1], hm[2].replace(/[（(](?:INSERTED|已插入)[)）]/i, '').trim());
     }
   } catch { /* intentionally empty */ }
 

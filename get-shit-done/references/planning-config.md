@@ -8,6 +8,9 @@
   "commit_docs": true,
   "search_gitignored": false
 },
+"workflow": {
+  "auto_commit": true
+},
 "git": {
   "branching_strategy": "none",
   "phase_branch_template": "gsd/phase-{phase}-{slug}",
@@ -20,6 +23,7 @@
 |--------|---------|-------------|
 | `commit_docs` | `true` | 是否将计划产物提交到 git |
 | `search_gitignored` | `false` | 为广泛的 rg 搜索添加 `--no-ignore` 标志 |
+| `workflow.auto_commit` | `true` | 执行阶段完成任务后是否自动 git commit 代码 |
 | `git.branching_strategy` | `"none"` | Git 分支策略：`"none"`, `"phase"`, 或 `"milestone"` |
 | `git.phase_branch_template` | `"gsd/phase-{phase}-{slug}"` | 阶段策略的分支模板 |
 | `git.milestone_branch_template` | `"gsd/{milestone}-{slug}"` | 里程碑策略的分支模板 |
@@ -66,6 +70,23 @@ node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" commit "docs: update state"
 CLI 会在内部检查 `commit_docs` 配置和 gitignore 状态 —— 无需手动编写条件判断。
 
 </commit_docs_behavior>
+
+<auto_commit_behavior>
+
+**当 `workflow.auto_commit: true` (默认) 时：**
+- 执行器在每个任务完成后自动执行 `git add` + `git commit`
+- 标准的 execute-plan 任务提交协议（`<task_commit>`）正常运行
+- 每个任务产生一个原子提交，包含 conventional commit 格式的消息
+
+**当 `workflow.auto_commit: false` 时：**
+- 执行器跳过所有自动 git 提交步骤
+- 改为输出变更摘要（修改了哪些文件、变更类型），供用户手动提交
+- 代码仍然正常编写和修改，只是不自动提交到 git
+- 适用场景：用户希望手动控制提交粒度、需要审查后再提交、或使用外部工具管理提交
+
+**注意：** `auto_commit` 仅控制代码的自动提交（execute-plan 中的 `<task_commit>` 协议）。规划文档的提交由 `commit_docs` 单独控制。
+
+</auto_commit_behavior>
 
 <search_behavior>
 

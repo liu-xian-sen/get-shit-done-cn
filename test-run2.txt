@@ -1,0 +1,2254 @@
+
+> get-shit-done-dh@1.27.4 test
+> node scripts/run-tests.cjs
+
+鈻?HDOC: anti-heredoc instruction
+  鉁?gsd-ai-researcher has anti-heredoc instruction (1.1486ms)
+  鉁?gsd-code-fixer has anti-heredoc instruction (0.3631ms)
+  鉁?gsd-code-reviewer has anti-heredoc instruction (0.2515ms)
+  鉁?gsd-codebase-mapper has anti-heredoc instruction (0.2204ms)
+  鉁?gsd-debugger has anti-heredoc instruction (0.3044ms)
+  鉁?gsd-doc-verifier has anti-heredoc instruction (0.2244ms)
+  鉁?gsd-doc-writer has anti-heredoc instruction (0.3583ms)
+  鉁?gsd-domain-researcher has anti-heredoc instruction (0.1738ms)
+  鉁?gsd-eval-auditor has anti-heredoc instruction (0.1755ms)
+  鉁?gsd-eval-planner has anti-heredoc instruction (0.2236ms)
+  鉁?gsd-executor has anti-heredoc instruction (0.2381ms)
+  鉁?gsd-intel-updater has anti-heredoc instruction (0.2364ms)
+  鉁?gsd-phase-researcher has anti-heredoc instruction (0.3436ms)
+  鉁?gsd-planner has anti-heredoc instruction (0.4513ms)
+  鉁?gsd-project-researcher has anti-heredoc instruction (0.244ms)
+  鉁?gsd-research-synthesizer has anti-heredoc instruction (0.243ms)
+  鉁?gsd-roadmapper has anti-heredoc instruction (0.2392ms)
+  鉁?gsd-ui-auditor has anti-heredoc instruction (0.1992ms)
+  鉁?gsd-ui-researcher has anti-heredoc instruction (0.2543ms)
+  鉁?gsd-verifier has anti-heredoc instruction (0.2838ms)
+  鉁?no active heredoc patterns in any agent file (10.0695ms)
+鉁?HDOC: anti-heredoc instruction (18.4793ms)
+鈻?SKILL: skills frontmatter absent
+  鉁?gsd-advisor-researcher does not have skills: in frontmatter (0.5761ms)
+  鉁?gsd-ai-researcher does not have skills: in frontmatter (0.2567ms)
+  鉁?gsd-assumptions-analyzer does not have skills: in frontmatter (0.2245ms)
+  鉁?gsd-code-fixer does not have skills: in frontmatter (0.5797ms)
+  鉁?gsd-code-reviewer does not have skills: in frontmatter (0.2731ms)
+  鉁?gsd-codebase-mapper does not have skills: in frontmatter (0.2421ms)
+  鉁?gsd-debugger does not have skills: in frontmatter (0.3354ms)
+  鉁?gsd-doc-verifier does not have skills: in frontmatter (0.2483ms)
+  鉁?gsd-doc-writer does not have skills: in frontmatter (0.4531ms)
+  鉁?gsd-domain-researcher does not have skills: in frontmatter (0.4253ms)
+  鉁?gsd-eval-auditor does not have skills: in frontmatter (0.1975ms)
+  鉁?gsd-eval-planner does not have skills: in frontmatter (0.1572ms)
+  鉁?gsd-executor does not have skills: in frontmatter (0.3883ms)
+  鉁?gsd-framework-selector does not have skills: in frontmatter (0.5431ms)
+  鉁?gsd-integration-checker does not have skills: in frontmatter (0.2271ms)
+  鉁?gsd-intel-updater does not have skills: in frontmatter (0.2112ms)
+  鉁?gsd-nyquist-auditor does not have skills: in frontmatter (0.2003ms)
+  鉁?gsd-phase-researcher does not have skills: in frontmatter (0.3143ms)
+  鉁?gsd-plan-checker does not have skills: in frontmatter (0.266ms)
+  鉁?gsd-planner does not have skills: in frontmatter (2.9583ms)
+  鉁?gsd-project-researcher does not have skills: in frontmatter (0.2838ms)
+  鉁?gsd-research-synthesizer does not have skills: in frontmatter (0.1797ms)
+  鉁?gsd-roadmapper does not have skills: in frontmatter (0.2821ms)
+  鉁?gsd-security-auditor does not have skills: in frontmatter (0.1848ms)
+  鉁?gsd-ui-auditor does not have skills: in frontmatter (0.2431ms)
+  鉁?gsd-ui-checker does not have skills: in frontmatter (0.1824ms)
+  鉁?gsd-ui-researcher does not have skills: in frontmatter (0.2765ms)
+  鉁?gsd-user-profiler does not have skills: in frontmatter (0.1495ms)
+  鉁?gsd-verifier does not have skills: in frontmatter (0.2529ms)
+鉁?SKILL: skills frontmatter absent (12.017ms)
+鈻?HOOK: hooks frontmatter pattern
+  鉁?gsd-ai-researcher has commented hooks pattern (0.4019ms)
+  鉁?gsd-code-fixer has commented hooks pattern (0.1952ms)
+  鉁?gsd-code-reviewer has commented hooks pattern (0.148ms)
+  鉁?gsd-codebase-mapper has commented hooks pattern (0.1539ms)
+  鉁?gsd-debugger has commented hooks pattern (0.2664ms)
+  鉁?gsd-doc-verifier has commented hooks pattern (0.1426ms)
+  鉁?gsd-doc-writer has commented hooks pattern (0.2522ms)
+  鉁?gsd-domain-researcher has commented hooks pattern (0.1326ms)
+  鉁?gsd-eval-auditor has commented hooks pattern (0.2349ms)
+  鉁?gsd-eval-planner has commented hooks pattern (0.2226ms)
+  鉁?gsd-executor has commented hooks pattern (0.2519ms)
+  鉁?gsd-intel-updater has commented hooks pattern (0.1685ms)
+  鉁?gsd-phase-researcher has commented hooks pattern (0.2419ms)
+  鉁?gsd-planner has commented hooks pattern (0.3478ms)
+  鉁?gsd-project-researcher has commented hooks pattern (0.2686ms)
+  鉁?gsd-research-synthesizer has commented hooks pattern (0.2247ms)
+  鉁?gsd-roadmapper has commented hooks pattern (0.3063ms)
+  鉁?gsd-ui-auditor has commented hooks pattern (0.2082ms)
+  鉁?gsd-ui-researcher has commented hooks pattern (0.163ms)
+  鉁?gsd-verifier has commented hooks pattern (0.2008ms)
+  鉁?gsd-advisor-researcher (read-only) does not need hooks (0.213ms)
+  鉁?gsd-assumptions-analyzer (read-only) does not need hooks (0.1232ms)
+  鉁?gsd-framework-selector (read-only) does not need hooks (0.2553ms)
+  鉁?gsd-integration-checker (read-only) does not need hooks (0.1979ms)
+  鉁?gsd-nyquist-auditor (read-only) does not need hooks (0.1647ms)
+  鉁?gsd-plan-checker (read-only) does not need hooks (0.2669ms)
+  鉁?gsd-security-auditor (read-only) does not need hooks (0.1727ms)
+  鉁?gsd-ui-checker (read-only) does not need hooks (0.1969ms)
+  鉁?gsd-user-profiler (read-only) does not need hooks (0.1951ms)
+鉁?HOOK: hooks frontmatter pattern (7.0016ms)
+鈻?SPAWN: spawn type consistency
+  鉁?no "First, read agent .md" workaround pattern remains (14.5532ms)
+  鉁?named agent spawns use correct agent names (11.273ms)
+  鉁?diagnose-issues uses gsd-debugger (not general-purpose) (0.3055ms)
+  鉁?execute-phase has Copilot sequential fallback in runtime_compatibility (0.359ms)
+鉁?SPAWN: spawn type consistency (26.7549ms)
+鈻?AGENT: required frontmatter fields
+  鉁?gsd-advisor-researcher has name, description, tools, color (0.4651ms)
+  鉁?gsd-ai-researcher has name, description, tools, color (0.201ms)
+  鉁?gsd-assumptions-analyzer has name, description, tools, color (0.1876ms)
+  鉁?gsd-code-fixer has name, description, tools, color (0.2494ms)
+  鉁?gsd-code-reviewer has name, description, tools, color (0.1856ms)
+  鉁?gsd-codebase-mapper has name, description, tools, color (0.5198ms)
+  鉁?gsd-debugger has name, description, tools, color (0.3045ms)
+  鉁?gsd-doc-verifier has name, description, tools, color (0.1683ms)
+  鉁?gsd-doc-writer has name, description, tools, color (0.2946ms)
+  鉁?gsd-domain-researcher has name, description, tools, color (0.2109ms)
+  鉁?gsd-eval-auditor has name, description, tools, color (0.2328ms)
+  鉁?gsd-eval-planner has name, description, tools, color (0.2677ms)
+  鉁?gsd-executor has name, description, tools, color (0.2664ms)
+  鉁?gsd-framework-selector has name, description, tools, color (0.1886ms)
+  鉁?gsd-integration-checker has name, description, tools, color (0.2043ms)
+  鉁?gsd-intel-updater has name, description, tools, color (0.1977ms)
+  鉁?gsd-nyquist-auditor has name, description, tools, color (0.2067ms)
+  鉁?gsd-phase-researcher has name, description, tools, color (0.3395ms)
+  鉁?gsd-plan-checker has name, description, tools, color (0.3166ms)
+  鉁?gsd-planner has name, description, tools, color (0.3694ms)
+  鉁?gsd-project-researcher has name, description, tools, color (0.2397ms)
+  鉁?gsd-research-synthesizer has name, description, tools, color (0.1556ms)
+  鉁?gsd-roadmapper has name, description, tools, color (0.1989ms)
+  鉁?gsd-security-auditor has name, description, tools, color (0.1505ms)
+  鉁?gsd-ui-auditor has name, description, tools, color (0.1604ms)
+  鉁?gsd-ui-checker has name, description, tools, color (0.1425ms)
+  鉁?gsd-ui-researcher has name, description, tools, color (0.1693ms)
+  鉁?gsd-user-profiler has name, description, tools, color (0.3846ms)
+  鉁?gsd-verifier has name, description, tools, color (0.2303ms)
+鉁?AGENT: required frontmatter fields (7.9987ms)
+鈻?CLAUDEMD: CLAUDE.md compliance enforcement
+  鉁?gsd-plan-checker has Dimension 10: CLAUDE.md Compliance (0.6221ms)
+  鉁?gsd-phase-researcher has CLAUDE.md enforcement directive (0.3279ms)
+  鉁?gsd-executor has CLAUDE.md enforcement directive (0.2917ms)
+  鉁?all three agents read CLAUDE.md in project_context (0.7199ms)
+鉁?CLAUDEMD: CLAUDE.md compliance enforcement (2.116ms)
+鈻?VERIFY: data-flow trace, environment audit, and behavioral spot-checks
+  鉁?gsd-verifier has Step 4b: Data-Flow Trace (0.3907ms)
+  鉁?gsd-verifier has Step 7b: Behavioral Spot-Checks (0.3077ms)
+  鉁?gsd-verifier VERIFICATION.md template includes data-flow and spot-check sections (0.3144ms)
+  鉁?gsd-verifier success criteria include data-flow and spot-checks (0.327ms)
+  鉁?gsd-phase-researcher has Step 2.6: Environment Availability Audit (0.3135ms)
+  鉁?gsd-phase-researcher success criteria include environment audit (0.3078ms)
+鉁?VERIFY: data-flow trace, environment audit, and behavioral spot-checks (2.1467ms)
+鈻?DISCUSS: discussion log generation
+  鉁?discuss-phase workflow references DISCUSSION-LOG.md generation (0.4378ms)
+  鉁?discussion-log template exists (0.2452ms)
+鉁?DISCUSS: discussion log generation (0.7629ms)
+
+[36m   鈻堚枅鈻堚枅鈻堚枅鈺?鈻堚枅鈻堚枅鈻堚枅鈻堚晽鈻堚枅鈻堚枅鈻堚枅鈺?  鈻堚枅鈺斺晲鈺愨晲鈺愨暆 鈻堚枅鈺斺晲鈺愨晲鈺愨暆鈻堚枅鈺斺晲鈺愨枅鈻堚晽
+  鈻堚枅鈺? 鈻堚枅鈻堚晽鈻堚枅鈻堚枅鈻堚枅鈻堚晽鈻堚枅鈺? 鈻堚枅鈺?  鈻堚枅鈺?  鈻堚枅鈺戔暁鈺愨晲鈺愨晲鈻堚枅鈺戔枅鈻堚晳  鈻堚枅鈺?  鈺氣枅鈻堚枅鈻堚枅鈻堚晹鈺濃枅鈻堚枅鈻堚枅鈻堚枅鈺戔枅鈻堚枅鈻堚枅鈻堚晹鈺?   鈺氣晲鈺愨晲鈺愨晲鈺?鈺氣晲鈺愨晲鈺愨晲鈺愨暆鈺氣晲鈺愨晲鈺愨晲鈺?[0m
+
+  Get Shit Done [2mv1.27.4[0m
+  A meta-prompting, context engineering and spec-driven
+  development system for Claude Code, OpenCode, Gemini, Codex, Copilot, Antigravity, Cursor, and CodeBuddy by T脗CHES.
+
+鈻?getDirName (Antigravity)
+  鉁?returns .agent for antigravity (0.7921ms)
+  鉁?does not break existing runtimes (0.1392ms)
+鉁?getDirName (Antigravity) (3.3267ms)
+鈻?getGlobalDir (Antigravity)
+  鉁?returns ~/.gemini/antigravity by default (0.515ms)
+  鉁?respects ANTIGRAVITY_CONFIG_DIR env var (0.279ms)
+  鉁?explicit config-dir overrides env var (0.5004ms)
+  鉁?does not change Claude Code global dir (0.3984ms)
+鉁?getGlobalDir (Antigravity) (1.9184ms)
+鈻?getConfigDirFromHome (Antigravity)
+  鉁?returns .agent for local installs (0.1224ms)
+  鉁?returns .gemini, antigravity for global installs (0.0554ms)
+  鉁?does not change other runtimes (0.0781ms)
+鉁?getConfigDirFromHome (Antigravity) (0.3982ms)
+鈻?convertClaudeToAntigravityContent
+  鈻?global install path replacements
+    鉁?replaces ~/. claude/ with ~/.gemini/antigravity/ (0.3467ms)
+    鉁?replaces $HOME/.claude/ with $HOME/.gemini/antigravity/ (0.0912ms)
+  鉁?global install path replacements (0.5178ms)
+  鈻?local install path replacements
+    鉁?replaces ~/.claude/ with .agent/ for local installs (0.0894ms)
+    鉁?replaces ./.claude/ with ./.agent/ (0.0841ms)
+    鉁?replaces .claude/ with .agent/ (0.0702ms)
+  鉁?local install path replacements (0.3191ms)
+  鈻?command name conversion
+    鉁?converts /gsd:command to /gsd-command (0.0972ms)
+    鉁?converts all gsd: references (0.0601ms)
+  鉁?command name conversion (0.2201ms)
+  鉁?does not modify unrelated content (0.085ms)
+鉁?convertClaudeToAntigravityContent (1.2868ms)
+鈻?convertClaudeCommandToAntigravitySkill
+  鉁?produces name and description only in frontmatter (0.3225ms)
+  鉁?applies path replacement in body (0.1315ms)
+  鉁?uses provided skillName for name field (0.0704ms)
+  鉁?converts gsd: command references in body (0.0586ms)
+  鉁?returns unchanged content when no frontmatter (0.0781ms)
+鉁?convertClaudeCommandToAntigravitySkill (0.7788ms)
+鈻?convertClaudeAgentToAntigravityAgent
+  鉁?preserves name and description (0.3339ms)
+  鉁?maps Claude tools to Gemini tool names (0.2018ms)
+  鉁?preserves color field (0.121ms)
+  鉁?applies path replacement in body (0.0687ms)
+  鉁?uses global path for global installs (0.0644ms)
+  鉁?excludes Task tool (filtered by convertGeminiToolName) (0.0642ms)
+鉁?convertClaudeAgentToAntigravityAgent (0.9946ms)
+鈻?copyCommandsAsAntigravitySkills
+  鉁?creates skills directory (26.9361ms)
+  鉁?creates one skill directory per command with SKILL.md (20.7828ms)
+  鉁?handles subdirectory commands with prefixed names (4.7503ms)
+  鉁?SKILL.md has minimal frontmatter (name + description only) (8.453ms)
+  鉁?SKILL.md body has paths converted for local install (9.0492ms)
+  鉁?removes old gsd-* skill dirs before reinstalling (10.6186ms)
+  鉁?does not remove non-gsd skill dirs (9.2789ms)
+鉁?copyCommandsAsAntigravitySkills (90.3862ms)
+鈻?writeManifest (Antigravity)
+  鉁?writes manifest JSON file (35.192ms)
+  鉁?manifest includes skills in skills/ directory (18.3764ms)
+  鉁?manifest includes agent files (20.9554ms)
+鉁?writeManifest (Antigravity) (74.849ms)
+鈻?generate-claude-md
+  鉁?creates CLAUDE.md with workflow enforcement section (264.1334ms)
+  鉁?adds workflow enforcement section when updating an existing CLAUDE.md (396.9836ms)
+鉁?generate-claude-md (662.287ms)
+鈻?new-project workflow includes CLAUDE.md generation
+  鉁?new-project workflow generates CLAUDE.md before final commit (0.6226ms)
+  鉁?new-project artifacts mention CLAUDE.md (0.8314ms)
+鉁?new-project workflow includes CLAUDE.md generation (1.7336ms)
+
+[36m   鈻堚枅鈻堚枅鈻堚枅鈺?鈻堚枅鈻堚枅鈻堚枅鈻堚晽鈻堚枅鈻堚枅鈻堚枅鈺?  鈻堚枅鈺斺晲鈺愨晲鈺愨暆 鈻堚枅鈺斺晲鈺愨晲鈺愨暆鈻堚枅鈺斺晲鈺愨枅鈻堚晽
+  鈻堚枅鈺? 鈻堚枅鈻堚晽鈻堚枅鈻堚枅鈻堚枅鈻堚晽鈻堚枅鈺? 鈻堚枅鈺?  鈻堚枅鈺?  鈻堚枅鈺戔暁鈺愨晲鈺愨晲鈻堚枅鈺戔枅鈻堚晳  鈻堚枅鈺?  鈺氣枅鈻堚枅鈻堚枅鈻堚晹鈺濃枅鈻堚枅鈻堚枅鈻堚枅鈺戔枅鈻堚枅鈻堚枅鈻堚晹鈺?   鈺氣晲鈺愨晲鈺愨晲鈺?鈺氣晲鈺愨晲鈺愨晲鈺愨暆鈺氣晲鈺愨晲鈺愨晲鈺?[0m
+
+  Get Shit Done [2mv1.27.4[0m
+  A meta-prompting, context engineering and spec-driven
+  development system for Claude Code, OpenCode, Gemini, Codex, Copilot, Antigravity, Cursor, and CodeBuddy by T脗CHES.
+
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-am4Uuv\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-usKYTj\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-uTP8kL\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-32nxkT\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-IsKdOE\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-wFLDSO\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-xgil79\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-xgil79\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-xgil79\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-B1lYia\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-B1lYia\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-gpA4gP\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-gpA4gP\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-kFQO2e\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-kFQO2e\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-AWvps4\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-AWvps4\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-RCS0Ig\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-RCS0Ig\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-4Sus0X\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-4Sus0X\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-inm5tK\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-inm5tK\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-3x0T1b\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-3x0T1b\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-Gj9VlW\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-AJWz7S\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-EC1Gp6\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-AZ5Me4\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-AZ5Me4\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-TjkIXS\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-TjkIXS\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-v0VHUe\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-v0VHUe\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-Fbdp5S\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-16DQ05\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-16DQ05\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-yndWsG\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-yndWsG\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-5LPCy0\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-e2e-5LPCy0\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-uninstall-kAsOV6\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-uninstall-vZ9bdg\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-uninstall-BfvHba\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-uninstall-z5qRJA\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-uninstall-HRAQGA\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-uninstall-z2CoRi\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-uninstall-bX9dMe\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-uninstall-bX9dMe\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+  Installing for [36mCodex[0m to [36m~\AppData\Local\Temp\gsd-codex-uninstall-BQvcga\codex-home[0m
+
+  [32m鉁?[0m Installed 71 skills to skills/
+  [32m鉁?[0m Installed get-shit-done
+  [32m鉁?[0m Installed agents
+  [32m鉁?[0m Installed CHANGELOG.md
+  [32m鉁?[0m Wrote VERSION (1.27.4)
+  [32m鉁?[0m Wrote file manifest (gsd-file-manifest.json)
+  [32m鉁?[0m Generated config.toml with 29 agent roles
+  [32m鉁?[0m Generated 29 agent .toml config files
+  [32m鉁?[0m Configured Codex hooks (SessionStart)
+鈻?getCodexSkillAdapterHeader
+  鉁?contains all three sections (0.873ms)
+  鉁?includes correct invocation syntax (0.1702ms)
+  鉁?section B maps AskUserQuestion parameters (0.138ms)
+  鉁?section C maps Task to spawn_agent (0.9501ms)
+鉁?getCodexSkillAdapterHeader (3.3649ms)
+鈻?convertClaudeAgentToCodexAgent
+  鉁?adds codex_agent_role header and cleans frontmatter (0.9282ms)
+  鉁?converts slash commands in body (0.21ms)
+  鉁?handles content without frontmatter (0.1487ms)
+鉁?convertClaudeAgentToCodexAgent (1.4778ms)
+鈻?generateCodexAgentToml
+  鉁?sets workspace-write for executor (0.304ms)
+  鉁?sets read-only for plan-checker (0.1955ms)
+  鉁?includes developer_instructions from body (0.203ms)
+  鉁?includes required name and description fields (0.1784ms)
+  鉁?falls back to generated description when frontmatter is missing fields (0.1862ms)
+  鉁?defaults unknown agents to read-only (0.139ms)
+鉁?generateCodexAgentToml (1.5434ms)
+鈻?CODEX_AGENT_SANDBOX
+  鉁?has all 11 agents mapped (0.1129ms)
+  鉁?workspace-write agents have write tools (0.1071ms)
+  鉁?read-only agents have no write tools (0.092ms)
+鉁?CODEX_AGENT_SANDBOX (0.425ms)
+鈻?generateCodexConfigBlock
+  鉁?starts with GSD marker (0.1494ms)
+  鉁?does not include feature flags or agents table header (0.1661ms)
+  鉁?includes per-agent sections (0.0913ms)
+鉁?generateCodexConfigBlock (0.5199ms)
+鈻?stripGsdFromCodexConfig
+  鉁?returns null for GSD-only config (0.6993ms)
+  鉁?preserves user content before marker (0.7322ms)
+  鉁?strips injected feature keys without marker (0.3929ms)
+  鉁?removes empty [features] section (0.1653ms)
+  鉁?strips injected keys above marker on uninstall (0.233ms)
+  鉁?removes [agents.gsd-*] sections (0.1959ms)
+鉁?stripGsdFromCodexConfig (2.6067ms)
+鈻?mergeCodexConfig
+  鉁?case 1: creates new config.toml (11.6282ms)
+  鉁?case 2: replaces existing GSD block (23.3296ms)
+  鉁?case 3: appends to config without GSD marker (21.3368ms)
+  鉁?case 3 with existing [features]: preserves user features, does not inject GSD keys (26.0458ms)
+  鉁?case 3 strips existing [agents.gsd-*] sections before appending fresh block (11.3548ms)
+  鉁?idempotent: re-merge produces same result (5.3179ms)
+  鉁?case 2 after case 3 with existing [features]: no duplicate sections (14.1238ms)
+  鉁?case 2 does not inject feature keys (18.5271ms)
+  鉁?case 2 strips leaked [agents] and [agents.gsd-*] from before content (23.9016ms)
+  鉁?case 2 strips leaked GSD-managed sections above marker in CRLF files (17.2019ms)
+  鉁?case 2 preserves user-authored [agents] tables while stripping leaked GSD sections in CRLF files (12.9769ms)
+  鉁?case 2 idempotent after case 3 with existing [features] (18.4031ms)
+  鉁?preserves CRLF when appending GSD block to existing config (4.2009ms)
+  鉁?uses the first newline style when appending GSD block to mixed-EOL configs (14.7544ms)
+鉁?mergeCodexConfig (224.3231ms)
+鈻?installCodexConfig (integration)
+  鉁?generates config.toml and agent .toml files (47.0227ms)
+鉁?installCodexConfig (integration) (47.1718ms)
+鈻?codex features section safety
+  鉁?non-boolean keys under [features] are moved to top level (0.6462ms)
+  鉁?boolean keys under [features] are NOT flagged (0.2458ms)
+鉁?codex features section safety (1.0632ms)
+鈻?Codex install hook configuration (e2e)
+  鉁?fresh CODEX_HOME enables codex_hooks without draft root defaults (1204.9538ms)
+  鉁?existing LF config without [features] gets one features block and preserves user content (1083.1175ms)
+  鉁?existing CRLF config without [features] preserves CRLF and adds codex_hooks (1068.6734ms)
+  鉁?existing CRLF [features] comment-only table gets codex_hooks without losing adjacent text (932.8269ms)
+  鉁?existing [features] with trailing comment gets one codex_hooks without a second table (1013.3395ms)
+  鉁?existing [features] at EOF without trailing newline is updated in place (940.2565ms)
+  鉁?existing empty [features] and codex_hooks = false are normalized and remain idempotent (3069.3658ms)
+  鉁?quoted codex_hooks keys inside [features] are normalized without adding a bare duplicate (2088.5823ms)
+  鉁?quoted [features] headers are recognized as the existing features table (1600.7765ms)
+  鉁?quoted table headers containing # are parsed without treating # as a comment start (1573.0318ms)
+  鉁?existing dotted features config stays dotted and does not grow a [features] table (1511.1796ms)
+  鉁?root inline-table features assignments are left untouched without appending invalid dotted keys or hooks (1413.2057ms)
+  鉁?root scalar features assignments are left untouched without appending invalid dotted keys or hooks (1387.6475ms)
+  鉁?quoted dotted codex_hooks keys stay dotted and are normalized without duplication (1535.3232ms)
+  鉁?multiline dotted features assignments insert codex_hooks after the full assignment block (1315.7256ms)
+  鉁?existing empty [features] table is populated with one codex_hooks key (638.0509ms)
+  鉁?multiline strings inside [features] do not create fake tables or fake codex_hooks matches (670.8188ms)
+  鉁?non-boolean codex_hooks assignments are normalized to true without duplication (688.2247ms)
+  鉁?multiline basic-string codex_hooks assignments are fully normalized without leaving trailing lines behind (1527.3805ms)
+  鉁?multiline literal-string codex_hooks assignments are fully normalized without leaving trailing lines behind (1292.0555ms)
+  鉁?multiline array codex_hooks assignments are fully normalized without leaving trailing lines behind (1444.5741ms)
+  鉁?triple-quoted codex_hooks values keep inline comments when normalized (714.4397ms)
+  鉁?existing CRLF codex_hooks = true stays single and preserves non-GSD hooks (1333.0387ms)
+  鉁?codex_hooks = true with an inline comment is treated as enabled for hook installation (1587.771ms)
+  鉁?mixed-EOL configs use the first newline style for inserted Codex content (1318.8251ms)
+鉁?Codex install hook configuration (e2e) (32955.111ms)
+鈻?Codex uninstall symmetry for hook-enabled configs
+  鉁?fresh install removes the GSD-added codex_hooks feature on uninstall (676.492ms)
+  鉁?install then uninstall removes [features].codex_hooks while preserving other feature keys, comments, hooks, and CRLF (701.8919ms)
+  鉁?install then uninstall removes dotted features.codex_hooks without creating a [features] table (744.3655ms)
+  鉁?install then uninstall preserves a pre-existing [features].codex_hooks = true (686.8222ms)
+  鉁?install then uninstall preserves a pre-existing quoted [features]."codex_hooks" = true (769.333ms)
+  鉁?install then uninstall preserves a pre-existing root dotted features.codex_hooks = true (659.2086ms)
+  鉁?install then uninstall leaves short-circuited root features assignments untouched (1297.766ms)
+  鉁?install then uninstall keeps mixed-EOL user content stable while removing GSD hook state (678.1835ms)
+鉁?Codex uninstall symmetry for hook-enabled configs (6214.622ms)
+鈻?history-digest command
+  鉁?empty phases directory returns valid schema (259.8083ms)
+  鉁?nested frontmatter fields extracted correctly (291.0071ms)
+  鉁?multiple phases merged into single digest (286.8196ms)
+  鉁?malformed SUMMARY.md skipped gracefully (335.4827ms)
+  鉁?flat provides field still works (backward compatibility) (297.3506ms)
+  鉁?inline array syntax supported (353.1269ms)
+鉁?history-digest command (1825.3183ms)
+鈻?summary-extract command
+  鉁?missing file returns error (267.3414ms)
+  鉁?extracts all fields from SUMMARY.md (310.5965ms)
+  鉁?selective extraction with --fields (312.7973ms)
+  鉁?extracts one-liner from body when not in frontmatter (381.1991ms)
+  鉁?handles missing frontmatter fields gracefully (216.6921ms)
+  鉁?parses key-decisions with rationale (282.8142ms)
+鉁?summary-extract command (1772.2028ms)
+鈻?progress command
+  鉁?renders JSON progress (362.6743ms)
+  鉁?renders bar format (227.4527ms)
+  鉁?renders table format (339.364ms)
+  鉁?does not crash when summaries exceed plans (orphaned SUMMARY.md) (762.5424ms)
+鉁?progress command (1692.484ms)
+鈻?todo complete command
+  鉁?moves todo from pending to completed (207.9532ms)
+  鉁?fails for nonexistent todo (216.3595ms)
+鉁?todo complete command (424.5383ms)
+鈻?todo match-phase command
+  鉁?returns empty matches when no todos exist (295.0446ms)
+  鉁?matches todo by keyword overlap with phase name (218.1769ms)
+  鉁?does not match unrelated todo (263.248ms)
+  鉁?matches todo by area overlap (256.9093ms)
+  鉁?sorts matches by score descending (199.1487ms)
+鉁?todo match-phase command (1233.0088ms)
+鈻?scaffold command
+  鉁?scaffolds context file (217.4145ms)
+  鉁?scaffolds UAT file (240.6753ms)
+  鉁?scaffolds verification file (179.9463ms)
+  鉁?scaffolds phase directory (204.261ms)
+  鉁?does not overwrite existing files (220.8508ms)
+鉁?scaffold command (1063.5463ms)
+鈻?generate-slug command
+  鉁?converts normal text to slug (185.4994ms)
+  鉁?strips special characters (218.6753ms)
+  鉁?preserves numbers (177.6413ms)
+  鉁?strips leading and trailing hyphens (308.9015ms)
+  鉁?fails when no text provided (185.3066ms)
+鉁?generate-slug command (1076.4718ms)
+鈻?current-timestamp command
+  鉁?date format returns YYYY-MM-DD (167.438ms)
+  鉁?filename format returns ISO without colons or fractional seconds (214.1318ms)
+  鉁?full format returns full ISO string (200.1156ms)
+  鉁?default (no format) returns full ISO string (255.0266ms)
+鉁?current-timestamp command (837.0566ms)
+鈻?list-todos command
+  鉁?empty directory returns zero count (156.1634ms)
+  鉁?returns multiple todos with correct fields (196.2871ms)
+  鉁?area filter returns only matching todos (193.4967ms)
+  鉁?area filter miss returns zero count (164.8549ms)
+  鉁?malformed files use defaults (215.8467ms)
+鉁?list-todos command (927.1533ms)
+鈻?verify-path-exists command
+  鉁?existing file returns exists=true with type=file (213.8443ms)
+  鉁?existing directory returns exists=true with type=directory (168.735ms)
+  鉁?missing path returns exists=false (169.0457ms)
+  鉁?absolute path resolves correctly (159.2024ms)
+  鉁?fails when no path provided (195.5419ms)
+鉁?verify-path-exists command (906.8511ms)
+鈻?resolve-model command
+  鉁?known agent returns model and profile without unknown_agent (184.8662ms)
+  鉁?unknown agent returns unknown_agent=true (174.598ms)
+  鉁?default profile fallback when no config exists (165.3888ms)
+  鉁?fails when no agent-type provided (168.5678ms)
+鉁?resolve-model command (693.7186ms)
+鈻?commit command
+  鉁?skips when commit_docs is false (601.7965ms)
+  鉁?skips when .planning is gitignored (741.8229ms)
+  鉁?handles nothing to commit (685.1448ms)
+  鉁?creates real commit with correct hash (812.7642ms)
+  鉁?amend mode works without crashing (938.6109ms)
+鉁?commit command (3780.5274ms)
+鈻?websearch command
+  鉁?returns available=false when BRAVE_API_KEY is unset (0.8629ms)
+  鉁?returns error when no query provided (0.3213ms)
+  鉁?returns results for successful API response (0.5497ms)
+  鉁?constructs correct URL parameters (0.5197ms)
+  鉁?handles API error (non-200 status) (0.2813ms)
+  鉁?handles network failure (0.2421ms)
+鉁?websearch command (3.0271ms)
+鈻?stats command
+  鉁?returns valid JSON with empty project (232.0034ms)
+  鉁?counts phases, plans, and summaries correctly (212.3105ms)
+  鉁?counts requirements from REQUIREMENTS.md (204.8371ms)
+  鉁?reads last activity from STATE.md (222.4272ms)
+  鉁?reads last activity from plain STATE.md template format (216.6137ms)
+  鉁?includes roadmap-only phases in totals and preserves hyphenated names (191.6345ms)
+  鉁?reports git commit count and first commit date from repository history (721.6856ms)
+  鉁?table format renders readable output (193.4514ms)
+鉁?stats command (2195.4852ms)
+鈻?config-ensure-section command
+  鉁?creates config.json with expected structure and types (380.3143ms)
+  鉁?is idempotent 鈥?returns already_exists on second call (661.8165ms)
+  鉁?detects Brave Search from file-based key (318.0048ms)
+  鉁?merges user defaults from defaults.json (355.3528ms)
+  鉁?merges nested workflow keys from defaults.json preserving unset keys (264.6041ms)
+鉁?config-ensure-section command (1981.6814ms)
+鈻?config-set command
+  鉁?sets a top-level string value (645.8092ms)
+  鉁?coerces true to boolean (585.3713ms)
+  鉁?coerces false to boolean (708.2993ms)
+  鉁?coerces numeric strings to numbers (464.9242ms)
+  鉁?preserves plain strings (574.4137ms)
+  鉁?sets nested values via dot-notation (469.9022ms)
+  鉁?auto-creates nested objects for dot-notation (539.9589ms)
+  鉁?rejects unknown config keys (484.512ms)
+  鉁?sets workflow.text_mode for remote session support (452.9265ms)
+  鉁?errors when no key path provided (443.8375ms)
+  鉁?rejects known invalid nyquist alias keys with a suggestion (389.1347ms)
+鉁?config-set command (5761.1862ms)
+鈻?config-get command
+  鉁?gets a top-level value (415.6185ms)
+  鉁?gets a nested value via dot-notation (399.6444ms)
+  鉁?errors for nonexistent key (451.0908ms)
+  鉁?errors for deeply nested nonexistent key (382.2337ms)
+  鉁?errors when config.json does not exist (366.7652ms)
+  鉁?errors when no key path provided (359.5535ms)
+鉁?config-get command (2375.4607ms)
+鈻?config-new-project command
+  鉁?creates full config with all expected keys (182.116ms)
+  鉁?user choices override defaults (159.7887ms)
+  鉁?works with empty choices 鈥?all defaults materialized (146.3836ms)
+  鉁?is idempotent 鈥?returns already_exists if config exists (377.8617ms)
+  鉁?auto_advance in workflow choices is preserved (154.4422ms)
+  鉁?rejects invalid JSON choices (144.8603ms)
+  鉁?output has created:true and path on success (150.9815ms)
+鉁?config-new-project command (1316.9779ms)
+鈻?config-set unknown key (no suggestion)
+  鉁?rejects a key that has no suggestion (412.5698ms)
+鉁?config-set unknown key (no suggestion) (412.687ms)
+鈻?config-get edge cases
+  鉁?errors when traversing a dot-path through a non-object value (173.8406ms)
+  鉁?errors when config.json contains malformed JSON (152.5326ms)
+鉁?config-get edge cases (326.5785ms)
+鈻?config-set-model-profile command
+  鉁?sets a valid profile and updates config (323.6118ms)
+  鉁?reports previous profile in output (343.2293ms)
+  鉁?setting the same profile is a no-op on config but still succeeds (470.3975ms)
+  鉁?is case-insensitive (305.4897ms)
+  鉁?rejects invalid profile (336.5591ms)
+  鉁?errors when no profile provided (323.1321ms)
+  鉁?creates config if missing before setting profile (310.9078ms)
+鉁?config-set-model-profile command (2413.9459ms)
+
+[36m   鈻堚枅鈻堚枅鈻堚枅鈺?鈻堚枅鈻堚枅鈻堚枅鈻堚晽鈻堚枅鈻堚枅鈻堚枅鈺?  鈻堚枅鈺斺晲鈺愨晲鈺愨暆 鈻堚枅鈺斺晲鈺愨晲鈺愨暆鈻堚枅鈺斺晲鈺愨枅鈻堚晽
+  鈻堚枅鈺? 鈻堚枅鈻堚晽鈻堚枅鈻堚枅鈻堚枅鈻堚晽鈻堚枅鈺? 鈻堚枅鈺?  鈻堚枅鈺?  鈻堚枅鈺戔暁鈺愨晲鈺愨晲鈻堚枅鈺戔枅鈻堚晳  鈻堚枅鈺?  鈺氣枅鈻堚枅鈻堚枅鈻堚晹鈺濃枅鈻堚枅鈻堚枅鈻堚枅鈺戔枅鈻堚枅鈻堚枅鈻堚晹鈺?   鈺氣晲鈺愨晲鈺愨晲鈺?鈺氣晲鈺愨晲鈺愨晲鈺愨暆鈺氣晲鈺愨晲鈺愨晲鈺?[0m
+
+  Get Shit Done [2mv1.27.4[0m
+  A meta-prompting, context engineering and spec-driven
+  development system for Claude Code, OpenCode, Gemini, Codex, Copilot, Antigravity, Cursor, and CodeBuddy by T脗CHES.
+
+鈻?getDirName (Copilot)
+  鉁?returns .github for copilot (0.7127ms)
+  鉁?does not break existing runtimes (0.2049ms)
+鉁?getDirName (Copilot) (1.8623ms)
+鈻?getGlobalDir (Copilot)
+  鉁?returns ~/.copilot with no env var or explicit dir (0.4113ms)
+  鉁?returns explicit dir when provided (0.1636ms)
+  鉁?respects COPILOT_CONFIG_DIR env var (0.2499ms)
+  鉁?explicit dir takes priority over COPILOT_CONFIG_DIR (0.1466ms)
+  鉁?does not break existing runtimes (0.1335ms)
+鉁?getGlobalDir (Copilot) (1.369ms)
+鈻?getConfigDirFromHome (Copilot)
+  鉁?returns .github path string for local (isGlobal=false) (0.1702ms)
+  鉁?returns .copilot path string for global (isGlobal=true) (0.1002ms)
+  鉁?does not break existing runtimes (0.3247ms)
+鉁?getConfigDirFromHome (Copilot) (0.9996ms)
+鈻?Source code integration (Copilot)
+  鉁?CLI-01: --copilot flag parsing exists (0.6755ms)
+  鉁?CLI-03: --all array includes copilot (0.0962ms)
+  鉁?CLI-06: banner text includes Copilot (0.0529ms)
+  鉁?CLI-06: help text includes --copilot (0.094ms)
+  鉁?CLI-02: promptRuntime has Copilot as option 5 (0.2176ms)
+  鉁?CLI-02: promptRuntime has All option including copilot (0.2822ms)
+  鉁?isCopilot variable exists in install function (0.0981ms)
+  鉁?hooks are skipped for Copilot (0.2427ms)
+  鉁?--both flag unchanged (still claude + opencode only) (0.1168ms)
+鉁?Source code integration (Copilot) (2.141ms)
+鈻?convertCopilotToolName
+  鉁?maps Read to read (0.3061ms)
+  鉁?maps Write to edit (0.0863ms)
+  鉁?maps Edit to edit (same as Write) (0.1123ms)
+  鉁?maps Bash to execute (0.0464ms)
+  鉁?maps Grep to search (0.0472ms)
+  鉁?maps Glob to search (same as Grep) (0.039ms)
+  鉁?maps Task to agent (0.04ms)
+  鉁?maps WebSearch to web (0.0472ms)
+  鉁?maps WebFetch to web (same as WebSearch) (0.0555ms)
+  鉁?maps TodoWrite to todo (0.1183ms)
+  鉁?maps AskUserQuestion to ask_user (0.1338ms)
+  鉁?maps SlashCommand to skill (0.1051ms)
+  鉁?maps mcp__context7__ prefix to io.github.upstash/context7/ (0.0663ms)
+  鉁?maps mcp__context7__* wildcard (0.0563ms)
+  鉁?lowercases unknown tools as fallback (0.049ms)
+  鉁?mapping constant has 13 entries (12 direct + mcp handled separately) (0.0562ms)
+鉁?convertCopilotToolName (1.7212ms)
+鈻?convertClaudeToCopilotContent
+  鉁?replaces ~/.claude/ with .github/ in local mode (default) (0.3185ms)
+  鉁?replaces ~/.claude/ with ~/.copilot/ in global mode (0.0844ms)
+  鉁?replaces ./.claude/ with ./.github/ (0.1083ms)
+  鉁?replaces bare .claude/ with .github/ (0.0544ms)
+  鉁?replaces $HOME/.claude/ with .github/ in local mode (default) (0.0492ms)
+  鉁?replaces $HOME/.claude/ with $HOME/.copilot/ in global mode (0.0968ms)
+  鉁?converts gsd: to gsd- in command names (0.0614ms)
+  鉁?handles mixed content in local mode (0.0926ms)
+  鉁?handles mixed content in global mode (0.1311ms)
+  鉁?does not double-replace in local mode (0.0937ms)
+  鉁?does not double-replace in global mode (0.113ms)
+  鉁?preserves content with no matches (0.0829ms)
+鉁?convertClaudeToCopilotContent (1.5586ms)
+鈻?convertClaudeCommandToCopilotSkill
+  鉁?converts frontmatter with all fields (1.7224ms)
+  鉁?handles skill without allowed-tools (0.3076ms)
+  鉁?handles skill without argument-hint (0.1306ms)
+  鉁?argument-hint with inner single quotes uses double-quote YAML delimiter (0.119ms)
+  鉁?applies CONV-06 path conversion to body (local mode) (0.0703ms)
+  鉁?applies CONV-06 path conversion to body (global mode) (0.0583ms)
+  鉁?applies CONV-07 command name conversion to body (0.0987ms)
+  鉁?handles content without frontmatter (local mode) (0.0711ms)
+  鉁?preserves agent field in frontmatter (0.0664ms)
+鉁?convertClaudeCommandToCopilotSkill (2.8318ms)
+鈻?convertClaudeAgentToCopilotAgent
+  鉁?maps and deduplicates tools (0.3345ms)
+  鉁?formats tools as JSON array (0.2066ms)
+  鉁?preserves name description and color (0.1305ms)
+  鉁?handles mcp__context7__ tools (0.116ms)
+  鉁?handles agent with no tools field (0.3076ms)
+  鉁?applies CONV-06 and CONV-07 to body (local mode) (0.2133ms)
+  鉁?applies CONV-06 and CONV-07 to body (global mode) (0.1181ms)
+  鉁?handles content without frontmatter (local mode) (0.075ms)
+鉁?convertClaudeAgentToCopilotAgent (1.7471ms)
+鈻?copyCommandsAsCopilotSkills
+  鉁?creates skill folders from source commands (144.1016ms)
+  鉁?skill content has Copilot frontmatter format (117.2833ms)
+  鉁?generates gsd-autonomous skill from autonomous.md command (168.1878ms)
+  鉁?autonomous skill body converts gsd: to gsd- (CONV-07) (0.488ms)
+  鉁?cleans up old skill directories on re-run (156.9751ms)
+鉁?copyCommandsAsCopilotSkills (587.515ms)
+鈻?Copilot agent conversion - real files
+  鉁?converts gsd-executor agent correctly (1.4907ms)
+  鉁?converts agent with mcp wildcard tools correctly (1.0399ms)
+  鉁?all 29 agents convert without error (5.5827ms)
+鉁?Copilot agent conversion - real files (8.4059ms)
+鈻?Copilot content conversion - engine files
+  鉁?converts engine .md files correctly (local mode default) (0.4941ms)
+  鉁?converts engine .md files correctly (global mode) (0.2831ms)
+  鉁?converts engine .cjs files correctly (0.3973ms)
+鉁?Copilot content conversion - engine files (1.318ms)
+鈻?Copilot instructions merge/strip
+  鈻?mergeCopilotInstructions
+    鉁?creates file from scratch when none exists (3.4228ms)
+    鉁?replaces GSD section when both markers present (19.4554ms)
+    鉁?appends to existing file when no markers present (11.01ms)
+    鉁?handles file that is GSD-only (re-creates cleanly) (21.3137ms)
+    鉁?preserves user content before and after markers (14.441ms)
+  鉁?mergeCopilotInstructions (70.0384ms)
+  鈻?stripGsdFromCopilotInstructions
+    鉁?returns null when content is GSD-only (0.3146ms)
+    鉁?returns cleaned content when user content exists before markers (0.1445ms)
+    鉁?returns cleaned content when user content exists after markers (0.0808ms)
+    鉁?returns cleaned content preserving both before and after (0.1236ms)
+    鉁?returns original content when no markers found (0.0953ms)
+  鉁?stripGsdFromCopilotInstructions (0.9464ms)
+鉁?Copilot instructions merge/strip (71.1273ms)
+鈻?Copilot uninstall skill removal
+  鉁?identifies gsd-* skill directories for removal (13.6255ms)
+  鉁?cleans GSD section from copilot-instructions.md on uninstall (1.1417ms)
+  鉁?deletes copilot-instructions.md when GSD-only on uninstall (0.8573ms)
+鉁?Copilot uninstall skill removal (15.8653ms)
+鈻?Copilot manifest and patches fixes
+  鉁?writeManifest hashes skills for Copilot runtime (20.7057ms)
+  鉁?reportLocalPatches shows /gsd-reapply-patches for Copilot (12.1475ms)
+  鉁?reportLocalPatches shows /gsd:reapply-patches for Claude (unchanged) (12.4653ms)
+鉁?Copilot manifest and patches fixes (45.6035ms)
+鈻?E2E: Copilot full install verification
+  鉁?installs expected number of skill directories (565.2353ms)
+  鉁?each skill directory contains SKILL.md (602.2955ms)
+  鉁?installs expected number of agent files (700.9154ms)
+  鉁?installs all expected agent files (508.6823ms)
+  鉁?generates copilot-instructions.md with GSD markers (746.239ms)
+  鉁?creates manifest with correct structure (570.4943ms)
+  鉁?manifest contains expected file categories (622.2719ms)
+  鉁?manifest SHA256 hashes match actual file contents (586.9883ms)
+  鉁?engine directory contains required subdirectories and files (496.1323ms)
+鉁?E2E: Copilot full install verification (5400.1491ms)
+鈻?E2E: Copilot uninstall verification
+  鉁?removes engine directory (866.9986ms)
+  鉁?removes copilot-instructions.md (556.3938ms)
+  鉁?removes all GSD skill directories (549.0866ms)
+  鉁?removes all GSD agent files (492.6469ms)
+  鉁?preserves non-GSD content in skills directory (1489.449ms)
+  鉁?preserves non-GSD content in agents directory (1046.6552ms)
+鉁?E2E: Copilot uninstall verification (5001.6912ms)
+鈻?loadConfig
+  鉁?returns defaults when config.json is missing (8.0375ms)
+  鉁?reads model_profile from config.json (70.5395ms)
+  鉁?reads nested config keys (14.7111ms)
+  鉁?reads branching_strategy from git section (75.3864ms)
+  鉁?returns model_overrides when present (REG-01) (104.9968ms)
+  鉁?returns model_overrides as null when not in config (78.2694ms)
+  鉁?returns defaults when config.json contains invalid JSON (12.8111ms)
+  鉁?handles parallelization as boolean (117.1091ms)
+  鉁?handles parallelization as object with enabled field (98.5066ms)
+  鉁?prefers top-level keys over nested keys (4.4628ms)
+鉁?loadConfig (587.8466ms)
+鈻?loadConfig commit_docs gitignore auto-detection (#1250)
+  鉁?commit_docs defaults to false when .planning/ is gitignored and no explicit config (996.3204ms)
+  鉁?commit_docs defaults to true when .planning/ is NOT gitignored and no explicit config (860.2523ms)
+  鉁?explicit commit_docs: false is respected even when .planning/ is not gitignored (733.2459ms)
+  鉁?explicit commit_docs: true is respected even when .planning/ is gitignored (923.0502ms)
+  鉁?commit_docs auto-detect works with no config.json (693.3417ms)
+鉁?loadConfig commit_docs gitignore auto-detection (#1250) (4206.8934ms)
+鈻?resolveModelInternal
+  鈻?model profile structural validation
+    鉁?all known agents resolve to a valid string for each profile (837.4641ms)
+    鉁?inherit profile forces all known agents to inherit model (278.1822ms)
+  鉁?model profile structural validation (1115.8822ms)
+  鈻?override precedence
+    鉁?per-agent override takes precedence over profile (55.5443ms)
+    鉁?opus override resolves to opus (48.9931ms)
+    鉁?agents not in override fall back to profile (46.3957ms)
+  鉁?override precedence (151.2661ms)
+  鈻?edge cases
+    鉁?returns sonnet for unknown agent type (45.6275ms)
+    鉁?returns sonnet for unknown agent type even with inherit profile (44.7221ms)
+    鉁?defaults to balanced profile when model_profile missing (48.0252ms)
+  鉁?edge cases (138.6713ms)
+鉁?resolveModelInternal (1406.0865ms)
+鈻?escapeRegex
+  鉁?escapes dots (0.3093ms)
+  鉁?escapes all special regex characters (0.1398ms)
+  鉁?handles empty string (0.0646ms)
+  鉁?returns plain string unchanged (0.0429ms)
+鉁?escapeRegex (0.7043ms)
+鈻?generateSlugInternal
+  鉁?converts text to lowercase kebab-case (0.2319ms)
+  鉁?removes special characters (0.0754ms)
+  鉁?trims leading and trailing hyphens (0.0565ms)
+  鉁?returns null for null input (0.0446ms)
+  鉁?returns null for empty string (0.0333ms)
+鉁?generateSlugInternal (0.5781ms)
+鈻?safeReadFile
+  鉁?reads existing file (8.7274ms)
+  鉁?returns null for missing file (0.9909ms)
+鉁?safeReadFile (9.8754ms)
+鈻?pathExistsInternal
+  鉁?returns true for existing path (1.7193ms)
+  鉁?returns false for non-existing path (1.4525ms)
+  鉁?handles absolute paths (1.4147ms)
+鉁?pathExistsInternal (4.759ms)
+鈻?getMilestoneInfo
+  鉁?extracts version and name from roadmap (9.4743ms)
+  鉁?returns defaults when roadmap missing (2.2083ms)
+  鉁?returns active milestone when shipped milestone is collapsed in details block (8.5598ms)
+  鉁?returns active milestone when multiple shipped milestones exist in details blocks (8.6902ms)
+  鉁?returns defaults when roadmap has no heading matches (9.8395ms)
+鉁?getMilestoneInfo (39.2176ms)
+鈻?searchPhaseInDir
+  鉁?finds phase directory by normalized prefix (3.6771ms)
+  鉁?returns plans and summaries (3.3971ms)
+  鉁?identifies incomplete plans (4.9685ms)
+  鉁?detects research and context files (2.5946ms)
+  鉁?returns null when phase not found (1.6241ms)
+  鉁?generates phase_slug from directory name (1.6684ms)
+鉁?searchPhaseInDir (18.3572ms)
+鈻?findPhaseInternal
+  鉁?finds phase in current phases directory (3.323ms)
+  鉁?returns null for non-existent phase (2.1429ms)
+  鉁?returns null for null phase (5.0149ms)
+  鉁?searches archived milestones when not in current (4.8637ms)
+鉁?findPhaseInternal (15.5981ms)
+鈻?getRoadmapPhaseInternal
+  鉁?is exported from core.cjs (REG-02) (10.4769ms)
+  鉁?extracts phase name and goal from roadmap (9.4998ms)
+  鉁?returns goal when Goal uses colon-outside-bold format (5.8558ms)
+  鉁?returns null when roadmap missing (3.8065ms)
+  鉁?returns null when phase not in roadmap (5.5849ms)
+  鉁?returns null for null phase number (3.4468ms)
+  鉁?extracts full section text (10.0784ms)
+鉁?getRoadmapPhaseInternal (49.8158ms)
+鈻?getMilestonePhaseFilter
+  鉁?filters directories to only current milestone phases (12.7196ms)
+  鉁?returns pass-all filter when ROADMAP.md is missing (1.8256ms)
+  鉁?returns pass-all filter when ROADMAP has no phase headings (8.792ms)
+  鉁?handles letter-suffix phases (e.g. 3A) (9.8987ms)
+  鉁?handles decimal phases (e.g. 5.1) (3.949ms)
+  鉁?returns false for non-phase directory names (4.3008ms)
+  鉁?phaseCount reflects ROADMAP phase count (10.3436ms)
+  鉁?phaseCount is 0 when ROADMAP is missing (2.1821ms)
+  鉁?phaseCount is 0 when ROADMAP has no phase headings (3.2513ms)
+鉁?getMilestonePhaseFilter (57.9613ms)
+鈻?normalizeMd
+  鉁?returns null/undefined/empty unchanged (0.2524ms)
+  鉁?MD022: adds blank lines around headings (0.2329ms)
+  鉁?MD032: adds blank line before list after non-list content (0.0723ms)
+  鉁?MD032: adds blank line after list before non-list content (0.0968ms)
+  鉁?MD032: does not add extra blank lines between list items (0.0372ms)
+  鉁?MD031: adds blank lines around fenced code blocks (0.0646ms)
+  鉁?MD012: collapses 3+ consecutive blank lines to 2 (0.043ms)
+  鉁?MD047: ensures file ends with single newline (0.0299ms)
+  鉁?MD047: trims trailing multiple newlines (0.026ms)
+  鉁?preserves frontmatter delimiters (0.031ms)
+  鉁?handles CRLF line endings (0.0302ms)
+  鉁?handles ordered lists (0.0445ms)
+  鉁?does not add blank line between table and list (0.0292ms)
+  鉁?complex real-world STATE.md-like content (0.0703ms)
+鉁?normalizeMd (1.3671ms)
+鈻?stale hook filter
+  鉁?filter should only match gsd-prefixed .js files (0.1368ms)
+鉁?stale hook filter (0.1757ms)
+鈻?stale hook path
+  鉁?gsd-check-update.js checks get-shit-done/hooks/ not configDir/hooks/ (0.304ms)
+鉁?stale hook path (0.3638ms)
+鈻?resolveWorktreeRoot
+  鉁?returns cwd when not in a git repo (133.6035ms)
+  鉁?returns cwd in a normal git repo (not a worktree) (420.415ms)
+鉁?resolveWorktreeRoot (554.1768ms)
+鈻?withPlanningLock
+  鉁?executes function and returns result (3.1031ms)
+  鉁?cleans up lock file even on error (2.2199ms)
+  鉁?recovers from stale lock (>30s old) (3.0401ms)
+鉁?withPlanningLock (8.5266ms)
+鈻?detectSubRepos
+  鉁?returns empty array when no child directories have .git (1.7346ms)
+  鉁?detects directories with .git (4.4113ms)
+  鉁?returns sorted results (3.3371ms)
+  鉁?skips hidden directories (2.7982ms)
+  鉁?skips node_modules (2.2846ms)
+鉁?detectSubRepos (14.7872ms)
+鈻?loadConfig sub_repos auto-sync
+  鉁?migrates multiRepo: true to sub_repos array (11.6686ms)
+  鉁?adds newly detected repos to sub_repos (54.6526ms)
+  鉁?removes repos that no longer have .git (56.0532ms)
+  鉁?does not sync when sub_repos is empty and no repos detected (65.8465ms)
+鉁?loadConfig sub_repos auto-sync (188.5558ms)
+鈻?findProjectRoot
+  鉁?returns startDir when no .planning/ exists anywhere (1.9922ms)
+  鉁?returns startDir when .planning/ is in startDir itself (1.2544ms)
+  鉁?walks up to parent with .planning/ and sub_repos config listing this dir (7.9852ms)
+  鉁?walks up from nested sub-repo subdirectory (3.7999ms)
+  鉁?walks up via legacy multiRepo flag (9.038ms)
+  鉁?walks up via .git heuristic when no config exists (2.2665ms)
+  鉁?walks up from nested path inside sub-repo via .git heuristic (3.9505ms)
+  鉁?walks up from nested path inside sub-repo via sub_repos config (4.2711ms)
+  鉁?walks up from nested path via legacy multiRepo flag (5.2118ms)
+  鉁?does not walk up for dirs without .git when no sub_repos config (2.3721ms)
+  鉁?handles planning.sub_repos nested config format (9.3529ms)
+  鉁?returns startDir when sub_repos is empty and no .git (9.6698ms)
+鉁?findProjectRoot (61.9026ms)
+鈻?reapStaleTempFiles
+  鉁?removes stale gsd-*.json files older than maxAgeMs (1.7123ms)
+  鉁?preserves fresh gsd-*.json files (1.1947ms)
+  鉁?removes stale temp directories when present (1.661ms)
+  鉁?does not throw on empty or missing prefix matches (0.7262ms)
+鉁?reapStaleTempFiles (5.4652ms)
+
+[36m   鈻堚枅鈻堚枅鈻堚枅鈺?鈻堚枅鈻堚枅鈻堚枅鈻堚晽鈻堚枅鈻堚枅鈻堚枅鈺?  鈻堚枅鈺斺晲鈺愨晲鈺愨暆 鈻堚枅鈺斺晲鈺愨晲鈺愨暆鈻堚枅鈺斺晲鈺愨枅鈻堚晽
+  鈻堚枅鈺? 鈻堚枅鈻堚晽鈻堚枅鈻堚枅鈻堚枅鈻堚晽鈻堚枅鈺? 鈻堚枅鈺?  鈻堚枅鈺?  鈻堚枅鈺戔暁鈺愨晲鈺愨晲鈻堚枅鈺戔枅鈻堚晳  鈻堚枅鈺?  鈺氣枅鈻堚枅鈻堚枅鈻堚晹鈺濃枅鈻堚枅鈻堚枅鈻堚枅鈺戔枅鈻堚枅鈻堚枅鈻堚晹鈺?   鈺氣晲鈺愨晲鈺愨晲鈺?鈺氣晲鈺愨晲鈺愨晲鈺愨暆鈺氣晲鈺愨晲鈺愨晲鈺?[0m
+
+  Get Shit Done [2mv1.27.4[0m
+  A meta-prompting, context engineering and spec-driven
+  development system for Claude Code, OpenCode, Gemini, Codex, Copilot, Antigravity, Cursor, and CodeBuddy by T脗CHES.
+
+鈻?convertClaudeCommandToCursorSkill
+  鉁?writes unquoted Cursor skill name in frontmatter (1.3078ms)
+  鉁?preserves slash for slash commands in markdown body (0.2989ms)
+鉁?convertClaudeCommandToCursorSkill (2.5687ms)
+鈻?convertClaudeAgentToCursorAgent
+  鉁?writes unquoted Cursor agent name in frontmatter (0.2959ms)
+鉁?convertClaudeAgentToCursorAgent (0.4357ms)
+鈻?dispatcher error paths
+  鉁?no-command invocation prints usage and exits non-zero (317.4966ms)
+  鉁?unknown command produces clear error and exits non-zero (330.0217ms)
+  鉁?--cwd= form overrides working directory (314.9307ms)
+  鉁?--cwd= with empty value produces error (150.1517ms)
+  鉁?--cwd with invalid path produces error (122.0752ms)
+  鉁?template unknown subcommand errors (349.4032ms)
+  鉁?frontmatter unknown subcommand errors (353.3576ms)
+  鉁?verify unknown subcommand errors (311.5599ms)
+  鉁?phases unknown subcommand errors (350.7904ms)
+  鉁?roadmap unknown subcommand errors (315.7019ms)
+  鉁?requirements unknown subcommand errors (283.236ms)
+  鉁?phase unknown subcommand errors (330.0706ms)
+  鉁?milestone unknown subcommand errors (337.7506ms)
+  鉁?validate unknown subcommand errors (194.2626ms)
+  鉁?todo unknown subcommand errors (248.1566ms)
+  鉁?init unknown workflow errors (334.5623ms)
+鉁?dispatcher error paths (4645.9327ms)
+鈻?dispatcher routing branches
+  鉁?find-phase locates phase directory by number (256.8215ms)
+  鉁?init resume returns valid JSON (200.8276ms)
+  鉁?init verify-work returns valid JSON (241.7768ms)
+  鉁?roadmap update-plan-progress updates phase progress (189.8023ms)
+  鉁?state with no subcommand calls cmdStateLoad (278.4306ms)
+  鉁?summary-extract parses SUMMARY.md frontmatter (205.5111ms)
+鉁?dispatcher routing branches (1373.7309ms)
+鈻?execute-phase command: active flags are explicit
+  鉁?command file exists (0.7599ms)
+  鉁?objective says documented flags are not implied active (0.5508ms)
+  鉁?context separates available flags from active flags (0.259ms)
+  鉁?context explicitly warns against inferring inactive flags (0.6375ms)
+鉁?execute-phase command: active flags are explicit (4.4111ms)
+鈻?execute-phase command: --wave flag
+  鉁?command file exists (1.1918ms)
+  鉁?argument-hint includes --wave, --gaps-only, and --interactive (0.4585ms)
+  鉁?objective describes wave-filter execution (0.2918ms)
+鉁?execute-phase command: --wave flag (3.4677ms)
+鈻?execute-phase workflow: wave filtering
+  鉁?workflow file exists (2.0781ms)
+  鉁?workflow parses WAVE_FILTER from arguments (0.5604ms)
+  鉁?workflow enforces lower-wave safety (0.4638ms)
+  鉁?workflow has partial-wave completion guardrail (0.4925ms)
+鉁?execute-phase workflow: wave filtering (3.9881ms)
+鈻?execute-phase docs: user-facing wave flag
+  鉁?COMMANDS.md documents --wave usage (0.491ms)
+  鉁?help workflow documents --wave behavior (0.4232ms)
+鉁?execute-phase docs: user-facing wave flag (1.1695ms)
+鈻?frontmatter get
+  鉁?returns all fields as JSON (304.3715ms)
+  鉁?returns specific field with --field (438.0886ms)
+  鉁?returns error for missing field (320.8841ms)
+  鉁?returns error for missing file (412.1141ms)
+  鉁?handles file with no frontmatter (370.8338ms)
+鉁?frontmatter get (1847.6458ms)
+鈻?frontmatter set
+  鉁?updates existing field (321.175ms)
+  鉁?adds new field (355.0567ms)
+  鉁?handles JSON array value (299.5932ms)
+  鉁?returns error for missing file (256.7346ms)
+  鉁?preserves body content after set (214.2867ms)
+鉁?frontmatter set (1447.4584ms)
+鈻?frontmatter merge
+  鉁?merges multiple fields into frontmatter (325.7511ms)
+  鉁?overwrites existing fields on conflict (208.4797ms)
+  鉁?returns error for missing file (216.3091ms)
+  鉁?returns error for invalid JSON data (222.7635ms)
+鉁?frontmatter merge (973.7246ms)
+鈻?frontmatter validate
+  鉁?reports valid for complete plan frontmatter (301.346ms)
+  鉁?reports invalid with missing fields (260.3697ms)
+  鉁?validates against summary schema (223.0699ms)
+  鉁?validates against verification schema (249.7917ms)
+  鉁?returns error for unknown schema (249.172ms)
+  鉁?returns error for missing file (287.7918ms)
+鉁?frontmatter validate (1572.0408ms)
+鈻?extractFrontmatter
+  鉁?parses simple key-value pairs (2.2044ms)
+  鉁?strips quotes from values (0.681ms)
+  鉁?parses nested objects (1.3576ms)
+  鉁?parses block arrays (0.3884ms)
+  鉁?parses inline arrays (0.4578ms)
+  鉁?handles quoted commas in inline arrays 鈥?REG-04 known limitation (0.39ms)
+  鉁?returns empty object for no frontmatter (0.1163ms)
+  鉁?returns empty object for empty frontmatter (0.1412ms)
+  鉁?parses frontmatter-only content (1.1087ms)
+  鉁?handles emoji and non-ASCII in values (0.1716ms)
+  鉁?converts empty-object placeholders to arrays when dash items follow (0.1745ms)
+  鉁?skips empty lines in YAML body (0.2248ms)
+鉁?extractFrontmatter (13.0948ms)
+鈻?reconstructFrontmatter
+  鉁?serializes simple key-value (0.4712ms)
+  鉁?serializes empty array as inline [] (0.1973ms)
+  鉁?serializes short string arrays inline (0.1914ms)
+  鉁?serializes long arrays as block (0.0868ms)
+  鉁?quotes values containing colons or hashes (0.0914ms)
+  鉁?serializes nested objects with proper indentation (0.0831ms)
+  鉁?serializes nested arrays within objects (0.1346ms)
+  鉁?skips null and undefined values (0.1222ms)
+  鉁?round-trip: simple frontmatter (0.1725ms)
+  鉁?round-trip: nested with arrays (0.2182ms)
+  鉁?round-trip: multiple data types (0.2354ms)
+鉁?reconstructFrontmatter (2.4301ms)
+鈻?spliceFrontmatter
+  鉁?replaces existing frontmatter preserving body (0.2778ms)
+  鉁?adds frontmatter to content without any (0.2115ms)
+  鉁?preserves content after frontmatter delimiters exactly (0.1372ms)
+鉁?spliceFrontmatter (0.7705ms)
+鈻?parseMustHavesBlock
+  鉁?extracts truths as string array (0.5316ms)
+  鉁?extracts artifacts as object array (0.3872ms)
+  鉁?extracts key_links with from/to/via/pattern fields (0.1701ms)
+  鉁?returns empty array when block not found (0.1018ms)
+  鉁?returns empty array when no frontmatter (0.0497ms)
+  鉁?handles nested arrays within artifact objects (0.1539ms)
+鉁?parseMustHavesBlock (1.5415ms)
+
+[36m   鈻堚枅鈻堚枅鈻堚枅鈺?鈻堚枅鈻堚枅鈻堚枅鈻堚晽鈻堚枅鈻堚枅鈻堚枅鈺?  鈻堚枅鈺斺晲鈺愨晲鈺愨暆 鈻堚枅鈺斺晲鈺愨晲鈺愨暆鈻堚枅鈺斺晲鈺愨枅鈻堚晽
+  鈻堚枅鈺? 鈻堚枅鈻堚晽鈻堚枅鈻堚枅鈻堚枅鈻堚晽鈻堚枅鈺? 鈻堚枅鈺?  鈻堚枅鈺?  鈻堚枅鈺戔暁鈺愨晲鈺愨晲鈻堚枅鈺戔枅鈻堚晳  鈻堚枅鈺?  鈺氣枅鈻堚枅鈻堚枅鈻堚晹鈺濃枅鈻堚枅鈻堚枅鈻堚枅鈺戔枅鈻堚枅鈻堚枅鈻堚晹鈺?   鈺氣晲鈺愨晲鈺愨晲鈺?鈺氣晲鈺愨晲鈺愨晲鈺愨暆鈺氣晲鈺愨晲鈺愨晲鈺?[0m
+
+  Get Shit Done [2mv1.27.4[0m
+  A meta-prompting, context engineering and spec-driven
+  development system for Claude Code, OpenCode, Gemini, Codex, Copilot, Antigravity, Cursor, and CodeBuddy by T脗CHES.
+
+鈻?convertClaudeToGeminiAgent
+  鉁?drops unsupported skills frontmatter while keeping converted tools (2.0004ms)
+鉁?convertClaudeToGeminiAgent (4.2406ms)
+鈻?init commands
+  鉁?init execute-phase returns file paths (385.3443ms)
+  鉁?init plan-phase returns file paths (329.8583ms)
+  鉁?init progress returns file paths (351.0336ms)
+  鉁?init phase-op returns core and optional phase file paths (422.9334ms)
+  鉁?init plan-phase detects has_reviews and reviews_path when REVIEWS.md exists (324.9749ms)
+  鉁?init plan-phase omits optional paths if files missing (303.6219ms)
+  鉁?init plan-phase extracts phase_req_ids from ROADMAP (310.4695ms)
+  鉁?init plan-phase strips brackets from phase_req_ids (364.8971ms)
+  鉁?init plan-phase returns null phase_req_ids when Requirements line is absent (283.2258ms)
+  鉁?init plan-phase returns null phase_req_ids when ROADMAP is absent (307.1086ms)
+  鉁?init execute-phase extracts phase_req_ids from ROADMAP (323.4063ms)
+  鉁?init plan-phase returns null phase_req_ids when value is TBD (194.4358ms)
+  鉁?init execute-phase returns null phase_req_ids when Requirements line is absent (290.55ms)
+鉁?init commands (4194.1727ms)
+鈻?init commands ROADMAP fallback when phase directory does not exist (#1238)
+  鉁?init plan-phase falls back to ROADMAP when no phase directory exists (316.7079ms)
+  鉁?init execute-phase falls back to ROADMAP when no phase directory exists (286.8231ms)
+  鉁?init verify-work falls back to ROADMAP when no phase directory exists (224.8108ms)
+  鉁?init plan-phase returns phase_found false when neither directory nor ROADMAP entry exists (249.8897ms)
+  鉁?init plan-phase prefers disk directory over ROADMAP fallback (249.2189ms)
+鉁?init commands ROADMAP fallback when phase directory does not exist (#1238) (1328.0486ms)
+鈻?cmdInitTodos
+  鉁?empty pending dir returns zero count (290.8791ms)
+  鉁?missing pending dir returns zero count (216.7766ms)
+  鉁?multiple todos with fields are read correctly (249.5971ms)
+  鉁?area filter returns only matching todos (216.0773ms)
+  鉁?area filter miss returns zero count (184.3969ms)
+  鉁?malformed file uses defaults (238.8939ms)
+  鉁?non-md files are ignored (246.2849ms)
+鉁?cmdInitTodos (1643.535ms)
+鈻?cmdInitMilestoneOp
+  鉁?no phase directories returns zero counts (199.7041ms)
+  鉁?multiple phases with no summaries (223.8237ms)
+  鉁?mix of complete and incomplete phases (224.4962ms)
+  鉁?all phases complete (185.4544ms)
+  鉁?archive directory scanning (221.3983ms)
+  鉁?no archive directory returns empty (174.6814ms)
+鉁?cmdInitMilestoneOp (1229.9978ms)
+鈻?cmdInitPhaseOp fallback
+  鉁?normal path with existing directory (309.4929ms)
+  鉁?fallback to ROADMAP when no directory exists (187.6312ms)
+  鉁?prefers current milestone roadmap entry over archived phase with same number (172.4496ms)
+  鉁?neither directory nor roadmap entry returns not found (207.0447ms)
+鉁?cmdInitPhaseOp fallback (876.9722ms)
+鈻?cmdInitProgress
+  鉁?no phases returns empty state (201.8731ms)
+  鉁?multiple phases with mixed statuses (266.3319ms)
+  鉁?researched status detected correctly (143.0022ms)
+  鉁?all phases complete returns no current or next (195.4415ms)
+  鉁?paused_at detected from STATE.md (187.2166ms)
+  鉁?no paused_at when STATE.md has no pause line (172.976ms)
+鉁?cmdInitProgress (1167.3115ms)
+鈻?cmdInitQuick
+  鉁?with description generates slug and task_dir with YYMMDD-xxx format (221.2559ms)
+  鉁?without description returns null slug and task_dir (207.5839ms)
+  鉁?two rapid calls produce different quick_ids (no collision within 2s window) (339.3345ms)
+  鉁?long description truncates slug to 40 chars (158.9655ms)
+  鉁?returns quick branch name when quick_branch_template is configured (451.457ms)
+  鉁?uses fallback slug in quick branch name when description is omitted (345.6842ms)
+鉁?cmdInitQuick (1724.8575ms)
+鈻?cmdInitMapCodebase
+  鉁?no codebase dir returns empty (173.4756ms)
+  鉁?with existing maps lists md files only (196.4317ms)
+  鉁?empty codebase dir returns no maps (147.0682ms)
+鉁?cmdInitMapCodebase (517.2271ms)
+鈻?cmdInitNewProject
+  鉁?greenfield project with no code (153.2075ms)
+  鉁?brownfield with package.json detected (150.5604ms)
+  鉁?brownfield with codebase map does not need map (166.6569ms)
+  鉁?planning_exists flag is correct (165.315ms)
+鉁?cmdInitNewProject (636.0868ms)
+鈻?cmdInitNewMilestone
+  鉁?returns expected fields (139.4664ms)
+  鉁?file existence flags reflect actual state (325.2548ms)
+  鉁?reports latest completed milestone and archive target for reset flow (166.9659ms)
+  鉁?reset flow metadata is null-safe when no milestones file exists (169.1886ms)
+鉁?cmdInitNewMilestone (801.2009ms)
+鈻?findProjectRoot integration via --cwd
+  鉁?init quick from sub-repo CWD returns project_root pointing to parent (329.3733ms)
+  鉁?init quick from project root returns project_root as-is (330.3923ms)
+  鉁?state load from sub-repo CWD reads project root config (194.7261ms)
+鉁?findProjectRoot integration via --cwd (854.7614ms)
+鈻?milestone complete command
+  鉁?archives roadmap, requirements, creates MILESTONES.md (359.0005ms)
+  鉁?prepends to existing MILESTONES.md (reverse chronological) (367.3619ms)
+  鉁?three sequential completions maintain reverse-chronological order (708.1396ms)
+  鉁?archives phase directories with --archive-phases flag (349.4209ms)
+  鉁?archived REQUIREMENTS.md contains archive header (353.1752ms)
+  鉁?STATE.md gets updated during milestone complete (344.3011ms)
+  鉁?handles missing ROADMAP.md gracefully (354.5575ms)
+  鉁?scopes stats to current milestone phases only (272.6643ms)
+  鉁?archive-phases only archives current milestone phases (297.7886ms)
+  鉁?phase 1 in roadmap does NOT match directory 10-something (no prefix collision) (331.9572ms)
+  鉁?non-numeric directory is excluded when milestone scoping is active (234.3131ms)
+  鉁?large phase numbers (456, 457) scope correctly (388.8891ms)
+  鉁?counts tasks from **Tasks:** N in summary body (301.787ms)
+  鉁?extracts one-liner from body when not in frontmatter (215.8275ms)
+  鉁?updates STATE.md with plain format fields (232.8233ms)
+  鉁?handles empty phases directory (258.5301ms)
+鉁?milestone complete command (5372.8873ms)
+鈻?requirements mark-complete command
+  鉁?marks single requirement complete (checkbox + table) (219.7639ms)
+  鉁?handles mixed prefixes in single call (TEST-XX, REG-XX, INFRA-XX) (276.5925ms)
+  鉁?accepts space-separated IDs (185.174ms)
+  鉁?accepts bracket-wrapped IDs [REQ-01, REQ-02] (241.7862ms)
+  鉁?returns not_found for invalid IDs while updating valid ones (255.0861ms)
+  鉁?idempotent 鈥?re-marking already-complete requirement does not corrupt (186.7927ms)
+  鉁?returns already_complete for idempotent calls on completed requirements (229.7448ms)
+  鉁?mixed: updates pending, reports already-complete, and flags missing (231.5278ms)
+  鉁?missing REQUIREMENTS.md returns expected error structure (181.187ms)
+鉁?requirements mark-complete command (2008.424ms)
+鈻?new-milestone workflow verification gate
+  鉁?new-milestone workflow has verification step before writing PROJECT.md (0.5532ms)
+  鉁?verification step uses AskUserQuestion with adjust loop (0.4143ms)
+鉁?new-milestone workflow verification gate (1.1056ms)
+鈻?MODEL_PROFILES
+  鉁?contains all expected GSD agents (0.9167ms)
+  鉁?every agent has quality, balanced, and budget profiles (0.2437ms)
+  鉁?all profile values are valid model aliases (1.2509ms)
+  鉁?quality profile never uses haiku (0.2374ms)
+鉁?MODEL_PROFILES (3.7185ms)
+鈻?VALID_PROFILES
+  鉁?contains quality, balanced, and budget (1.2898ms)
+  鉁?is derived from MODEL_PROFILES keys (0.1526ms)
+鉁?VALID_PROFILES (1.6237ms)
+鈻?getAgentToModelMapForProfile
+  鉁?returns correct models for balanced profile (0.4062ms)
+  鉁?returns correct models for budget profile (0.1974ms)
+  鉁?returns correct models for quality profile (0.4035ms)
+  鉁?returns all agents in the map (0.2731ms)
+鉁?getAgentToModelMapForProfile (1.6175ms)
+鈻?formatAgentToModelMapAsTable
+  鉁?produces a table with header and separator (0.5155ms)
+  鉁?pads columns correctly (0.3741ms)
+  鉁?handles empty map (0.0852ms)
+鉁?formatAgentToModelMapAsTable (1.1821ms)
+
+[36m   鈻堚枅鈻堚枅鈻堚枅鈺?鈻堚枅鈻堚枅鈻堚枅鈻堚晽鈻堚枅鈻堚枅鈻堚枅鈺?  鈻堚枅鈺斺晲鈺愨晲鈺愨暆 鈻堚枅鈺斺晲鈺愨晲鈺愨暆鈻堚枅鈺斺晲鈺愨枅鈻堚晽
+  鈻堚枅鈺? 鈻堚枅鈻堚晽鈻堚枅鈻堚枅鈻堚枅鈻堚晽鈻堚枅鈺? 鈻堚枅鈺?  鈻堚枅鈺?  鈻堚枅鈺戔暁鈺愨晲鈺愨晲鈻堚枅鈺戔枅鈻堚晳  鈻堚枅鈺?  鈺氣枅鈻堚枅鈻堚枅鈻堚晹鈺濃枅鈻堚枅鈻堚枅鈻堚枅鈺戔枅鈻堚枅鈻堚枅鈻堚晹鈺?   鈺氣晲鈺愨晲鈺愨晲鈺?鈺氣晲鈺愨晲鈺愨晲鈺愨暆鈺氣晲鈺愨晲鈺愨晲鈺?[0m
+
+  Get Shit Done [2mv1.27.4[0m
+  A meta-prompting, context engineering and spec-driven
+  development system for Claude Code, OpenCode, Gemini, Codex, Copilot, Antigravity, Cursor, and CodeBuddy by T脗CHES.
+
+鈻?OpenCode agent conversion (isAgent: true)
+  鉁?keeps name: field for agents (3.0138ms)
+  鉁?does not add model: inherit (removed per #1156) (1.2001ms)
+  鉁?adds mode: subagent (0.2532ms)
+  鉁?strips tools: field (0.543ms)
+  鉁?strips skills: array (1.0441ms)
+  鉁?strips color: field (2.0261ms)
+  鉁?strips commented hooks block (0.2836ms)
+  鉁?keeps description: field (0.191ms)
+  鉁?preserves body content (0.1702ms)
+  鉁?applies body text replacements (0.1978ms)
+鉁?OpenCode agent conversion (isAgent: true) (13.2498ms)
+鈻?OpenCode command conversion (isAgent: false, default)
+  鉁?strips name: field for commands (0.3903ms)
+  鉁?does not add model: or mode: for commands (0.1208ms)
+  鉁?keeps description: for commands (0.1108ms)
+鉁?OpenCode command conversion (isAgent: false, default) (0.8743ms)
+鈻?pathPrefix computation
+  鉁?default Claude global install uses ~/ (0.6955ms)
+  鉁?default Gemini global install uses ~/ (0.1696ms)
+  鉁?custom config dir under home uses ~/ (0.2118ms)
+  鉁?Windows-style paths produce ~/ not C:/ (0.108ms)
+鉁?pathPrefix computation (2.017ms)
+鈻?installed .md files contain no resolved absolute paths
+  鉁?source .md files exist (0.1171ms)
+  鉁?after replacement, no .md file contains os.homedir() (35.9786ms)
+鉁?installed .md files contain no resolved absolute paths (36.3086ms)
+鈻?phases list command
+  鉁?empty phases directory returns empty array (408.9854ms)
+  鉁?lists phase directories sorted numerically (328.2755ms)
+  鉁?handles decimal phases in sort order (262.8143ms)
+  鉁?--type plans lists only PLAN.md files (401.427ms)
+  鉁?--type summaries lists only SUMMARY.md files (332.6574ms)
+  鉁?--phase filters to specific phase directory (292.6849ms)
+鉁?phases list command (2028.3492ms)
+鈻?phase next-decimal command
+  鉁?returns X.1 when no decimal phases exist (399.0741ms)
+  鉁?increments from existing decimal phases (304.6148ms)
+  鉁?handles gaps in decimal sequence (266.987ms)
+  鉁?handles single-digit phase input (323.6347ms)
+  鉁?returns error if base phase does not exist (343.6286ms)
+鉁?phase next-decimal command (1638.5707ms)
+鈻?phase-plan-index command
+  鉁?empty phase directory returns empty plans array (216.2186ms)
+  鉁?extracts single plan with frontmatter (368.2932ms)
+  鉁?groups multiple plans by wave (332.331ms)
+  鉁?detects incomplete plans (no matching summary) (208.4224ms)
+  鉁?detects checkpoints (autonomous: false) (234.0807ms)
+  鉁?phase not found returns error (252.677ms)
+鉁?phase-plan-index command (1613.2041ms)
+鈻?phase-plan-index canonical format
+  鉁?files_modified: underscore key is parsed correctly (232.25ms)
+  鉁?objective: extracted from <objective> XML tag, not frontmatter (252.239ms)
+  鉁?task_count: counts <task> XML tags (186.6142ms)
+  鉁?all three fields work together in canonical plan format (236.8833ms)
+鉁?phase-plan-index canonical format (908.4178ms)
+鈻?phase add command
+  鉁?adds phase after highest existing (217.2027ms)
+  鉁?handles empty roadmap (195.8111ms)
+  鉁?phase add includes **Requirements**: TBD in new ROADMAP entry (236.7388ms)
+鉁?phase add command (650.0621ms)
+鈻?phase insert command
+  鉁?inserts decimal phase after target (250.2505ms)
+  鉁?increments decimal when siblings exist (199.4005ms)
+  鉁?rejects missing phase (225.3411ms)
+  鉁?handles padding mismatch between input and roadmap (211.0877ms)
+  鉁?phase insert includes **Requirements**: TBD in new ROADMAP entry (170.6048ms)
+  鉁?handles #### heading depth from multi-milestone roadmaps (194.2033ms)
+鉁?phase insert command (1251.4658ms)
+鈻?phase remove command
+  鉁?removes phase directory and renumbers subsequent (186.86ms)
+  鉁?rejects removal of phase with summaries unless --force (460.9222ms)
+  鉁?removes decimal phase and renumbers siblings (163.7023ms)
+  鉁?updates STATE.md phase count (196.8761ms)
+鉁?phase remove command (1008.6989ms)
+鈻?phase complete command
+  鉁?marks phase complete and transitions to next (197.5618ms)
+  鉁?detects last phase in milestone (311.0133ms)
+  鉁?updates REQUIREMENTS.md traceability when phase completes (166.1886ms)
+  鉁?handles requirements with bracket format [REQ-01, REQ-02] (190.1043ms)
+  鉁?handles phase with no requirements mapping (196.8605ms)
+  鉁?handles missing REQUIREMENTS.md gracefully (170.546ms)
+  鉁?returns requirements_updated field in result (210.6832ms)
+  鉁?handles In Progress status in traceability table (208.4124ms)
+  鉁?scoped regex does not cross phase boundaries (190.7211ms)
+  鉁?handles multi-level decimal phase without regex crash (179.9101ms)
+  鉁?preserves Milestone column in 5-column progress table (193.8745ms)
+  鉁?updates STATE.md with plain format fields (no bold) (256.4705ms)
+鉁?phase complete command (2474.028ms)
+鈻?comparePhaseNum
+  鉁?sorts integer phases numerically (0.8108ms)
+  鉁?sorts decimal phases correctly (0.2053ms)
+  鉁?sorts letter-suffix phases correctly (0.0807ms)
+  鉁?sorts hybrid phases correctly (0.0686ms)
+  鉁?handles full sort order (0.155ms)
+  鉁?handles directory names with slugs (0.0669ms)
+  鉁?case insensitive letter matching (0.052ms)
+  鉁?sorts multi-level decimal phases correctly (0.0736ms)
+  鉁?falls back to localeCompare for non-phase strings (11.3608ms)
+鉁?comparePhaseNum (13.1918ms)
+鈻?normalizePhaseName
+  鉁?pads single-digit integers (0.2903ms)
+  鉁?handles decimal phases (0.0639ms)
+  鉁?handles letter-suffix phases (0.0496ms)
+  鉁?handles hybrid phases (0.0387ms)
+  鉁?uppercases letters (0.0469ms)
+  鉁?handles multi-level decimal phases (0.0471ms)
+  鉁?returns non-matching input unchanged (0.0354ms)
+鉁?normalizePhaseName (0.7715ms)
+鈻?letter-suffix phase sorting
+  鉁?lists letter-suffix phases in correct order (155.9741ms)
+鉁?letter-suffix phase sorting (156.0615ms)
+鈻?phase complete milestone-scoped next-phase
+  鉁?finds next phase within milestone, ignoring prior milestone dirs (214.827ms)
+  鉁?detects last phase when only milestone phases are considered (189.0903ms)
+鉁?phase complete milestone-scoped next-phase (404.1067ms)
+鈻?PROFILING_QUESTIONS
+  鉁?is a non-empty array (0.788ms)
+  鉁?each question has required fields (0.2352ms)
+  鉁?each option has label, value, and rating (0.2114ms)
+  鉁?all dimension keys are unique (0.2278ms)
+鉁?PROFILING_QUESTIONS (2.6868ms)
+鈻?CLAUDE_INSTRUCTIONS
+  鉁?is a non-empty object (1.3189ms)
+  鉁?each dimension has at least one instruction (0.1673ms)
+  鉁?every PROFILING_QUESTIONS dimension has CLAUDE_INSTRUCTIONS (0.1055ms)
+鉁?CLAUDE_INSTRUCTIONS (1.8409ms)
+鈻?write-profile command
+  鉁?writes USER-PROFILE.md from analysis JSON (351.9626ms)
+  鉁?errors when --input is missing (318.3914ms)
+鉁?write-profile command (670.6429ms)
+鈻?generate-claude-md command
+  鉁?generates CLAUDE.md with --auto flag (1069.8091ms)
+  鉁?does not overwrite existing CLAUDE.md without --force (1148.5411ms)
+鉁?generate-claude-md command (2218.6261ms)
+鈻?generate-dev-preferences command
+  鉁?errors when --analysis is missing (313.3878ms)
+  鉁?generates preferences from analysis file (309.934ms)
+鉁?generate-dev-preferences command (623.5852ms)
+鈻?scan-sessions command
+  鉁?returns empty array for empty sessions directory (375.3423ms)
+  鉁?scans synthetic project directory (322.8249ms)
+  鉁?reports multiple sessions and sizes (343.6218ms)
+鉁?scan-sessions command (1043.0565ms)
+鈻?extract-messages command
+  鉁?extracts user messages from synthetic session (333.593ms)
+  鉁?filters out meta and internal messages (292.5992ms)
+鉁?extract-messages command (626.6904ms)
+鈻?profile-questionnaire command
+  鉁?returns questionnaire structure (313.1375ms)
+鉁?profile-questionnaire command (313.4106ms)
+鈻?codebase prompt injection scan
+  鉁?found files to scan (0.6692ms)
+  鉁?agent definition files are clean (0.2679ms)
+  鉁?workflow files are clean (0.1414ms)
+  鉁?command files are clean (0.1302ms)
+  鉁?hook files are clean (0.1356ms)
+  鉁?lib source files are clean (0.1367ms)
+  鉁?no invisible Unicode characters in non-allowlisted files (26.9132ms)
+  鉁?no fake system boundary tags in non-allowlisted files (5.3258ms)
+鉁?codebase prompt injection scan (34.8708ms)
+鈻?injection vector regression tests
+  鉁?detects instruction override in markdown frontmatter (1.122ms)
+  鉁?detects hidden instruction in commit message (0.7019ms)
+  鉁?detects XML tag injection in PRD content (0.187ms)
+  鉁?detects role manipulation in phase description (0.1114ms)
+  鉁?detects prompt extraction attempt (0.1399ms)
+  鉁?clean technical content passes (0.133ms)
+鉁?injection vector regression tests (2.7478ms)
+鈻?quick workflow: branching support
+  鉁?workflow file exists (0.7423ms)
+  鉁?init parse list includes branch_name (0.424ms)
+  鉁?workflow includes quick-task branching step (0.3429ms)
+  鉁?branching step runs before task directory creation (1.3046ms)
+鉁?quick workflow: branching support (3.7963ms)
+鈻?quick command: --research in frontmatter
+  鉁?quick.md exists (1.2093ms)
+  鉁?argument-hint includes --research (0.4482ms)
+  鉁?argument-hint includes all three flags (0.3535ms)
+  鉁?objective section describes --research flag (0.4823ms)
+鉁?quick command: --research in frontmatter (5.7217ms)
+鈻?quick workflow: research step
+  鉁?workflow file exists (0.9048ms)
+  鉁?purpose mentions --research flag (1.7948ms)
+  鉁?step 1 parses --research flag (0.834ms)
+  鉁?step 4.75 research phase exists (1.1031ms)
+  鉁?research step spawns gsd-phase-researcher (2.2595ms)
+  鉁?research step writes RESEARCH.md (2.2491ms)
+  鉁?planner context includes RESEARCH.md when research mode (0.3814ms)
+  鉁?file commit list includes RESEARCH.md (0.3741ms)
+  鉁?success criteria includes research items (0.4156ms)
+鉁?quick workflow: research step (11.3736ms)
+鈻?quick task: research file in task directory
+  鉁?init quick returns valid task_dir for research file placement (355.0145ms)
+  鉁?verify-path-exists detects RESEARCH.md in quick task directory (349.7023ms)
+  鉁?verify-path-exists returns false for missing RESEARCH.md (314.4892ms)
+  鉁?quick task directory supports all research workflow artifacts (1602.9094ms)
+鉁?quick task: research file in task directory (2622.5748ms)
+鈻?quick workflow: banner variants for flag combinations
+  鉁?has banner for research-only mode (0.5698ms)
+  鉁?has banner for discuss + research mode (0.4104ms)
+  鉁?has banner for research + full mode (0.3429ms)
+  鉁?has banner for all three flags (0.3497ms)
+鉁?quick workflow: banner variants for flag combinations (1.8771ms)
+鈻?roadmap get-phase command
+  鉁?extracts phase section from ROADMAP.md (386.9596ms)
+  鉁?returns not found for missing phase (340.9326ms)
+  鉁?handles decimal phase numbers (258.8019ms)
+  鉁?extracts full section content (435.4309ms)
+  鉁?handles missing ROADMAP.md gracefully (278.313ms)
+  鉁?accepts ## phase headers (two hashes) (365.6574ms)
+  鉁?extracts goal when colon is outside bold (**Goal**: format) (394.4282ms)
+  鉁?extracts goal for both colon-inside and colon-outside bold formats (429.564ms)
+  鉁?detects malformed ROADMAP with summary list but no detail sections (267.9309ms)
+鉁?roadmap get-phase command (3160.7532ms)
+鈻?roadmap analyze command
+  鉁?missing ROADMAP.md returns error (329.4161ms)
+  鉁?parses phases with goals and disk status (216.1537ms)
+  鉁?extracts goals and dependencies (258.4973ms)
+  鉁?extracts goals and depends_on with colon outside bold (**Goal**: format) (292.8962ms)
+  鉁?handles mixed colon-inside and colon-outside bold formats in analyze (279.2008ms)
+鉁?roadmap analyze command (1376.7117ms)
+鈻?roadmap analyze disk status variants
+  鉁?returns researched status for phase dir with only RESEARCH.md (214.0525ms)
+  鉁?returns discussed status for phase dir with only CONTEXT.md (248.7504ms)
+  鉁?returns empty status for phase dir with no recognized files (206.7018ms)
+鉁?roadmap analyze disk status variants (669.8722ms)
+鈻?roadmap analyze milestone extraction
+  鉁?extracts milestone headings and version numbers (263.8847ms)
+鉁?roadmap analyze milestone extraction (264.0606ms)
+鈻?roadmap analyze missing phase details
+  鉁?detects checklist-only phases missing detail sections (215.7549ms)
+  鉁?returns null when all checklist phases have detail sections (204.5589ms)
+鉁?roadmap analyze missing phase details (420.5946ms)
+鈻?roadmap get-phase success criteria
+  鉁?extracts success_criteria array from phase section (248.7878ms)
+  鉁?returns empty array when no success criteria present (174.9883ms)
+鉁?roadmap get-phase success criteria (424.0249ms)
+鈻?roadmap update-plan-progress command
+  鉁?missing phase number returns error (146.8766ms)
+  鉁?nonexistent phase returns error (223.4471ms)
+  鉁?no plans found returns updated false (246.9148ms)
+  鉁?updates progress for partial completion (175.4281ms)
+  鉁?updates progress and checks checkbox on completion (212.3824ms)
+  鉁?missing ROADMAP.md returns updated false (219.7379ms)
+  鉁?marks completed plan checkboxes (186.3945ms)
+  鉁?preserves Milestone column in 5-column progress table (223.1393ms)
+鉁?roadmap update-plan-progress command (1634.9314ms)
+
+[36m   鈻堚枅鈻堚枅鈻堚枅鈺?鈻堚枅鈻堚枅鈻堚枅鈻堚晽鈻堚枅鈻堚枅鈻堚枅鈺?  鈻堚枅鈺斺晲鈺愨晲鈺愨暆 鈻堚枅鈺斺晲鈺愨晲鈺愨暆鈻堚枅鈺斺晲鈺愨枅鈻堚晽
+  鈻堚枅鈺? 鈻堚枅鈻堚晽鈻堚枅鈻堚枅鈻堚枅鈻堚晽鈻堚枅鈺? 鈻堚枅鈺?  鈻堚枅鈺?  鈻堚枅鈺戔暁鈺愨晲鈺愨晲鈻堚枅鈺戔枅鈻堚晳  鈻堚枅鈺?  鈺氣枅鈻堚枅鈻堚枅鈻堚晹鈺濃枅鈻堚枅鈻堚枅鈻堚枅鈺戔枅鈻堚枅鈻堚枅鈻堚晹鈺?   鈺氣晲鈺愨晲鈺愨晲鈺?鈺氣晲鈺愨晲鈺愨晲鈺愨暆鈺氣晲鈺愨晲鈺愨晲鈺?[0m
+
+  Get Shit Done [2mv1.27.4[0m
+  A meta-prompting, context engineering and spec-driven
+  development system for Claude Code, OpenCode, Gemini, Codex, Copilot, Antigravity, Cursor, and CodeBuddy by T脗CHES.
+
+鈻?OpenCode agent conversion (isAgent: true)
+  鉁?keeps name: field for agents (1.9786ms)
+  鉁?does not add model: inherit (OpenCode does not support it) (0.251ms)
+  鉁?adds mode: subagent (0.1887ms)
+  鉁?strips tools: field (0.1688ms)
+  鉁?strips skills: array (0.1888ms)
+  鉁?strips color: field (0.1074ms)
+  鉁?strips commented hooks block (3.2759ms)
+  鉁?keeps description: field (0.2851ms)
+  鉁?preserves body content (0.1791ms)
+  鉁?applies body text replacements (0.3096ms)
+鉁?OpenCode agent conversion (isAgent: true) (8.3763ms)
+鈻?OpenCode command conversion (isAgent: false, default)
+  鉁?strips name: field for commands (0.2823ms)
+  鉁?does not add model: or mode: for commands (0.2679ms)
+  鉁?keeps description: for commands (0.1508ms)
+鉁?OpenCode command conversion (isAgent: false, default) (0.8947ms)
+鈻?convertClaudeToGeminiAgent
+  鉁?drops unsupported skills frontmatter while keeping converted tools (0.4867ms)
+鉁?convertClaudeToGeminiAgent (0.5551ms)
+鈻?neutralizeAgentReferences
+  鉁?replaces standalone Claude with "the agent" (0.1678ms)
+  鉁?preserves Claude Code (product name) (0.0586ms)
+  鉁?preserves Claude model names (0.0627ms)
+  鉁?replaces CLAUDE.md with runtime instruction file (0.0556ms)
+  鉁?uses different instruction file per runtime (0.0681ms)
+  鉁?removes AGENTS.md load-blocking instruction (0.1291ms)
+  鉁?preserves claude- prefixes (CSS classes, package names) (0.061ms)
+鉁?neutralizeAgentReferences (0.757ms)
+鈻?validatePath
+  鉁?allows relative paths within base (1.2994ms)
+  鉁?allows nested relative paths (0.3113ms)
+  鉁?rejects ../ traversal escaping base (0.2776ms)
+  鉁?rejects absolute paths by default (0.1619ms)
+  鉁?allows absolute paths within base when opted in (0.7096ms)
+  鉁?rejects absolute paths outside base even when opted in (0.3429ms)
+  鉁?rejects null bytes (0.2463ms)
+  鉁?rejects empty path (0.1613ms)
+  鉁?rejects non-string path (0.217ms)
+  鉁?handles . and ./ correctly (stays in base) (0.3482ms)
+  鉁?handles complex traversal like src/../../.. (0.3384ms)
+  鉁?allows path that resolves back into base after .. (0.3989ms)
+鉁?validatePath (7.4963ms)
+鈻?requireSafePath
+  鉁?returns resolved path for safe input (0.2609ms)
+  鉁?throws on traversal attempt (0.557ms)
+鉁?requireSafePath (0.9336ms)
+鈻?scanForInjection
+  鉁?clean text returns clean: true (0.897ms)
+  鉁?detects "ignore previous instructions" (0.6816ms)
+  鉁?detects "you are now a" (0.1392ms)
+  鉁?detects <system> tags (0.099ms)
+  鉁?does not false-positive on generic types like Promise<User> (0.0844ms)
+  鉁?detects [SYSTEM] markers (0.123ms)
+  鉁?detects [INST] markers (0.0985ms)
+  鉁?detects <<SYS>> markers (0.1053ms)
+  鉁?detects "pretend you are" (0.0589ms)
+  鉁?detects "override system prompt" (0.0483ms)
+  鉁?detects exfiltration attempts (0.0417ms)
+  鉁?returns empty for null/undefined (0.042ms)
+  鉁?strict mode detects invisible unicode (0.5214ms)
+  鉁?strict mode detects prompt stuffing (0.5534ms)
+鉁?scanForInjection (3.8248ms)
+鈻?sanitizeForPrompt
+  鉁?strips zero-width characters (0.258ms)
+  鉁?neutralizes <system> tags (0.1291ms)
+  鉁?neutralizes <assistant> tags (0.0575ms)
+  鉁?neutralizes [SYSTEM] markers (0.048ms)
+  鉁?neutralizes <<SYS>> markers (0.0429ms)
+  鉁?preserves normal text (0.0779ms)
+  鉁?preserves normal HTML tags (0.046ms)
+  鉁?handles null/undefined gracefully (0.0592ms)
+鉁?sanitizeForPrompt (0.8826ms)
+鈻?validateShellArg
+  鉁?allows normal strings (0.2162ms)
+  鉁?allows strings with spaces (0.1021ms)
+  鉁?rejects null bytes (0.0957ms)
+  鉁?rejects command substitution with $() (0.1028ms)
+  鉁?rejects command substitution with backticks (0.152ms)
+  鉁?rejects empty/null input (0.0825ms)
+  鉁?allows dollar signs not in substitution context (0.0879ms)
+鉁?validateShellArg (1.0027ms)
+鈻?safeJsonParse
+  鉁?parses valid JSON (1.1896ms)
+  鉁?handles malformed JSON gracefully (0.1859ms)
+  鉁?rejects oversized input (0.1202ms)
+  鉁?rejects empty input (0.0593ms)
+  鉁?respects custom maxLength (0.0702ms)
+  鉁?uses custom label in errors (0.0706ms)
+鉁?safeJsonParse (1.8815ms)
+鈻?validatePhaseNumber
+  鉁?accepts simple integers (0.3056ms)
+  鉁?accepts decimal phases (0.0983ms)
+  鉁?accepts letter suffixes (0.0602ms)
+  鉁?accepts custom project IDs (0.6404ms)
+  鉁?rejects shell injection attempts (0.1068ms)
+  鉁?rejects empty/null (0.0725ms)
+  鉁?rejects excessively long input (0.1114ms)
+  鉁?rejects arbitrary strings (0.101ms)
+鉁?validatePhaseNumber (1.735ms)
+鈻?validateFieldName
+  鉁?accepts typical STATE.md fields (0.1979ms)
+  鉁?rejects regex metacharacters (0.0529ms)
+  鉁?rejects empty/null (0.0413ms)
+  鉁?rejects excessively long names (0.0559ms)
+  鉁?must start with a letter (0.047ms)
+鉁?validateFieldName (0.5184ms)
+鈻?state-snapshot command
+  鉁?missing STATE.md returns error (397.9491ms)
+  鉁?extracts basic fields from STATE.md (301.7112ms)
+  鉁?extracts decisions table (397.2587ms)
+  鉁?extracts blockers list (319.0978ms)
+  鉁?extracts session continuity info (318.3378ms)
+  鉁?handles paused_at field (312.2632ms)
+  鉁?supports --cwd override when command runs outside project root (381.9837ms)
+  鉁?returns error for invalid --cwd path (120.9203ms)
+鉁?state-snapshot command (2551.2326ms)
+鈻?state mutation commands
+  鉁?add-decision preserves dollar amounts without corrupting Decisions section (209.8279ms)
+  鉁?add-blocker preserves dollar strings without corrupting Blockers section (257.0786ms)
+  鉁?add-decision supports file inputs to preserve shell-sensitive dollar text (410.9895ms)
+  鉁?add-blocker supports --text-file for shell-sensitive text (238.9368ms)
+鉁?state mutation commands (1117.321ms)
+鈻?state json command
+  鉁?missing STATE.md returns error (320.9182ms)
+  鉁?builds frontmatter on-the-fly from body when no frontmatter exists (286.3332ms)
+  鉁?reads existing frontmatter when present (234.2203ms)
+  鉁?normalizes various status values (1355.6213ms)
+鉁?state json command (2197.5132ms)
+鈻?STATE.md frontmatter sync
+  鉁?state update adds frontmatter to STATE.md (284.8274ms)
+  鉁?state patch adds frontmatter (195.8623ms)
+  鉁?frontmatter is idempotent on multiple writes (448.9445ms)
+  鉁?preserves frontmatter status when body Status field is missing (197.8254ms)
+  鉁?round-trip: write then read via state json (486.5283ms)
+鉁?STATE.md frontmatter sync (1614.4543ms)
+鈻?stateExtractField and stateReplaceField helpers
+  鉁?extracts simple field value (0.3223ms)
+  鉁?extracts field with colon in value (0.0901ms)
+  鉁?returns null for missing field (0.0781ms)
+  鉁?is case-insensitive on field name (0.4393ms)
+  鉁?replaces field value (0.1997ms)
+  鉁?returns null when field not found (0.0641ms)
+  鉁?preserves surrounding content (0.0503ms)
+  鉁?round-trip: extract then replace then extract (0.1138ms)
+鉁?stateExtractField and stateReplaceField helpers (1.5097ms)
+鈻?stateReplaceFieldWithFallback
+  鉁?replaces primary field when present (0.0777ms)
+  鉁?falls back to secondary field when primary not found (0.0947ms)
+  鉁?returns content unchanged when neither field matches (0.0905ms)
+  鉁?prefers primary over fallback when both exist (0.0382ms)
+  鉁?works with plain format fields (0.1681ms)
+鉁?stateReplaceFieldWithFallback (0.554ms)
+鈻?cmdStateLoad (state load)
+  鉁?returns config and state when STATE.md exists (220.6001ms)
+  鉁?returns state_exists false when STATE.md missing (184.159ms)
+  鉁?returns raw key=value format with --raw flag (208.9668ms)
+鉁?cmdStateLoad (state load) (614.0186ms)
+鈻?cmdStateGet (state get)
+  鉁?returns full content when no section specified (279.9407ms)
+  鉁?extracts bold field value (183.3788ms)
+  鉁?extracts markdown section content (170.216ms)
+  鉁?returns error for nonexistent field (208.6736ms)
+  鉁?returns error when STATE.md missing (200.0222ms)
+鉁?cmdStateGet (state get) (1042.6565ms)
+鈻?cmdStatePatch and cmdStateUpdate (state patch, state update)
+  鉁?state patch updates multiple fields at once (259.7142ms)
+  鉁?state patch reports failed fields that do not exist (154.3824ms)
+  鉁?state update changes a single field (182.837ms)
+  鉁?state update reports field not found (197.4858ms)
+  鉁?state update returns error when STATE.md missing (170.8332ms)
+鉁?cmdStatePatch and cmdStateUpdate (state patch, state update) (965.7048ms)
+鈻?cmdStateAdvancePlan (state advance-plan)
+  鉁?advances plan counter when not on last plan (223.3879ms)
+  鉁?marks phase complete on last plan (213.3686ms)
+  鉁?returns error when STATE.md missing (164.0844ms)
+  鉁?returns error when plan fields not parseable (168.0409ms)
+  鉁?advances plan in compound "Plan: X of Y" format (162.7002ms)
+  鉁?marks phase complete on last plan in compound format (214.2285ms)
+鉁?cmdStateAdvancePlan (state advance-plan) (1146.3741ms)
+鈻?cmdStateRecordMetric (state record-metric)
+  鉁?appends metric row to existing table (175.6012ms)
+  鉁?replaces None yet placeholder with first metric (169.3705ms)
+  鉁?returns error when required fields missing (163.8616ms)
+  鉁?returns error when STATE.md missing (164.0227ms)
+鉁?cmdStateRecordMetric (state record-metric) (673.1685ms)
+鈻?cmdStateUpdateProgress (state update-progress)
+  鉁?calculates progress from plan/summary counts (171.1434ms)
+  鉁?handles zero plans gracefully (175.2766ms)
+  鉁?returns error when Progress field missing (148.4422ms)
+  鉁?returns error when STATE.md missing (146.8309ms)
+鉁?cmdStateUpdateProgress (state update-progress) (642.0039ms)
+鈻?cmdStateResolveBlocker (state resolve-blocker)
+  鉁?removes matching blocker line (case-insensitive substring match) (167.6121ms)
+  鉁?adds None placeholder when last blocker resolved (174.8381ms)
+  鉁?returns error when text not provided (137.9965ms)
+  鉁?returns error when STATE.md missing (213.098ms)
+  鉁?returns resolved true even if no line matches (193.7259ms)
+鉁?cmdStateResolveBlocker (state resolve-blocker) (887.6688ms)
+鈻?cmdStateRecordSession (state record-session)
+  鉁?updates session fields with stopped-at and resume-file (171.6761ms)
+  鉁?updates Last session timestamp even with no other options (162.7544ms)
+  鉁?sets Resume file to None when not specified (162.0595ms)
+  鉁?returns error when STATE.md missing (160.9522ms)
+  鉁?returns recorded false when no session fields found (144.4903ms)
+鉁?cmdStateRecordSession (state record-session) (802.3725ms)
+鈻?milestone-scoped phase counting in frontmatter
+  鉁?total_phases counts only current milestone phases (355.0236ms)
+  鉁?total_phases includes ROADMAP phases without directories (294.8182ms)
+  鉁?without ROADMAP counts all phases (pass-all filter) (345.7472ms)
+鉁?milestone-scoped phase counting in frontmatter (995.8805ms)
+鈻?template select command
+  鉁?selects minimal template for simple plan (325.6762ms)
+  鉁?selects standard template for moderate plan (341.3837ms)
+  鉁?selects complex template for plan with decisions and many files (300.8148ms)
+  鉁?returns standard as fallback for nonexistent file (387.0959ms)
+鉁?template select command (1356.5698ms)
+鈻?template fill command
+  鉁?fills summary template (269.1994ms)
+  鉁?fills plan template (285.9063ms)
+  鉁?fills verification template (324.5157ms)
+  鉁?rejects existing file (347.3314ms)
+  鉁?errors on unknown template type (223.4435ms)
+  鉁?errors when phase not found (289.1363ms)
+  鉁?respects --plan option for plan number (334.7243ms)
+鉁?template fill command (2075.1986ms)
+鈻?audit-uat command
+  鉁?returns empty results when no UAT files exist (328.7479ms)
+  鉁?detects UAT with pending items (306.4839ms)
+  鉁?detects UAT with blocked items and categorizes blocked_by (273.5211ms)
+  鉁?detects false completion (complete status with pending items) (392.302ms)
+  鉁?extracts human_needed items from VERIFICATION files (252.2284ms)
+  鉁?scans and aggregates across multiple phases (301.7295ms)
+  鉁?milestone scoping filters phases to current milestone (316.4541ms)
+  鉁?summary by_category counts are correct (310.1943ms)
+  鉁?ignores VERIFICATION files without human_needed or gaps_found status (220.7346ms)
+鉁?audit-uat command (2704.5455ms)
+鈻?validate health command
+  鉁?returns 'broken' when .planning directory is missing (352.6086ms)
+  鉁?warns when PROJECT.md is missing (317.465ms)
+  鉁?warns when PROJECT.md missing required sections (390.5163ms)
+  鉁?passes when PROJECT.md has all required sections (360.9713ms)
+  鉁?errors when ROADMAP.md is missing (349.4583ms)
+  鉁?errors when STATE.md is missing with repairable true (301.9019ms)
+  鉁?warns when STATE.md references nonexistent phase (352.1706ms)
+  鉁?warns when config.json is missing with repairable true (289.1722ms)
+  鉁?errors when config.json has invalid JSON (424.6448ms)
+  鉁?warns when config.json has invalid model_profile (318.7636ms)
+  鉁?accepts inherit model_profile as valid (207.2008ms)
+  鉁?warns about incorrectly named phase directories (306.5597ms)
+  鉁?reports orphaned plans (PLAN without SUMMARY) as info (371.1374ms)
+  鉁?warns about phase in ROADMAP but not on disk (211.5911ms)
+  鉁?warns about phase on disk but not in ROADMAP (233.5784ms)
+  鉁?detects W008 when workflow.nyquist_validation absent from config (243.8305ms)
+  鉁?does not emit W008 when nyquist_validation is explicitly set (253.3908ms)
+  鉁?detects W009 when RESEARCH.md has Validation Architecture but no VALIDATION.md (246.0774ms)
+  鉁?does not emit W009 when VALIDATION.md exists alongside RESEARCH.md (185.1573ms)
+  鉁?returns 'healthy' when all checks pass (237.8681ms)
+  鉁?returns 'degraded' when only warnings exist (231.4386ms)
+鉁?validate health command (6192.0745ms)
+鈻?validate health --repair command
+  鉁?creates config.json with defaults when missing (417.5079ms)
+  鉁?resets config.json when JSON is invalid (246.1871ms)
+  鉁?regenerates STATE.md when missing (181.2918ms)
+  鉁?does not rewrite existing STATE.md for invalid phase references (203.8906ms)
+  鉁?adds nyquist_validation key to config.json via addNyquistKey repair (214.2039ms)
+  鉁?reports repairable_count correctly (185.3471ms)
+  鉁?phase mismatch warnings do not count as repairable issues (223.386ms)
+鉁?validate health --repair command (1672.3807ms)
+鈻?validate consistency command
+  鉁?passes for consistent project (306.3728ms)
+  鉁?warns about phase on disk but not in roadmap (354.4258ms)
+  鉁?warns about gaps in phase numbering (440.9874ms)
+鉁?validate consistency command (1103.3022ms)
+鈻?verify plan-structure command
+  鉁?reports missing required frontmatter fields (334.5965ms)
+  鉁?validates complete plan with all required fields and tasks (332.1353ms)
+  鉁?reports task missing name element (364.4092ms)
+  鉁?reports task missing action element (376.7108ms)
+  鉁?warns about wave > 1 with empty depends_on (228.5953ms)
+  鉁?errors when checkpoint task but autonomous is true (275.7724ms)
+  鉁?returns error for nonexistent file (328.1835ms)
+鉁?verify plan-structure command (2241.5199ms)
+鈻?verify phase-completeness command
+  鉁?reports complete phase with matching plans and summaries (197.9987ms)
+  鉁?reports incomplete phase with plan missing summary (235.1925ms)
+  鉁?warns about orphan summaries (263.7425ms)
+  鉁?returns error for nonexistent phase (294.5679ms)
+鉁?verify phase-completeness command (991.945ms)
+鈻?verify summary command
+  鉁?returns not found for nonexistent summary (812.5485ms)
+  鉁?passes for valid summary with real files and commits (1154.9103ms)
+  鉁?reports missing files mentioned in summary (849.7284ms)
+  鉁?detects self-check section with pass indicators (699.6032ms)
+  鉁?detects self-check section with fail indicators (674.6224ms)
+  鉁?REG-03: returns self_check "not_found" when no self-check section exists (777.3031ms)
+  鉁?search(-1) regression: self-check guard prevents entry when no heading (630.0239ms)
+  鉁?respects checkFileCount parameter (648.0385ms)
+鉁?verify summary command (6247.4558ms)
+鈻?verify references command
+  鉁?reports valid when all referenced files exist (171.2438ms)
+  鉁?reports missing for nonexistent referenced files (161.3593ms)
+  鉁?detects backtick file paths (162.2531ms)
+  鉁?skips backtick template expressions (236.9446ms)
+  鉁?returns error for nonexistent file (173.5393ms)
+鉁?verify references command (905.7342ms)
+鈻?verify commits command
+  鉁?validates real commit hashes (685.561ms)
+  鉁?reports invalid for fake hashes (547.0332ms)
+  鉁?handles mixed valid and invalid hashes (887.2783ms)
+鉁?verify commits command (2120.2149ms)
+鈻?verify artifacts command
+  鉁?passes when all artifacts exist and match criteria (167.2463ms)
+  鉁?reports missing artifact file (154.4523ms)
+  鉁?reports insufficient line count (168.8685ms)
+  鉁?reports missing pattern (143.2841ms)
+  鉁?reports missing export (168.1456ms)
+  鉁?returns error when no artifacts in frontmatter (156.0614ms)
+鉁?verify artifacts command (958.5527ms)
+鈻?verify key-links command
+  鉁?verifies link when pattern found in source (155.7043ms)
+  鉁?verifies link when pattern found in target (141.4351ms)
+  鉁?fails when pattern not found in source or target (164.428ms)
+  鉁?verifies link without pattern using string inclusion (150.7329ms)
+  鉁?reports source file not found (146.4138ms)
+  鉁?returns error when no key_links in frontmatter (139.3437ms)
+鉁?verify key-links command (899.0463ms)
+鈻?detectChildRepos
+  鉁?detects child git repos (521.3391ms)
+  鉁?skips non-git directories (237.9528ms)
+  鉁?skips hidden directories (235.0302ms)
+  鉁?skips files (2.2003ms)
+  鉁?returns empty array for non-existent directory (1.0088ms)
+鉁?detectChildRepos (999.6088ms)
+鈻?init new-workspace
+  鉁?returns expected JSON fields (495.7282ms)
+  鉁?detects child git repos in cwd (812.0433ms)
+  鉁?reports no git repo when cwd is not a git repo (343.6406ms)
+鉁?init new-workspace (1651.8219ms)
+鈻?init list-workspaces
+  鉁?returns empty list when no workspaces exist (291.2308ms)
+  鉁?finds workspaces with WORKSPACE.md (355.5205ms)
+鉁?init list-workspaces (647.1007ms)
+鈻?init remove-workspace
+  鉁?errors when no name provided (226.63ms)
+  鉁?errors when workspace not found (337.8875ms)
+  鉁?returns workspace info for existing workspace (373.8912ms)
+鉁?init remove-workspace (938.7397ms)
+鈻?workspace worktree integration
+  鉁?creates workspace with git worktree (670.3404ms)
+  鉁?creates workspace with git clone (884.6814ms)
+  鉁?worktree removal cleans up properly (1199.3054ms)
+鉁?workspace worktree integration (2754.6244ms)
+鈻?workspace command files
+  鉁?new-workspace command exists with correct frontmatter (0.3968ms)
+  鉁?list-workspaces command exists with correct frontmatter (0.1729ms)
+  鉁?remove-workspace command exists with correct frontmatter (0.1425ms)
+  鉁?new-workspace workflow exists (0.1913ms)
+  鉁?list-workspaces workflow exists (0.5065ms)
+  鉁?remove-workspace workflow exists (0.1964ms)
+鉁?workspace command files (1.8194ms)
+鈻?workspace routing in gsd-tools
+  鉁?init new-workspace is routed correctly (0.3549ms)
+  鉁?init list-workspaces is routed correctly (0.3515ms)
+  鉁?init remove-workspace is routed correctly (0.1866ms)
+鉁?workspace routing in gsd-tools (0.9971ms)
+鈩?tests 1206
+鈩?suites 215
+鈩?pass 1206
+鈩?fail 0
+鈩?cancelled 0
+鈩?skipped 0
+鈩?todo 0
+鈩?duration_ms 39604.4794

@@ -26,6 +26,8 @@ cat .planning/config.json
 ```
 
 解析当前值（如果不存在，默认设为 `true`）：
+- `commit_docs` — 是否将规划文档自动提交至 Git（缺省为 true）
+- `workflow.auto_commit` — 执行阶段完成任务后是否自动 git commit 代码（缺省为 true）
 - `workflow.research` — 在 plan-phase 期间生成研究员 (researcher)
 - `workflow.plan_check` — 在 plan-phase 期间生成计划检查员 (plan checker)
 - `workflow.verifier` — 在 execute-phase 期间生成验证员 (verifier)
@@ -144,6 +146,24 @@ AskUserQuestion([
       { label: "否 (No - 推荐)", description: "直接提问。更快，消耗更少 Token。" },
       { label: "是 (Yes)", description: "在每组问题前搜索网页以获取最佳实践。提问更具针对性，但消耗更多 Token。" }
     ]
+  },
+  {
+    question: "是否将规划文档自动提交至 Git？",
+    header: "Git 提交 (Commit Docs)",
+    multiSelect: false,
+    options: [
+      { label: "是 (Yes - 推荐)", description: "工作流完成后自动提交 .planning/ 目录下的文档到 Git" },
+      { label: "否 (No)", description: "不自动提交。规划文档仅保留在本地，不进入版本控制" }
+    ]
+  },
+  {
+    question: "执行阶段完成任务后是否自动 git commit 代码？",
+    header: "自动提交代码 (Auto Commit)",
+    multiSelect: false,
+    options: [
+      { label: "是 (Yes - 推荐)", description: "每个任务完成后自动执行 git add + git commit" },
+      { label: "否 (No)", description: "跳过自动提交，仅输出变更摘要供手动提交" }
+    ]
   }
 ])
 ```
@@ -156,6 +176,7 @@ AskUserQuestion([
 {
   ...existing_config,
   "model_profile": "quality" | "balanced" | "budget" | "inherit",
+  "commit_docs": true/false,
   "workflow": {
     "research": true/false,
     "plan_check": true/false,
@@ -163,7 +184,8 @@ AskUserQuestion([
     "auto_advance": true/false,
     "nyquist_validation": true/false,
     "ui_phase": true/false,
-    "ui_safety_gate": true/false
+    "ui_safety_gate": true/false,
+    "auto_commit": true/false
   },
   "git": {
     "branching_strategy": "none" | "phase" | "milestone",
@@ -179,6 +201,9 @@ AskUserQuestion([
   }
 }
 ```
+
+当用户将 `commit_docs` 设为 `false` 时，自动将 `.planning/` 添加至 `.gitignore`（如果尚未存在）。
+当用户将 `commit_docs` 从 `false` 改回 `true` 时，从 `.gitignore` 中移除 `.planning/` 条目（如果存在）。
 
 将更新后的配置写入 `.planning/config.json`。
 </step>
@@ -223,7 +248,8 @@ mkdir -p ~/.gsd
     "auto_advance": <current>,
     "nyquist_validation": <current>,
     "ui_phase": <current>,
-    "ui_safety_gate": <current>
+    "ui_safety_gate": <current>,
+    "auto_commit": <current>
   }
 }
 ```
@@ -247,6 +273,8 @@ mkdir -p ~/.gsd
 | Nyquist 验证 (Nyquist Validation) | {开启/关闭} |
 | UI 阶段 (UI Phase) | {开启/关闭} |
 | UI 安全闸门 (UI Safety Gate) | {开启/关闭} |
+| Git 提交文档 (Commit Docs) | {开启/关闭} |
+| 自动提交代码 (Auto Commit) | {开启/关闭} |
 | Git 分支 (Git Branching) | {无/按阶段/按里程碑} |
 | 上下文警告 (Context Warnings) | {开启/关闭} |
 | 已保存为默认值 (Saved as Defaults) | {是/否} |
@@ -265,8 +293,8 @@ mkdir -p ~/.gsd
 
 <success_criteria>
 - [ ] 已读取当前配置
-- [ ] 向用户呈现了 9 个设置（配置 + 7 个工作流开关 + Git 分支）
-- [ ] 配置已更新，包含 model_profile、workflow 和 git 部分
+- [ ] 向用户呈现了 11 个设置（配置 + 7 个工作流开关 + Git 提交 + 自动提交代码 + Git 分支）
+- [ ] 配置已更新，包含 model_profile、commit_docs、workflow 和 git 部分
 - [ ] 已提议用户保存为全局默认值 (~/.gsd/defaults.json)
 - [ ] 已向用户确认更改
 </success_criteria>

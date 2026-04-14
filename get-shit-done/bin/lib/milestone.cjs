@@ -159,7 +159,7 @@ function cmdMilestoneComplete(cwd, version, options, raw) {
   // Archive REQUIREMENTS.md
   if (fs.existsSync(reqPath)) {
     const reqContent = fs.readFileSync(reqPath, 'utf-8');
-    const archiveHeader = `# Requirements Archive: ${version} ${milestoneName}\n\n**Archived:** ${today}\n**Status:** SHIPPED\n\nFor current requirements, see \`.planning/REQUIREMENTS.md\`.\n\n---\n\n`;
+    const archiveHeader = `# 需求归档：${version} ${milestoneName}\n\n**归档日期：** ${today}\n**状态：** 已发布\n\n当前需求请参见 \`.planning/REQUIREMENTS.md\`。\n\n---\n\n`;
     fs.writeFileSync(path.join(archiveDir, `${version}-REQUIREMENTS.md`), archiveHeader + reqContent, 'utf-8');
   }
 
@@ -171,13 +171,13 @@ function cmdMilestoneComplete(cwd, version, options, raw) {
 
   // Create/append MILESTONES.md entry
   const accomplishmentsList = accomplishments.map(a => `- ${a}`).join('\n');
-  const milestoneEntry = `## ${version} ${milestoneName} (Shipped: ${today})\n\n**Phases completed:** ${phaseCount} phases, ${totalPlans} plans, ${totalTasks} tasks\n\n**Key accomplishments:**\n${accomplishmentsList || '- (none recorded)'}\n\n---\n\n`;
+  const milestoneEntry = `## ${version} ${milestoneName}（发布日期：${today}）\n\n**已完成阶段：** ${phaseCount} 个阶段，${totalPlans} 个计划，${totalTasks} 个任务\n\n**主要成果：**\n${accomplishmentsList || '- （无记录）'}\n\n---\n\n`;
 
   if (fs.existsSync(milestonesPath)) {
     const existing = fs.readFileSync(milestonesPath, 'utf-8');
     if (!existing.trim()) {
       // Empty file — treat like new
-      fs.writeFileSync(milestonesPath, normalizeMd(`# Milestones\n\n${milestoneEntry}`), 'utf-8');
+      fs.writeFileSync(milestonesPath, normalizeMd(`# 里程碑\n\n${milestoneEntry}`), 'utf-8');
     } else {
       // Insert after the header line(s) for reverse chronological order (newest first)
       const headerMatch = existing.match(/^(#{1,3}\s+[^\n]*\n\n?)/);
@@ -191,17 +191,17 @@ function cmdMilestoneComplete(cwd, version, options, raw) {
       }
     }
   } else {
-    fs.writeFileSync(milestonesPath, normalizeMd(`# Milestones\n\n${milestoneEntry}`), 'utf-8');
+    fs.writeFileSync(milestonesPath, normalizeMd(`# 里程碑\n\n${milestoneEntry}`), 'utf-8');
   }
 
   // Update STATE.md — use shared helpers that handle both **bold:** and plain Field: formats
   if (fs.existsSync(statePath)) {
     let stateContent = fs.readFileSync(statePath, 'utf-8');
 
-    stateContent = stateReplaceFieldWithFallback(stateContent, 'Status', null, `${version} milestone complete`);
-    stateContent = stateReplaceFieldWithFallback(stateContent, 'Last Activity', 'Last activity', today);
-    stateContent = stateReplaceFieldWithFallback(stateContent, 'Last Activity Description', null,
-      `${version} milestone completed and archived`);
+    stateContent = stateReplaceFieldWithFallback(stateContent, 'Status', '状态', `${version} 里程碑完成`);
+    stateContent = stateReplaceFieldWithFallback(stateContent, 'Last Activity', '最后活动', today);
+    stateContent = stateReplaceFieldWithFallback(stateContent, 'Last Activity Description', '最后活动说明',
+      `${version} 里程碑已完成并归档`);
 
     writeStateMd(statePath, stateContent, cwd);
   }

@@ -148,14 +148,14 @@ echo "$TARGET_RUNTIME"
 在 npm 中检查最新版本：
 
 ```bash
-npm view get-shit-done-dh version 2>/dev/null
+npm view get-shit-done-cn version 2>/dev/null
 ```
 
 **如果 npm 检查失败：**
 ```
 无法检查更新（离线或 npm 不可用）。
 
-要手动更新，请运行：`npx get-shit-done-dh --global`
+要手动更新，请运行：`npx get-shit-done-cn --global`
 ```
 
 退出。
@@ -254,17 +254,17 @@ RUNTIME_FLAG="--$TARGET_RUNTIME"
 
 **如果是 LOCAL 安装：**
 ```bash
-npx -y get-shit-done-dh@latest "$RUNTIME_FLAG" --local
+npx -y get-shit-done-cn@latest "$RUNTIME_FLAG" --local
 ```
 
 **如果是 GLOBAL 安装：**
 ```bash
-npx -y get-shit-done-dh@latest "$RUNTIME_FLAG" --global
+npx -y get-shit-done-cn@latest "$RUNTIME_FLAG" --global
 ```
 
 **如果是 UNKNOWN 安装：**
 ```bash
-npx -y get-shit-done-dh@latest --claude --global
+npx -y get-shit-done-cn@latest --claude --global
 ```
 
 捕获输出。如果安装失败，显示错误并退出。
@@ -292,7 +292,7 @@ SessionStart 钩子 (`gsd-check-update.js`) 会向检测到的运行时缓存目
 
 ⚠️  请重启运行时以加载新命令。
 
-[查看完整变更日志](https://github.com/liu-xian-sen/get-shit-done-dh/blob/main/CHANGELOG.md)
+[查看完整变更日志](https://github.com/liu-xian-sen/get-shit-done-cn/blob/main/CHANGELOG.md)
 ```
 </step>
 

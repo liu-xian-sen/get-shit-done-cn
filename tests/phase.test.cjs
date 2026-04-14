@@ -626,8 +626,8 @@ describe('phase add command', () => {
 
     // Verify ROADMAP updated
     const roadmap = fs.readFileSync(path.join(tmpDir, '.planning', 'ROADMAP.md'), 'utf-8');
-    assert.ok(roadmap.includes('### Phase 3: User Dashboard'), 'roadmap should include new phase');
-    assert.ok(roadmap.includes('**Depends on:** Phase 2'), 'should depend on previous');
+    assert.ok(roadmap.includes('### 阶段 3：User Dashboard'), 'roadmap should include new phase');
+    assert.ok(roadmap.includes('**依赖：** 阶段 2'), 'should depend on previous');
   });
 
   test('handles empty roadmap', () => {
@@ -653,7 +653,7 @@ describe('phase add command', () => {
     assert.ok(result.success, `Command failed: ${result.error}`);
 
     const roadmap = fs.readFileSync(path.join(tmpDir, '.planning', 'ROADMAP.md'), 'utf-8');
-    assert.ok(roadmap.includes('**Requirements**: TBD'), 'new phase entry should include Requirements TBD');
+    assert.ok(roadmap.includes('**需求：** TBD'), 'new phase entry should include Requirements TBD');
   });
 });
 
@@ -702,7 +702,7 @@ describe('phase insert command', () => {
 
     // Verify ROADMAP
     const roadmap = fs.readFileSync(path.join(tmpDir, '.planning', 'ROADMAP.md'), 'utf-8');
-    assert.ok(roadmap.includes('Phase 01.1: Fix Critical Bug (INSERTED)'), 'roadmap should include inserted phase');
+    assert.ok(roadmap.includes('阶段 01.1：Fix Critical Bug（已插入）'), 'roadmap should include inserted phase');
   });
 
   test('increments decimal when siblings exist', () => {
@@ -760,7 +760,7 @@ describe('phase insert command', () => {
     assert.strictEqual(output.after_phase, '9.05');
 
     const roadmap = fs.readFileSync(path.join(tmpDir, '.planning', 'ROADMAP.md'), 'utf-8');
-    assert.ok(roadmap.includes('(INSERTED)'), 'roadmap should include inserted phase');
+    assert.ok(roadmap.includes('（已插入）'), 'roadmap should include inserted phase');
   });
 
   test('phase insert includes **Requirements**: TBD in new ROADMAP entry', () => {
@@ -774,7 +774,7 @@ describe('phase insert command', () => {
     assert.ok(result.success, `Command failed: ${result.error}`);
 
     const roadmap = fs.readFileSync(path.join(tmpDir, '.planning', 'ROADMAP.md'), 'utf-8');
-    assert.ok(roadmap.includes('**Requirements**: TBD'), 'inserted phase entry should include Requirements TBD');
+    assert.ok(roadmap.includes('**需求：** TBD'), 'inserted phase entry should include Requirements TBD');
   });
 
   test('handles #### heading depth from multi-milestone roadmaps', () => {
@@ -800,7 +800,7 @@ describe('phase insert command', () => {
     assert.strictEqual(output.phase_number, '05.1');
 
     const roadmap = fs.readFileSync(path.join(tmpDir, '.planning', 'ROADMAP.md'), 'utf-8');
-    assert.ok(roadmap.includes('Phase 05.1: Hotfix (INSERTED)'), 'roadmap should include inserted phase');
+    assert.ok(roadmap.includes('阶段 05.1：Hotfix（已插入）'), 'roadmap should include inserted phase');
   });
 });
 
@@ -1002,8 +1002,8 @@ describe('phase complete command', () => {
     // Verify STATE.md updated
     const state = fs.readFileSync(path.join(tmpDir, '.planning', 'STATE.md'), 'utf-8');
     assert.ok(state.includes('**Current Phase:** 02'), 'should advance to phase 02');
-    assert.ok(state.includes('**Status:** Ready to plan'), 'status should be ready to plan');
-    assert.ok(state.includes('**Current Plan:** Not started'), 'plan should be reset');
+    assert.ok(state.includes('**Status:** 准备规划'), 'status should be ready to plan');
+    assert.ok(state.includes('**Current Plan:** 未开始'), 'plan should be reset');
 
     // Verify ROADMAP checkbox
     const roadmap = fs.readFileSync(path.join(tmpDir, '.planning', 'ROADMAP.md'), 'utf-8');
@@ -1034,7 +1034,7 @@ describe('phase complete command', () => {
     assert.strictEqual(output.next_phase, null, 'no next phase');
 
     const state = fs.readFileSync(path.join(tmpDir, '.planning', 'STATE.md'), 'utf-8');
-    assert.ok(state.includes('Milestone complete'), 'status should be milestone complete');
+    assert.ok(state.includes('里程碑完成'), 'status should be milestone complete');
   });
 
   test('updates REQUIREMENTS.md traceability when phase completes', () => {
@@ -1528,8 +1528,8 @@ describe('phase complete command', () => {
     assert.ok(result.success, `Command failed: ${result.error}`);
 
     const state = fs.readFileSync(path.join(tmpDir, '.planning', 'STATE.md'), 'utf-8');
-    assert.ok(state.includes('Milestone complete'), 'plain Status field should be updated');
-    assert.ok(state.includes('Not started'), 'plain Plan field should be updated');
+    assert.ok(state.includes('里程碑完成'), 'plain Status field should be updated');
+    assert.ok(state.includes('未开始'), 'plain Plan field should be updated');
     // Verify compound format preserved
     assert.ok(state.match(/Phase:.*of\s+1/), 'should preserve "of N" in compound Phase format');
   });

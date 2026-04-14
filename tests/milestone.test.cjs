@@ -191,9 +191,9 @@ describe('milestone complete command', () => {
     const archivedReq = fs.readFileSync(
       path.join(tmpDir, '.planning', 'milestones', 'v1.0-REQUIREMENTS.md'), 'utf-8'
     );
-    assert.ok(archivedReq.includes('Requirements Archive: v1.0'), 'should contain archive version');
-    assert.ok(archivedReq.includes('SHIPPED'), 'should contain SHIPPED status');
-    assert.ok(archivedReq.includes('Archived:'), 'should contain Archived: date line');
+    assert.ok(archivedReq.includes('需求归档：v1.0'), 'should contain archive version');
+    assert.ok(archivedReq.includes('已发布'), 'should contain SHIPPED status');
+    assert.ok(archivedReq.includes('归档日期：'), 'should contain Archived: date line');
     // Original content preserved after header
     assert.ok(archivedReq.includes('# Requirements'), 'original content should be preserved');
     assert.ok(archivedReq.includes('**TEST-01**'), 'original requirement items should be preserved');
@@ -216,9 +216,9 @@ describe('milestone complete command', () => {
     assert.strictEqual(output.state_updated, true, 'state_updated should be true');
 
     const state = fs.readFileSync(path.join(tmpDir, '.planning', 'STATE.md'), 'utf-8');
-    assert.ok(state.includes('v1.0 milestone complete'), 'status should be updated to milestone complete');
+    assert.ok(state.includes('v1.0 里程碑完成'), 'status should be updated to milestone complete');
     assert.ok(
-      state.includes('v1.0 milestone completed and archived'),
+      state.includes('v1.0 里程碑已完成并归档'),
       'last activity description should reference milestone completion'
     );
   });
@@ -490,7 +490,7 @@ describe('milestone complete command', () => {
     assert.ok(result.success, `Command failed: ${result.error}`);
 
     const state = fs.readFileSync(path.join(tmpDir, '.planning', 'STATE.md'), 'utf-8');
-    assert.ok(state.includes('v1.0 milestone complete'), 'plain Status field should be updated');
+    assert.ok(state.includes('v1.0 里程碑完成'), 'plain Status field should be updated');
   });
 
   test('handles empty phases directory', () => {

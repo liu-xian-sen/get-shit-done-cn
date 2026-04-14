@@ -2,7 +2,7 @@
 
 **Date**: 2026-03-21
 **Source**: `get-shit-done` (v1.27.0)
-**Target**: `get-shit-done-dh` (v1.25.0 → v1.27.0)
+**Target**: `get-shit-done-cn` (v1.25.0 → v1.27.0)
 
 ## Summary
 
@@ -83,12 +83,12 @@ Total: **89 files changed** (+10,707 / -582 lines).
 - `build-hooks.js`
 
 **Root (2)**
-- `package.json` — updated to v1.27.0, restored name=`get-shit-done-dh` and bin key
+- `package.json` — updated to v1.27.0, restored name=`get-shit-done-cn` and bin key
 - `CHANGELOG.md` — synced from source (includes v1.26.0 and v1.27.0 entries)
 
 ### 4. package.json Adjustments
-- `name`: restored to `get-shit-done-dh`
-- `bin`: restored to `{ "get-shit-done-dh": "bin/install.js" }`
+- `name`: restored to `get-shit-done-cn`
+- `bin`: restored to `{ "get-shit-done-cn": "bin/install.js" }`
 - `keywords`: preserved `codebuddy` keyword
 - `version`: updated to `1.27.0`
 

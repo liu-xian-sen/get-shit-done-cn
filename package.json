@@ -1,9 +1,9 @@
 {
-  "name": "get-shit-done-dh",
+  "name": "get-shit-done-cn",
   "version": "1.27.4",
   "description": "A meta-prompting, context engineering and spec-driven development system for Claude Code, OpenCode, Gemini and Codex by TÂCHES.",
   "bin": {
-    "get-shit-done-dh": "bin/install.js"
+    "get-shit-done-cn": "bin/install.js"
   },
   "files": [
     "bin",
@@ -30,11 +30,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/glittercowboy/get-shit-done.git"
+    "url": "git+https://github.com/liu-xian-sen/get-shit-done-cn.git"
   },
-  "homepage": "https://github.com/glittercowboy/get-shit-done",
+  "homepage": "https://github.com/liu-xian-sen/get-shit-done-cn",
   "bugs": {
-    "url": "https://github.com/glittercowboy/get-shit-done/issues"
+    "url": "https://github.com/liu-xian-sen/get-shit-done-cn/issues"
   },
   "engines": {
     "node": ">=20.0.0"

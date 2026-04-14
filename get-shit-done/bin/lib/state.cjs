@@ -247,9 +247,9 @@ function cmdStateAdvancePlan(cwd, raw) {
   const today = new Date().toISOString().split('T')[0];
 
   // Try legacy separate fields first, then compound "Plan: X of Y" format
-  const legacyPlan = stateExtractField(content, 'Current Plan');
-  const legacyTotal = stateExtractField(content, 'Total Plans in Phase');
-  const planField = stateExtractField(content, 'Plan');
+  const legacyPlan = stateExtractField(content, 'Current Plan') || stateExtractField(content, '当前计划');
+  const legacyTotal = stateExtractField(content, 'Total Plans in Phase') || stateExtractField(content, '阶段总计划数');
+  const planField = stateExtractField(content, 'Plan') || stateExtractField(content, '计划');
 
   let currentPlan, totalPlans;
   let useCompoundFormat = false;
@@ -271,8 +271,8 @@ function cmdStateAdvancePlan(cwd, raw) {
   }
 
   if (currentPlan >= totalPlans) {
-    content = stateReplaceFieldWithFallback(content, 'Status', null, 'Phase complete — ready for verification');
-    content = stateReplaceFieldWithFallback(content, 'Last Activity', 'Last activity', today);
+    content = stateReplaceFieldWithFallback(content, 'Status', '状态', '阶段完成 — 准备验证');
+    content = stateReplaceFieldWithFallback(content, 'Last Activity', '最后活动', today);
     writeStateMd(statePath, content, cwd);
     output({ advanced: false, reason: 'last_plan', current_plan: currentPlan, total_plans: totalPlans, status: 'ready_for_verification' }, raw, 'false');
   } else {
@@ -284,8 +284,8 @@ function cmdStateAdvancePlan(cwd, raw) {
     } else {
       content = stateReplaceField(content, 'Current Plan', String(newPlan)) || content;
     }
-    content = stateReplaceFieldWithFallback(content, 'Status', null, 'Ready to execute');
-    content = stateReplaceFieldWithFallback(content, 'Last Activity', 'Last activity', today);
+    content = stateReplaceFieldWithFallback(content, 'Status', '状态', '准备执行');
+    content = stateReplaceFieldWithFallback(content, 'Last Activity', '最后活动', today);
     writeStateMd(statePath, content, cwd);
     output({ advanced: true, previous_plan: currentPlan, current_plan: newPlan, total_plans: totalPlans }, raw, 'true');
   }
@@ -304,12 +304,12 @@ function cmdStateRecordMetric(cwd, options, raw) {
   }
 
   // Find Performance Metrics section and its table
-  const metricsPattern = /(##\s*Performance Metrics[\s\S]*?\n\|[^\n]+\n\|[-|\s]+\n)([\s\S]*?)(?=\n##|\n$|$)/i;
+  const metricsPattern = /(##\s*(?:Performance Metrics|性能指标)[\s\S]*?\n\|[^\n]+\n\|[-|\s]+\n)([\s\S]*?)(?=\n##|\n$|$)/i;
   const metricsMatch = content.match(metricsPattern);
 
   if (metricsMatch) {
     let tableBody = metricsMatch[2].trimEnd();
-    const newRow = `| Phase ${phase} P${plan} | ${duration} | ${tasks || '-'} tasks | ${files || '-'} files |`;
+    const newRow = `| 阶段 ${phase} P${plan} | ${duration} | ${tasks || '-'} 个任务 | ${files || '-'} 个文件 |`;
 
     if (tableBody.trim() === '' || tableBody.includes('None yet')) {
       tableBody = newRow;
@@ -354,9 +354,9 @@ function cmdStateUpdateProgress(cwd, raw) {
   const bar = '\u2588'.repeat(filled) + '\u2591'.repeat(barWidth - filled);
   const progressStr = `[${bar}] ${percent}%`;
 
-  // Try **Progress:** bold format first, then plain Progress: format
-  const boldProgressPattern = /(\*\*Progress:\*\*\s*).*/i;
-  const plainProgressPattern = /^(Progress:\s*).*/im;
+  // Try **Progress:** / **进度:** bold format first, then plain Progress: / 进度: format
+  const boldProgressPattern = /(\*\*(?:Progress|进度)[：:]?\*\*\s*).*/i;
+  const plainProgressPattern = /^((?:Progress|进度)[：:]?\s*).*/im;
   if (boldProgressPattern.test(content)) {
     content = content.replace(boldProgressPattern, (_match, prefix) => `${prefix}${progressStr}`);
     writeStateMd(statePath, content, cwd);
@@ -389,16 +389,16 @@ function cmdStateAddDecision(cwd, options, raw) {
   if (!summaryText) { output({ error: 'summary required' }, raw); return; }
 
   let content = fs.readFileSync(statePath, 'utf-8');
-  const entry = `- [Phase ${phase || '?'}]: ${summaryText}${rationaleText ? ` — ${rationaleText}` : ''}`;
+  const entry = `- [阶段 ${phase || '?'}]：${summaryText}${rationaleText ? ` — ${rationaleText}` : ''}`;
 
   // Find Decisions section (various heading patterns)
-  const sectionPattern = /(###?\s*(?:Decisions|Decisions Made|Accumulated.*Decisions)\s*\n)([\s\S]*?)(?=\n###?|\n##[^#]|$)/i;
+  const sectionPattern = /(###?\s*(?:Decisions|Decisions Made|Accumulated.*Decisions|决策|已做决策|累积.*决策)\s*\n)([\s\S]*?)(?=\n###?|\n##[^#]|$)/i;
   const match = content.match(sectionPattern);
 
   if (match) {
     let sectionBody = match[2];
     // Remove placeholders
-    sectionBody = sectionBody.replace(/None yet\.?\s*\n?/gi, '').replace(/No decisions yet\.?\s*\n?/gi, '');
+    sectionBody = sectionBody.replace(/None yet\.?\s*\n?/gi, '').replace(/No decisions yet\.?\s*\n?/gi, '').replace(/暂无\.?\s*\n?/g, '').replace(/暂无决策\.?\s*\n?/g, '');
     sectionBody = sectionBody.trimEnd() + '\n' + entry + '\n';
     content = content.replace(sectionPattern, (_match, header) => `${header}${sectionBody}`);
     writeStateMd(statePath, content, cwd);
@@ -426,12 +426,12 @@ function cmdStateAddBlocker(cwd, text, raw) {
   let content = fs.readFileSync(statePath, 'utf-8');
   const entry = `- ${blockerText}`;
 
-  const sectionPattern = /(###?\s*(?:Blockers|Blockers\/Concerns|Concerns)\s*\n)([\s\S]*?)(?=\n###?|\n##[^#]|$)/i;
+  const sectionPattern = /(###?\s*(?:Blockers|Blockers\/Concerns|Concerns|阻塞|阻塞\/关注|关注)\s*\n)([\s\S]*?)(?=\n###?|\n##[^#]|$)/i;
   const match = content.match(sectionPattern);
 
   if (match) {
     let sectionBody = match[2];
-    sectionBody = sectionBody.replace(/None\.?\s*\n?/gi, '').replace(/None yet\.?\s*\n?/gi, '');
+    sectionBody = sectionBody.replace(/None\.?\s*\n?/gi, '').replace(/None yet\.?\s*\n?/gi, '').replace(/无\.?\s*\n?/g, '').replace(/暂无\.?\s*\n?/g, '');
     sectionBody = sectionBody.trimEnd() + '\n' + entry + '\n';
     content = content.replace(sectionPattern, (_match, header) => `${header}${sectionBody}`);
     writeStateMd(statePath, content, cwd);
@@ -448,7 +448,7 @@ function cmdStateResolveBlocker(cwd, text, raw) {
 
   let content = fs.readFileSync(statePath, 'utf-8');
 
-  const sectionPattern = /(###?\s*(?:Blockers|Blockers\/Concerns|Concerns)\s*\n)([\s\S]*?)(?=\n###?|\n##[^#]|$)/i;
+  const sectionPattern = /(###?\s*(?:Blockers|Blockers\/Concerns|Concerns|阻塞|阻塞\/关注|关注)\s*\n)([\s\S]*?)(?=\n###?|\n##[^#]|$)/i;
   const match = content.match(sectionPattern);
 
   if (match) {
@@ -462,7 +462,7 @@ function cmdStateResolveBlocker(cwd, text, raw) {
     let newBody = filtered.join('\n');
     // If section is now empty, add placeholder
     if (!newBody.trim() || !newBody.includes('- ')) {
-      newBody = 'None\n';
+      newBody = '无\n';
     }
 
     content = content.replace(sectionPattern, (_match, header) => `${header}${newBody}`);
@@ -483,6 +483,7 @@ function cmdStateRecordSession(cwd, options, raw) {
 
   // Update Last session / Last Date
   let result = stateReplaceField(content, 'Last session', now);
+  if (!result) result = stateReplaceField(content, '最后会话', now);
   if (result) { content = result; updated.push('Last session'); }
   result = stateReplaceField(content, 'Last Date', now);
   if (result) { content = result; updated.push('Last Date'); }
@@ -491,6 +492,7 @@ function cmdStateRecordSession(cwd, options, raw) {
   if (options.stopped_at) {
     result = stateReplaceField(content, 'Stopped At', options.stopped_at);
     if (!result) result = stateReplaceField(content, 'Stopped at', options.stopped_at);
+    if (!result) result = stateReplaceField(content, '停止位置', options.stopped_at);
     if (result) { content = result; updated.push('Stopped At'); }
   }
 
@@ -498,6 +500,7 @@ function cmdStateRecordSession(cwd, options, raw) {
   const resumeFile = options.resume_file || 'None';
   result = stateReplaceField(content, 'Resume File', resumeFile);
   if (!result) result = stateReplaceField(content, 'Resume file', resumeFile);
+  if (!result) result = stateReplaceField(content, '恢复文件', resumeFile);
   if (result) { content = result; updated.push('Resume File'); }
 
   if (updated.length > 0) {
@@ -518,17 +521,17 @@ function cmdStateSnapshot(cwd, raw) {
 
   const content = fs.readFileSync(statePath, 'utf-8');
 
-  // Extract basic fields
-  const currentPhase = stateExtractField(content, 'Current Phase');
-  const currentPhaseName = stateExtractField(content, 'Current Phase Name');
-  const totalPhasesRaw = stateExtractField(content, 'Total Phases');
-  const currentPlan = stateExtractField(content, 'Current Plan');
-  const totalPlansRaw = stateExtractField(content, 'Total Plans in Phase');
-  const status = stateExtractField(content, 'Status');
-  const progressRaw = stateExtractField(content, 'Progress');
-  const lastActivity = stateExtractField(content, 'Last Activity');
-  const lastActivityDesc = stateExtractField(content, 'Last Activity Description');
-  const pausedAt = stateExtractField(content, 'Paused At');
+  // Extract basic fields (with Chinese fallbacks)
+  const currentPhase = stateExtractField(content, 'Current Phase') || stateExtractField(content, '当前阶段');
+  const currentPhaseName = stateExtractField(content, 'Current Phase Name') || stateExtractField(content, '当前阶段名称');
+  const totalPhasesRaw = stateExtractField(content, 'Total Phases') || stateExtractField(content, '总阶段数');
+  const currentPlan = stateExtractField(content, 'Current Plan') || stateExtractField(content, '当前计划');
+  const totalPlansRaw = stateExtractField(content, 'Total Plans in Phase') || stateExtractField(content, '阶段总计划数');
+  const status = stateExtractField(content, 'Status') || stateExtractField(content, '状态');
+  const progressRaw = stateExtractField(content, 'Progress') || stateExtractField(content, '进度');
+  const lastActivity = stateExtractField(content, 'Last Activity') || stateExtractField(content, '最后活动');
+  const lastActivityDesc = stateExtractField(content, 'Last Activity Description') || stateExtractField(content, '最后活动说明');
+  const pausedAt = stateExtractField(content, 'Paused At') || stateExtractField(content, '暂停于');
 
   // Parse numeric fields
   const totalPhases = totalPhasesRaw ? parseInt(totalPhasesRaw, 10) : null;
@@ -537,7 +540,7 @@ function cmdStateSnapshot(cwd, raw) {
 
   // Extract decisions table
   const decisions = [];
-  const decisionsMatch = content.match(/##\s*Decisions Made[\s\S]*?\n\|[^\n]+\n\|[-|\s]+\n([\s\S]*?)(?=\n##|\n$|$)/i);
+  const decisionsMatch = content.match(/##\s*(?:Decisions Made|已做决策)[\s\S]*?\n\|[^\n]+\n\|[-|\s]+\n([\s\S]*?)(?=\n##|\n$|$)/i);
   if (decisionsMatch) {
     const tableBody = decisionsMatch[1];
     const rows = tableBody.trim().split('\n').filter(r => r.includes('|'));
@@ -555,7 +558,7 @@ function cmdStateSnapshot(cwd, raw) {
 
   // Extract blockers list
   const blockers = [];
-  const blockersMatch = content.match(/##\s*Blockers\s*\n([\s\S]*?)(?=\n##|$)/i);
+  const blockersMatch = content.match(/##\s*(?:Blockers|阻塞)\s*\n([\s\S]*?)(?=\n##|$)/i);
   if (blockersMatch) {
     const blockersSection = blockersMatch[1];
     const items = blockersSection.match(/^-\s+(.+)$/gm) || [];
@@ -571,7 +574,7 @@ function cmdStateSnapshot(cwd, raw) {
     resume_file: null,
   };
 
-  const sessionMatch = content.match(/##\s*Session\s*\n([\s\S]*?)(?=\n##|$)/i);
+  const sessionMatch = content.match(/##\s*(?:Session|会话)\s*\n([\s\S]*?)(?=\n##|$)/i);
   if (sessionMatch) {
     const sessionSection = sessionMatch[1];
     const lastDateMatch = sessionSection.match(/\*\*Last Date:\*\*\s*(.+)/i)
@@ -613,16 +616,16 @@ function cmdStateSnapshot(cwd, raw) {
  * reliably via `state json` instead of fragile regex parsing.
  */
 function buildStateFrontmatter(bodyContent, cwd) {
-  const currentPhase = stateExtractField(bodyContent, 'Current Phase');
-  const currentPhaseName = stateExtractField(bodyContent, 'Current Phase Name');
-  const currentPlan = stateExtractField(bodyContent, 'Current Plan');
-  const totalPhasesRaw = stateExtractField(bodyContent, 'Total Phases');
-  const totalPlansRaw = stateExtractField(bodyContent, 'Total Plans in Phase');
-  const status = stateExtractField(bodyContent, 'Status');
-  const progressRaw = stateExtractField(bodyContent, 'Progress');
-  const lastActivity = stateExtractField(bodyContent, 'Last Activity');
-  const stoppedAt = stateExtractField(bodyContent, 'Stopped At') || stateExtractField(bodyContent, 'Stopped at');
-  const pausedAt = stateExtractField(bodyContent, 'Paused At');
+  const currentPhase = stateExtractField(bodyContent, 'Current Phase') || stateExtractField(bodyContent, '当前阶段');
+  const currentPhaseName = stateExtractField(bodyContent, 'Current Phase Name') || stateExtractField(bodyContent, '当前阶段名称');
+  const currentPlan = stateExtractField(bodyContent, 'Current Plan') || stateExtractField(bodyContent, '当前计划');
+  const totalPhasesRaw = stateExtractField(bodyContent, 'Total Phases') || stateExtractField(bodyContent, '总阶段数');
+  const totalPlansRaw = stateExtractField(bodyContent, 'Total Plans in Phase') || stateExtractField(bodyContent, '阶段总计划数');
+  const status = stateExtractField(bodyContent, 'Status') || stateExtractField(bodyContent, '状态');
+  const progressRaw = stateExtractField(bodyContent, 'Progress') || stateExtractField(bodyContent, '进度');
+  const lastActivity = stateExtractField(bodyContent, 'Last Activity') || stateExtractField(bodyContent, '最后活动');
+  const stoppedAt = stateExtractField(bodyContent, 'Stopped At') || stateExtractField(bodyContent, 'Stopped at') || stateExtractField(bodyContent, '停止位置');
+  const pausedAt = stateExtractField(bodyContent, 'Paused At') || stateExtractField(bodyContent, '暂停于');
 
   let milestone = null;
   let milestoneName = null;
@@ -678,20 +681,22 @@ function buildStateFrontmatter(bodyContent, cwd) {
   // Normalize status to one of: planning, discussing, executing, verifying, paused, completed, unknown
   let normalizedStatus = status || 'unknown';
   const statusLower = (status || '').toLowerCase();
-  if (statusLower.includes('paused') || statusLower.includes('stopped') || pausedAt) {
+  if (statusLower.includes('paused') || statusLower.includes('stopped') || statusLower.includes('暂停') || pausedAt) {
     normalizedStatus = 'paused';
-  } else if (statusLower.includes('executing') || statusLower.includes('in progress')) {
+  } else if (statusLower.includes('executing') || statusLower.includes('in progress') || statusLower.includes('执行中')) {
     normalizedStatus = 'executing';
-  } else if (statusLower.includes('planning') || statusLower.includes('ready to plan')) {
+  } else if (statusLower.includes('planning') || statusLower.includes('ready to plan') || statusLower.includes('准备规划') || statusLower.includes('规划中')) {
     normalizedStatus = 'planning';
-  } else if (statusLower.includes('discussing')) {
+  } else if (statusLower.includes('discussing') || statusLower.includes('讨论中')) {
     normalizedStatus = 'discussing';
-  } else if (statusLower.includes('verif')) {
+  } else if (statusLower.includes('verif') || statusLower.includes('验证')) {
     normalizedStatus = 'verifying';
-  } else if (statusLower.includes('complete') || statusLower.includes('done')) {
+  } else if (statusLower.includes('complete') || statusLower.includes('done') || statusLower.includes('完成') || statusLower.includes('里程碑完成')) {
     normalizedStatus = 'completed';
-  } else if (statusLower.includes('ready to execute')) {
+  } else if (statusLower.includes('ready to execute') || statusLower.includes('准备执行')) {
     normalizedStatus = 'executing';
+  } else if (statusLower.includes('未开始') || statusLower.includes('not started')) {
+    normalizedStatus = 'planning';
   }
 
   const fm = { gsd_state_version: '1.0' };
@@ -841,52 +846,59 @@ function cmdStateBeginPhase(cwd, phaseNumber, phaseName, planCount, raw) {
   const updated = [];
 
   // Update Status field
-  const statusValue = `Executing Phase ${phaseNumber}`;
+  const statusValue = `正在执行阶段 ${phaseNumber}`;
   let result = stateReplaceField(content, 'Status', statusValue);
+  if (!result) result = stateReplaceField(content, '状态', statusValue);
   if (result) { content = result; updated.push('Status'); }
 
   // Update Last Activity
   result = stateReplaceField(content, 'Last Activity', today);
+  if (!result) result = stateReplaceField(content, '最后活动', today);
   if (result) { content = result; updated.push('Last Activity'); }
 
   // Update Last Activity Description if it exists
-  const activityDesc = `Phase ${phaseNumber} execution started`;
+  const activityDesc = `阶段 ${phaseNumber} 开始执行`;
   result = stateReplaceField(content, 'Last Activity Description', activityDesc);
+  if (!result) result = stateReplaceField(content, '最后活动说明', activityDesc);
   if (result) { content = result; updated.push('Last Activity Description'); }
 
   // Update Current Phase
   result = stateReplaceField(content, 'Current Phase', String(phaseNumber));
+  if (!result) result = stateReplaceField(content, '当前阶段', String(phaseNumber));
   if (result) { content = result; updated.push('Current Phase'); }
 
   // Update Current Phase Name
   if (phaseName) {
     result = stateReplaceField(content, 'Current Phase Name', phaseName);
+    if (!result) result = stateReplaceField(content, '当前阶段名称', phaseName);
     if (result) { content = result; updated.push('Current Phase Name'); }
   }
 
   // Update Current Plan to 1 (starting from the first plan)
   result = stateReplaceField(content, 'Current Plan', '1');
+  if (!result) result = stateReplaceField(content, '当前计划', '1');
   if (result) { content = result; updated.push('Current Plan'); }
 
   // Update Total Plans in Phase
   if (planCount) {
     result = stateReplaceField(content, 'Total Plans in Phase', String(planCount));
+    if (!result) result = stateReplaceField(content, '阶段总计划数', String(planCount));
     if (result) { content = result; updated.push('Total Plans in Phase'); }
   }
 
   // Update **Current focus:** body text line (#1104)
-  const focusLabel = phaseName ? `Phase ${phaseNumber} — ${phaseName}` : `Phase ${phaseNumber}`;
-  const focusPattern = /(\*\*Current focus:\*\*\s*).*/i;
+  const focusLabel = phaseName ? `阶段 ${phaseNumber} — ${phaseName}` : `阶段 ${phaseNumber}`;
+  const focusPattern = /(\*\*(?:Current focus|当前焦点)[：:]?\*\*\s*).*/i;
   if (focusPattern.test(content)) {
     content = content.replace(focusPattern, (_match, prefix) => `${prefix}${focusLabel}`);
     updated.push('Current focus');
   }
 
   // Update ## Current Position section (#1104)
-  const positionPattern = /(##\s*Current Position\s*\n)([\s\S]*?)(?=\n##|$)/i;
+  const positionPattern = /(##\s*(?:Current Position|当前位置)\s*\n)([\s\S]*?)(?=\n##|$)/i;
   const positionMatch = content.match(positionPattern);
   if (positionMatch) {
-    const newPosition = `Phase: ${phaseNumber}${phaseName ? ` (${phaseName})` : ''} — EXECUTING\nPlan: 1 of ${planCount || '?'}\n`;
+    const newPosition = `阶段：${phaseNumber}${phaseName ? `（${phaseName}）` : ''} — 执行中\n计划：1 / ${planCount || '?'}\n`;
     content = content.replace(positionPattern, (_match, header) => `${header}${newPosition}`);
     updated.push('Current Position');
   }
