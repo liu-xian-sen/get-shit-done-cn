@@ -1,6 +1,6 @@
 {
   "name": "get-shit-done-cn",
-  "version": "1.27.4",
+  "version": "1.35.0",
   "description": "A meta-prompting, context engineering and spec-driven development system for Claude Code, OpenCode, Gemini and Codex by TÂCHES.",
   "bin": {
     "get-shit-done-cn": "bin/install.js"
