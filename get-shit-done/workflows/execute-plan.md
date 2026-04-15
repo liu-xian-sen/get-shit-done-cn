@@ -19,7 +19,7 @@ INIT=$(node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" init execute-phase "
 if [[ "$INIT" == @file:* ]]; then INIT=$(cat "${INIT#@file:}"); fi
 ```
 
-从 init JSON 中提取：`executor_model`, `commit_docs`, `sub_repos`, `phase_dir`, `phase_number`, `plans`, `summaries`, `incomplete_plans`, `state_path`, `config_path`。
+从 init JSON 中提取：`executor_model`, `commit_docs`, `auto_commit`, `sub_repos`, `phase_dir`, `phase_number`, `plans`, `summaries`, `incomplete_plans`, `state_path`, `config_path`。
 
 如果缺少 `.planning/`：报错。
 </step>
@@ -453,6 +453,8 @@ node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" requirements mark-complete 
 </step>
 
 <step name="git_commit_metadata">
+如果 `auto_commit` 为 `false`：跳过此步骤（用户将手动提交所有变更，包括元数据文件）。
+
 任务代码已在每个任务中提交。提交计划元数据：
 
 ```bash

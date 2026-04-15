@@ -211,10 +211,11 @@ PLAN_INDEX=$(node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" phase-plan-ind
      subagent_type="gsd-executor",
      model="{executor_model}",
      prompt="
-       <objective>
-       执行阶段 {phase_number}-{phase_name} 的计划 {plan_number}。
-       原子化地提交每个任务。创建 SUMMARY.md。更新 STATE.md 和 ROADMAP.md。
-       </objective>
+        <objective>
+        执行阶段 {phase_number}-{phase_name} 的计划 {plan_number}。
+        如果 auto_commit 为 true，原子化地提交每个任务；如果为 false，跳过所有 git 提交。
+        创建 SUMMARY.md。更新 STATE.md 和 ROADMAP.md。
+        </objective>
 
        <parallel_execution>
        你正作为并行执行器代理运行。在所有 git 提交上使用 --no-verify，以避免与其他代理发生预提交钩子 (pre-commit hook) 冲突。
@@ -223,12 +224,17 @@ PLAN_INDEX=$(node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" phase-plan-ind
        对于直接的 git 提交：使用 git commit --no-verify -m \"...\"
        </parallel_execution>
 
-       <execution_context>
-       @~/.claude/get-shit-done/workflows/execute-plan.md
-       @~/.claude/get-shit-done/templates/summary.md
-       @~/.claude/get-shit-done/references/checkpoints.md
-       @~/.claude/get-shit-done/references/tdd.md
-       </execution_context>
+        <auto_commit>
+        auto_commit 设置为 {auto_commit}。如果为 false，不要在任务完成后执行 git commit，
+        改为输出变更摘要（修改了哪些文件、变更类型），供用户手动提交。
+        </auto_commit>
+
+        <execution_context>
+        @~/.claude/get-shit-done/workflows/execute-plan.md
+        @~/.claude/get-shit-done/templates/summary.md
+        @~/.claude/get-shit-done/references/checkpoints.md
+        @~/.claude/get-shit-done/references/tdd.md
+        </execution_context>
 
        <files_to_read>
        在执行开始时使用 Read 工具阅读这些文件：
@@ -246,13 +252,13 @@ PLAN_INDEX=$(node "$HOME/.claude/get-shit-done/bin/gsd-tools.cjs" phase-plan-ind
        首先检查工具可用性 —— 如果无法访问 MCP 工具，则回退到 Grep/Glob。
        </mcp_tools>
 
-       <success_criteria>
-       - [ ] 所有任务已执行
-       - [ ] 每个任务已单独提交
-       - [ ] 在计划目录中创建了 SUMMARY.md
-       - [ ] STATE.md 已更新位置和决策
-       - [ ] ROADMAP.md 已更新计划进度（通过 `roadmap update-plan-progress`）
-       </success_criteria>
+        <success_criteria>
+        - [ ] 所有任务已执行
+        - [ ] 每个任务已单独提交（仅当 auto_commit 为 true 时）
+        - [ ] 在计划目录中创建了 SUMMARY.md
+        - [ ] STATE.md 已更新位置和决策
+        - [ ] ROADMAP.md 已更新计划进度（通过 `roadmap update-plan-progress`）
+        </success_criteria>
      "
    )
    ```
